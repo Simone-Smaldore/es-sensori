@@ -55,9 +55,9 @@ Z2 = areaPiezo * z_aria; % Mezzo z2 considerato
 
 % 5) *** Calcolo dei valori di interesse e plot dei grafici ***
 % **********************************************************************
-N_Campioni = 10000;
-f_low = 0.7 * f_r;
-f_high = 1.2 * f_r;
+N_Campioni = 1000;
+f_low = 0.5 * f_r;
+f_high = 1.5 * f_r;
 freq_vector = linspace(f_low, f_high, N_Campioni);
 Zel = 1e7;
 
@@ -73,15 +73,16 @@ stampaGrafici(freq_vector, Zin, FTT, FTR, min_to_plot, max_to_plot);
 
 % 6) *** Confronto tra due diverse configurazioni ***
 % **********************************************************************
-Zin_conf_1 = calcolaZin(Z_0_D, freq_vector, v, spessore, h_33, C_0, Z1_backing, Z1_aria);
-FTT_conf_1 = calcolaFTT(Z_0_D, freq_vector, v, spessore, h_33, C_0, Z1_backing, Z1_aria);
-FTR_conf_1 = calcolaFTR(Z_0_D, freq_vector, v, spessore, h_33, C_0, Z1_backing, Zel);
+Zin_conf_1 = calcolaZin(Z_0_D, freq_vector, v, spessore, h_33, C_0, Z1_aria, Z2_aria);
+FTT_conf_1 = calcolaFTT(Z_0_D, freq_vector, v, spessore, h_33, C_0, Z1_aria, Z2_aria);
+FTR_conf_1 = calcolaFTR(Z_0_D, freq_vector, v, spessore, h_33, C_0, Z1_aria, Zel);
 FTT_i_conf_1 = FTT_conf_1 .* Zin_conf_1; % FTT pilotata in corrente
 % 
-Zin_conf_2 = calcolaZin(Z_0_D, freq_vector, v, spessore, h_33, C_0, Z1_backing, Z2_acqua);
-FTT_conf_2 = calcolaFTT(Z_0_D, freq_vector, v, spessore, h_33, C_0, Z1_backing, Z2_acqua);
-FTR_conf_2 = calcolaFTR(Z_0_D, freq_vector, v, spessore, h_33, C_0, Z1_backing, Zel);
+Zin_conf_2 = calcolaZin(Z_0_D, freq_vector, v, spessore, h_33, C_0, Z1_acqua, Z2_acqua);
+FTT_conf_2 = calcolaFTT(Z_0_D, freq_vector, v, spessore, h_33, C_0, Z1_acqua, Z2_acqua);
+FTR_conf_2 = calcolaFTR(Z_0_D, freq_vector, v, spessore, h_33, C_0, Z1_acqua, Zel);
 FTT_i_conf_2 = FTT_conf_2 .* Zin_conf_2; % FTT pilotata in corrente
 
-stampaGraficiConfronto(freq_vector, Zin_conf_1, Zin_conf_2, FTT_conf_1, FTT_conf_2, FTR_conf_1, FTR_conf_2);
+stampaSoloImpedenza = true;
+stampaGraficiConfronto(freq_vector, Zin_conf_1, Zin_conf_2, FTT_conf_1, FTT_conf_2, FTR_conf_1, FTR_conf_2, stampaSoloImpedenza);
 % *******************************************************************************
