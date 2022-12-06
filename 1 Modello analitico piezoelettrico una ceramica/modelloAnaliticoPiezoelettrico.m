@@ -41,6 +41,11 @@ z_acqua = rho_acqua * v_acqua; % impedenza acustica specifica nell'acqua
 z_aria = rho_aria * v_aria; % impedenza acustica specifica nell'aria
 z_backing = 7e6;
 
+perdite_meccaniche = 0.1e6;
+z_acqua = z_acqua + perdite_meccaniche;
+z_aria = z_aria + perdite_meccaniche;
+z_backing = z_backing + perdite_meccaniche;
+
 Z1_acqua = areaPiezo * z_acqua; % Mezzo z1 acqua
 Z2_acqua = areaPiezo * z_acqua; % Mezzo z2 acqua
 Z1_aria = areaPiezo * z_aria; % Mezzo z1 aria
@@ -83,6 +88,6 @@ FTT_conf_2 = calcolaFTT(Z_0_D, freq_vector, v, spessore, h_33, C_0, Z1_acqua, Z2
 FTR_conf_2 = calcolaFTR(Z_0_D, freq_vector, v, spessore, h_33, C_0, Z1_acqua, Zel);
 FTT_i_conf_2 = FTT_conf_2 .* Zin_conf_2; % FTT pilotata in corrente
 
-stampaSoloImpedenza = true;
+stampaSoloImpedenza = false;
 stampaGraficiConfronto(freq_vector, Zin_conf_1, Zin_conf_2, FTT_conf_1, FTT_conf_2, FTR_conf_1, FTR_conf_2, stampaSoloImpedenza);
 % *******************************************************************************
