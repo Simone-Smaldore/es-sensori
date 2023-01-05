@@ -1,4 +1,5 @@
 function stampaGraficiDC(freq_vector, Zin, FTT, FTR, Zin_DC, FTT_DC, FTR_DC)
+    freq_vector = freq_vector./1e6;
     figure;
     set(gcf,'WindowState','maximized')
 
@@ -9,8 +10,8 @@ function stampaGraficiDC(freq_vector, Zin, FTT, FTR, Zin_DC, FTT_DC, FTR_DC)
     hold off
     grid on;
     title('Impedenza')
-    xlabel('frequenza [Hz]')
-    ylabel('Zin')
+    xlabel('frequenza [MHz]')
+    ylabel('Zin [Ohm]')
     legend('Una ceramica da 2mm','Due ceramiche da 1mm')
 
     subplot(3,1,2)
@@ -20,7 +21,7 @@ function stampaGraficiDC(freq_vector, Zin, FTT, FTR, Zin_DC, FTT_DC, FTR_DC)
     hold off
     grid on
     title('Funzione di trasferimento trasmissione')
-    xlabel('frequenza [Hz]')
+    xlabel('frequenza [MHz]')
     ylabel('FTT[dB]')
     legend('Una ceramica da 2mm','Due ceramiche da 1mm')
     
@@ -31,7 +32,7 @@ function stampaGraficiDC(freq_vector, Zin, FTT, FTR, Zin_DC, FTT_DC, FTR_DC)
     hold off
     grid on
     title('Funzione di trasferimento ricezione')
-    xlabel('frequenza [Hz]')
+    xlabel('frequenza [MHz]')
     ylabel('FTR[dB]')
     legend('Una ceramica da 2mm','Due ceramiche da 1mm')
 
