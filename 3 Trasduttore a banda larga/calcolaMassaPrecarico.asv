@@ -1,0 +1,5 @@
+function [M_11,M_22] = calcolaMassaPrecarico(freq,v_materiale,rho_materiale,areaPiezo,l_adatt,z_l)
+    Z_L = 
+
+end
+
