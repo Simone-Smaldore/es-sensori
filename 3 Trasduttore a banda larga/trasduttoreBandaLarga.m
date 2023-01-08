@@ -34,31 +34,17 @@ f_r = v / (2 * spessore); % Frequenza di risonanza
 rho_acqua = 997; % densità dell'acqua in [kg/m_3]
 v_acqua = 1484; % velocità di propagazione dell'onda nell'acqua [m/s]
 
-rho_aria = 1.225; % densità dell'aria in [kg/m_3]
-v_aria = 343; % velocità di propagazione dell'onda nell'aria [m/s]
-
 z_acqua = rho_acqua * v_acqua; % impedenza acustica specifica nell'acqua
-z_aria = rho_aria * v_aria; % impedenza acustica specifica nell'aria
 z_backing = 7e6;
 
 perdite_meccaniche = 0.1e6; % perdite meccaniche per rispecchiare caso reale
 z_acqua = z_acqua + perdite_meccaniche;
-z_aria = z_aria + perdite_meccaniche;
 z_backing = z_backing + perdite_meccaniche;
 
-Z1_acqua = areaPiezo * z_acqua; % Mezzo z1 acqua
-Z2_acqua = areaPiezo * z_acqua; % Mezzo z2 acqua
-Z1_aria = areaPiezo * z_aria; % Mezzo z1 aria
-Z2_aria = areaPiezo * z_aria; % Mezzo z2 aria
-Z1_backing = areaPiezo * z_backing; % Mezzo z1 backing
-Z2_backing = areaPiezo * z_backing; % Mezzo z2 backing
-
-Z1 = areaPiezo * z_aria; % Mezzo z1 considerato
-Z2 = areaPiezo * z_aria; % Mezzo z2 considerato
-
+Z1 = z_acqua * areaPiezo;
 % **********************************************************************
 
-% 5) *** Calcolo dei valori di interesse e plot dei grafici ***
+% 5) *** Calcolo della frequenza di massimo spostamento ***
 % **********************************************************************
 N_Campioni = 1000;
 f_low = 0.5 * f_r;
@@ -67,32 +53,12 @@ freq_vector = linspace(f_low, f_high, N_Campioni);
 
 Zin = calcolaZin(Z_0_D, freq_vector, v, spessore, h_33, C_0, Z1, Z1);
 [Zmin, indexMin] = min(abs(Zin));
-f0 = freq_vector(indexMin);
+f0 = freq_vector(indexMin); % Trovo la frequenza di massimo spostamento del piezoelettrico
 % **********************************************************************
 
-% TODO: Rifattorizzare e valutare cosa tenere della sezione 4
-
-[Zmodulotrasduttore,FTTtrasduttore] = simulaTrasduttoreBandaLarga(freq_vector, f0, areaPiezo, v, rho, z_acqua, rho_acqua, z_acqua, z_acqua, C_0, spessore, h_33);
-[Zmodulotrasduttore_backing,FTTtrasduttore_backing] = simulaTrasduttoreBandaLarga(freq_vector, f0, areaPiezo, v, rho, z_acqua, rho_acqua, z_backing, z_acqua, C_0, spessore, h_33);
-
-% PLOT CONFRONTO TRASDUTTORE BANDA LARGA CON E SENZA BACKING
-figure
-tiledlayout(1,2);
-
-ax(1) = nexttile;
-plot(freq_vector, Zmodulotrasduttore,'b');
-hold on;
-plot(freq_vector, Zmodulotrasduttore_backing,'r');
-hold off
-grid on;
-xlabel('Frequenza [MHz]')
-ylabel(' |Zin| [Ohm] ')
-
-nexttile
-plot(freq_vector,FTTtrasduttore, 'b');
-hold on;
-plot(freq_vector,FTTtrasduttore_backing, 'r');
-hold off
-grid on;
-xlabel('Frequenza [MHz]')
-ylabel(' |FTT| [dB]')
+% 6) *** Calcolo della Zin e della FTT del trasduttore con e senza backing ***
+% **********************************************************************
+[Zintrasduttore,FTTtrasduttore] = simulaTrasduttoreBandaLarga(freq_vector, f0, areaPiezo, v, rho, z_acqua, rho_acqua, z_acqua, z_acqua, C_0, spessore, h_33);
+[Zintrasduttore_backing,FTTtrasduttore_backing] = simulaTrasduttoreBandaLarga(freq_vector, f0, areaPiezo, v, rho, z_acqua, rho_acqua, z_backing, z_acqua, C_0, spessore, h_33);
+stampaGraficiConfronto(freq_vector, Zintrasduttore, FTTtrasduttore, Zintrasduttore_backing, FTTtrasduttore_backing);
+% **********************************************************************
