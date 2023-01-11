@@ -60,7 +60,7 @@ Z2 = areaPiezo * z_aria; % Mezzo z2 considerato
 
 % 5) *** Calcolo dei valori di interesse singola ceramica ***
 % **********************************************************************
-N_Campioni = 1000;
+N_Campioni = 10000;
 f_low = 0.5 * f_r;
 f_high = 1.5 * f_r;
 freq_vector = linspace(f_low, f_high, N_Campioni);
