@@ -11,9 +11,5 @@ function FTR = calcolaFTR(Z_0_D, freq_vector, v, l, h_33, C_0, Z1, Zel, singleCe
             B = calcolaMatriceB(G, Z1);
         end
         FTR(i) = Zel * B(1, 2) / (B(1, 1) * (B(2, 2) + Zel) - B(1, 2)^2);
-        %Il /4 lo considero qui ?
-%         if ~ singleCeramic
-%             FTR(i) = FTR(i)/4;
-%         end
     end
 end

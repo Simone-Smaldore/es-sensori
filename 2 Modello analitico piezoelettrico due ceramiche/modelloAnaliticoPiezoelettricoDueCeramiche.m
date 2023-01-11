@@ -2,7 +2,7 @@ clear; clc; close all;
 
 % 1) *** Tipo di materiale ***
 % **********************************************************************
-% Scelgo di utilizzare il materiale Pz26 
+% Scelgo di utilizzare il materiale Pz21
 c_33_D = 1.58E+11; % Costante elastica
 h_33 = 2.37E+9; % Costante h(serve per il set di equazioni scelto nel modello thickness)
 e_33 = 14.7; % Costante piezoelettrica

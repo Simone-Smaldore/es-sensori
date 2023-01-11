@@ -11,11 +11,6 @@ function Zin = calcolaZin(Z_0_D, freq_vector, v, l, h_33, C_0, Z1, Z2, singleCer
             B = calcolaMatriceB(G, Z1);
         end
         Zin(i) = B(2, 2) - B(1, 2)^2/(Z2 + B(1, 1));
-
-        %Il /4 lo considero qui ?
-%         if ~ singleCeramic
-%             Zin(i) = Zin(i)/4;
-%         end
     end
 end
 

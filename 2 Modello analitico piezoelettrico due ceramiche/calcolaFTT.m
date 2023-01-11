@@ -11,9 +11,5 @@ function FTT = calcolaFTT(Z_0_D, freq_vector, v, l, h_33, C_0, Z1, Z2, singleCer
             B = calcolaMatriceB(G, Z1);
         end
         FTT(i) = Z2 * B(1, 2) / (B(2, 2) * (B(1, 1) + Z2) - B(1, 2)^2);
-        %Il /4 lo considero qui ?
-%         if ~ singleCeramic
-%             FTT(i) = FTT(i)/4;
-%         end
     end
 end
