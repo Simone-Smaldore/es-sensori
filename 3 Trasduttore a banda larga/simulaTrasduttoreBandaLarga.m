@@ -6,6 +6,10 @@ function [ZinAbs, FTTAbs] = simulaTrasduttoreBandaLarga(freq_vector, f0,areaPiez
     lambda_adatt = v_p/f0;
     l_adatt = lambda_adatt/4; % Spessore finale piastra di adattamento
 
+    offset = 0.0000;
+    l_adatt = l_adatt - offset;
+
+
     n_freq = numel(freq_vector);
     ZinAbs = zeros(1, n_freq);
     FTTAbs = zeros(1, n_freq);

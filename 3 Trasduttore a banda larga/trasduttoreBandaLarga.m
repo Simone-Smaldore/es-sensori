@@ -46,7 +46,7 @@ Z1 = z_acqua * areaPiezo;
 
 % 5) *** Calcolo della frequenza di massimo spostamento ***
 % **********************************************************************
-N_Campioni = 1000;
+N_Campioni = 10000;
 f_low = 0.5 * f_r;
 f_high = 1.5 * f_r;
 freq_vector = linspace(f_low, f_high, N_Campioni);
