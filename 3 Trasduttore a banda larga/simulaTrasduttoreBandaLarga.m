@@ -7,13 +7,11 @@ function [ZinAbs, FTTAbs] = simulaTrasduttoreBandaLarga(freq_vector, f0,areaPiez
     l_adatt = lambda_adatt/4; % Spessore finale piastra di adattamento
 
     n_freq = numel(freq_vector);
-    ZinAbs = zeros(n_freq);
-    FTTAbs = zeros(n_freq);
+    ZinAbs = zeros(1, n_freq);
+    FTTAbs = zeros(1, n_freq);
     for i = 1:n_freq
         [M11,M12] = calcolaMassaPrecarico(freq_vector(i),v_p,rho_p,l_adatt,areaPiezo);      
         [ZinAbs(i), FTTAbs(i)] = calcolaImpedenzaTrasduttoreBandaLarga(freq_vector(i), areaPiezo, z_ceramica, v_materiale, C_0, Z1, Z2, spessore, h_33, M11, M12);
     end
-    ZinAbs = mag2db(abs(ZinAbs));
-    FTTAbs = mag2db(abs(FTTAbs));
 end
 
