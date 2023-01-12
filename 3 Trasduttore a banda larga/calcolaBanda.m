@@ -1,4 +1,4 @@
-function [banda, index0, index1] = calcolaBanda(freq_vector,array, banda)
+function [banda, index0, index1, freqCentroBanda] = calcolaBanda(freq_vector,array, banda)
     absArray = abs(array);
     [maxVal, indexMax] = max(absArray); %Prende la frequenza massima
     index1 = indexMax;
@@ -22,5 +22,6 @@ function [banda, index0, index1] = calcolaBanda(freq_vector,array, banda)
         end
     end 
     banda = freq_vector(index1) - freq_vector(index0);
+    freqCentroBanda = (freq_vector(index0) + freq_vector(index1)) / 2;
 end
 

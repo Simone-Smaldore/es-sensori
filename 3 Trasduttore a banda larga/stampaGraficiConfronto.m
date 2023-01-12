@@ -29,13 +29,13 @@ function stampaGraficiConfronto(freq_vector, Zintrasduttore, FTTtrasduttore, Zin
     hold on;
     plot(freq_vector,FTTtrasduttore_backing_plot, 'LineWidth',lineWidth);
 
-    [banda, index0, index1] = calcolaBanda(freq_vector,FTTtrasduttore, bandaDb);
+    [banda, index0, index1, freqCentroBanda] = calcolaBanda(freq_vector,FTTtrasduttore, bandaDb);
     plot(freq_vector(index0),FTTtrasduttore_plot(index0),'*r');
     plot(freq_vector(index1),FTTtrasduttore_plot(index1),'*r');
     txt_show = ['Banda' bandaDb 'Db senza backing: ' num2str(banda), ' MHz'];
     text(freq_vector(index0) + 0.04 , FTTtrasduttore_plot(index0) ,txt_show)
         
-    [banda, index0, index1] = calcolaBanda(freq_vector,FTTtrasduttore_backing, bandaDb);
+    [banda, index0, index1, freqCentroBanda] = calcolaBanda(freq_vector,FTTtrasduttore_backing, bandaDb);
     plot(freq_vector(index0),FTTtrasduttore_backing_plot(index0),'*r');
     plot(freq_vector(index1),FTTtrasduttore_backing_plot(index1),'*r');
     txt_show = ['Banda' bandaDb 'Db con backing: ' num2str(banda), ' MHz'];

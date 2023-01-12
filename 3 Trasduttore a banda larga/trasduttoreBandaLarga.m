@@ -62,3 +62,13 @@ f0 = freq_vector(indexMin); % Trovo la frequenza di massimo spostamento del piez
 [Zintrasduttore_backing,FTTtrasduttore_backing] = simulaTrasduttoreBandaLarga(freq_vector, f0, areaPiezo, v, rho, z_acqua, rho_acqua, z_backing, z_acqua, C_0, spessore, h_33);
 stampaGraficiConfronto(freq_vector, Zintrasduttore, FTTtrasduttore, Zintrasduttore_backing, FTTtrasduttore_backing);
 % **********************************************************************
+
+
+% 7) *** Calcolo delle informazioni sulla banda per le FTT ***
+% **********************************************************************
+bandaDb = 6;
+disp(newline + "***** Banda FTT senza backing *****");
+stampaInformazioniBanda(freq_vector, FTTtrasduttore, bandaDb, f0);
+disp(newline + "***** Banda FTT con backing *****");
+stampaInformazioniBanda(freq_vector, FTTtrasduttore_backing, bandaDb, f0);
+% **********************************************************************
