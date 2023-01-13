@@ -1,4 +1,5 @@
 clear; clc; close all;
+addpath('../condivise'); 
 
 % 1) *** Tipo di materiale ***
 % **********************************************************************
@@ -51,7 +52,7 @@ f_low = 0.5 * f_r;
 f_high = 1.5 * f_r;
 freq_vector = linspace(f_low, f_high, N_Campioni);
 
-Zin = calcolaZin(Z_0_D, freq_vector, v, spessore, h_33, C_0, Z1, Z1);
+Zin = calcolaZin(Z_0_D, freq_vector, v, spessore, h_33, C_0, Z1, Z1, true);
 [Zmin, indexMin] = min(abs(Zin));
 f0 = freq_vector(indexMin); % Trovo la frequenza di massimo spostamento del piezoelettrico
 % **********************************************************************

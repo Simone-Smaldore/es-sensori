@@ -1,5 +1,9 @@
 clear; clc; close all;
 
+addpath('../condivise');
+
+useSingleCeramic = true;
+
 % 1) *** Tipo di materiale ***
 % **********************************************************************
 % Scelgo di utilizzare il materiale Pz26 
@@ -66,9 +70,9 @@ f_high = 1.5 * f_r;
 freq_vector = linspace(f_low, f_high, N_Campioni);
 Zel = 1e7;
 
-Zin = calcolaZin(Z_0_D, freq_vector, v, spessore, h_33, C_0, Z1, Z2);
-FTT = calcolaFTT(Z_0_D, freq_vector, v, spessore, h_33, C_0, Z1, Z2);
-FTR = calcolaFTR(Z_0_D, freq_vector, v, spessore, h_33, C_0, Z1, Zel);
+Zin = calcolaZin(Z_0_D, freq_vector, v, spessore, h_33, C_0, Z1, Z2, useSingleCeramic);
+FTT = calcolaFTT(Z_0_D, freq_vector, v, spessore, h_33, C_0, Z1, Z2, useSingleCeramic);
+FTR = calcolaFTR(Z_0_D, freq_vector, v, spessore, h_33, C_0, Z1, Zel, useSingleCeramic);
 FTT_i = FTT .* Zin; % FTT pilotata in corrente
 
 max_to_plot = 1;
@@ -78,14 +82,14 @@ stampaGrafici(freq_vector, Zin, FTT, FTR, min_to_plot, max_to_plot);
 
 % 6) *** Confronto tra due diverse configurazioni ***
 % **********************************************************************
-Zin_conf_1 = calcolaZin(Z_0_D, freq_vector, v, spessore, h_33, C_0, Z1_aria, Z2_aria);
-FTT_conf_1 = calcolaFTT(Z_0_D, freq_vector, v, spessore, h_33, C_0, Z1_aria, Z2_aria);
-FTR_conf_1 = calcolaFTR(Z_0_D, freq_vector, v, spessore, h_33, C_0, Z1_aria, Zel);
+Zin_conf_1 = calcolaZin(Z_0_D, freq_vector, v, spessore, h_33, C_0, Z1_aria, Z2_aria, useSingleCeramic);
+FTT_conf_1 = calcolaFTT(Z_0_D, freq_vector, v, spessore, h_33, C_0, Z1_aria, Z2_aria, useSingleCeramic);
+FTR_conf_1 = calcolaFTR(Z_0_D, freq_vector, v, spessore, h_33, C_0, Z1_aria, Zel, useSingleCeramic);
 FTT_i_conf_1 = FTT_conf_1 .* Zin_conf_1; % FTT pilotata in corrente
 % 
-Zin_conf_2 = calcolaZin(Z_0_D, freq_vector, v, spessore, h_33, C_0, Z1_acqua, Z2_acqua);
-FTT_conf_2 = calcolaFTT(Z_0_D, freq_vector, v, spessore, h_33, C_0, Z1_acqua, Z2_acqua);
-FTR_conf_2 = calcolaFTR(Z_0_D, freq_vector, v, spessore, h_33, C_0, Z1_acqua, Zel);
+Zin_conf_2 = calcolaZin(Z_0_D, freq_vector, v, spessore, h_33, C_0, Z1_acqua, Z2_acqua, useSingleCeramic);
+FTT_conf_2 = calcolaFTT(Z_0_D, freq_vector, v, spessore, h_33, C_0, Z1_acqua, Z2_acqua, useSingleCeramic);
+FTR_conf_2 = calcolaFTR(Z_0_D, freq_vector, v, spessore, h_33, C_0, Z1_acqua, Zel, useSingleCeramic);
 FTT_i_conf_2 = FTT_conf_2 .* Zin_conf_2; % FTT pilotata in corrente
 
 stampaSoloImpedenza = false;

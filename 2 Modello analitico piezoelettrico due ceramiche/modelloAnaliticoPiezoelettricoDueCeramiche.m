@@ -1,4 +1,5 @@
 clear; clc; close all;
+addpath('../condivise');
 
 % 1) *** Tipo di materiale ***
 % **********************************************************************

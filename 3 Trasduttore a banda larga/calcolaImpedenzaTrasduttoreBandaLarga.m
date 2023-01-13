@@ -3,20 +3,10 @@ function [Zin, FTT] = calcolaImpedenzaTrasduttoreBandaLarga(freq, areaPiezo, z_c
     Z1 = z1 * areaPiezo;
     Z2 = z2 * areaPiezo;
 
-    A = calcolaMatriceA(Z_0_D, freq, v_materiale, spessore, h_33, C_0);
-    T = zeros(3 ,3);
-
+    M = [M11 M12 0; 0 0 0; 0 0 0];
     % Matrice T (Simile a matrice G 2 ceramiche però accoppia ceramica e massa)
-    T(1,1) = A(1,1)-((A(1,2)^2/(A(1,1)+M11)));
-    T(1,2) = A(1,2)*M12/(A(1,1)+M11);
-    T(1,3) = (A(1,3)-A(1,2)*A(1,3)/(A(1,1)+M11))/2;
-    T(2,1) = T(1,2);
-    T(2,2) = M11-(M12^2/(A(1,1)+M11));
-    T(2,3) = (A(1,3)*M12/(A(1,1)+M11))/2;
-    T(3,1) = T(1,3);
-    T(3,2) = T(2,3);
-    T(3,3) = (A(3,3)/2-(A(1,3)^2)/(2*(A(1,1)+M11)))/2;
-        
+    A = calcolaMatriceA(Z_0_D, freq, v_materiale, spessore, h_33, C_0);
+    T = calcolaMatriceG(A, M);
     B = calcolaMatriceB(T, Z1);
 
     Zin = abs((B(2,2) - ((B(1,2)^2)/(Z2+B(1,1)))));
