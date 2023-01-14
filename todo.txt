@@ -9,3 +9,5 @@
  - Banda in percentuale = ((f2 - f1)/f0) * 100 --> Dovremmo ottenere valori tra il 50% e il 60%
  - Variare lo spessore per andare a vedere che lambda/4 da la banda migliore(Aumentare e diminuire di poco lo spessore)
   Lo spessore è fondamentale per modificare il comportamento della singola ceramica
+
+-Decidere quale piezo utilizzare

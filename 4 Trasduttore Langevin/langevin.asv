@@ -1,0 +1,42 @@
+clear; clc; close all;
+addpath('../condivise'); 
+
+inizializzaPiezo();
+
+% 4) *** Condizioni al contorno ***
+% **********************************************************************
+rho_acqua = 997; % densità dell'acqua in [kg/m_3]
+v_acqua = 1484; % velocità di propagazione dell'onda nell'acqua [m/s]
+
+rho_aria = 1.225; % densità dell'aria in [kg/m_3]
+v_aria = 343; % velocità di propagazione  dell'onda nell'aria [m/s]
+
+rho_titanio = 4.507 * 10^3; % Densità di massa del titanio [Kg/m^3]
+v_titanio = 6100; % Velocità di propagazione nel titanio [m/s]
+
+z_acqua = rho_acqua * v_acqua; % impedenza acustica specifica nell'acqua
+z_aria = rho_aria * v_aria; % impedenza acustica specifica nell'aria
+z_titanio = rho_titanio * v_titanio; % impedenza acustica specifica nel titanio
+
+perdite_meccaniche = 0.1e6; % perdite meccaniche per rispecchiare caso reale
+z_acqua = z_acqua + perdite_meccaniche;
+z_aria = z_aria + perdite_meccaniche;
+
+Z1 = z_aria * areaPiezo;
+Z0_massa_1 = z_titanio * areaPiezo; % Massa 1 in titanio
+Z0_massa_2 = z_titanio * areaPiezo; % Visto che considereremo le masse uguali
+% **********************************************************************
+
+% 5) *** Calcolo della dimensione a delle masse ***
+% **********************************************************************
+freq_lavoro = 130 * 10^3; % Frequenza di lavoro di 130 KHz
+spessore_half = spessore/2; % valore di c visto che consideriamo metà del trasduttore nello studio
+a = calcolaDimensioneMasse(freq_lavoro, v_titanio, rho_titanio, v, rho, spessore_half);
+% **********************************************************************
+
+% 6) *** Calcolo delle impedenze acustiche in ingresso alle masse(Zacu) ***
+% **********************************************************************
+Y = v_titanio * v_titanio * rho_titanio; % Modulo di young del titanio
+
+% **********************************************************************
+
