@@ -23,6 +23,10 @@ function stampaGrafici(freq_vector, Zin, FTT, FTR, min_to_plot, max_to_plot)
     i = 1;
     while max_cont < max_to_plot && i < length(Zin_abs) 
         index_max = index_max_arr(i);
+        if index_max == 1 || index_max == length(Zin_abs)
+            i = i + 1;
+            continue;
+        end 
         if(Zin_abs(index_max - 1) < Zin_abs(index_max) && Zin_abs(index_max + 1) < Zin_abs(index_max))
             semilogy(freq_vector(index_max),Zin_abs(index_max),'*r');    
             txt_max = ['Freq Max Zin: ' num2str(freq_vector(index_max)), ' MHz'];

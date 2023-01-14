@@ -14,6 +14,7 @@ function stampaGraficiConfronto(freq_vector, Zin_aria, Zin_acqua, FTT_aria, FTT_
         title('Impedenza')
         xlabel('frequenza [MHz]')
         ylabel('Zin [Ohm]')
+        legend('Aria Aria','Acqua Acqua')
     else
         subplot(3,1,1)
         semilogy(freq_vector, abs(Zin_aria))
@@ -24,6 +25,7 @@ function stampaGraficiConfronto(freq_vector, Zin_aria, Zin_acqua, FTT_aria, FTT_
         title('Impedenza')
         xlabel('frequenza [MHz]')
         ylabel('Zin [Ohm]')
+        legend('Aria Aria','Acqua Acqua')
     
         subplot(3,1,2)
         plot(freq_vector, mag2db(abs(FTT_aria)))
@@ -33,6 +35,7 @@ function stampaGraficiConfronto(freq_vector, Zin_aria, Zin_acqua, FTT_aria, FTT_
         title('Funzione di trasferimento trasmissione')
         xlabel('frequenza [MHz]')
         ylabel('FTT[dB]')
+        legend('Aria Aria','Acqua Acqua')
         
         subplot(3,1,3)
         plot(freq_vector, mag2db(abs(FTR_aria)))
@@ -42,6 +45,7 @@ function stampaGraficiConfronto(freq_vector, Zin_aria, Zin_acqua, FTT_aria, FTT_
         title('Funzione di trasferimento ricezione')
         xlabel('frequenza [MHz]')
         ylabel('FTR[dB]')
+        legend('Aria Aria','Acqua Acqua')
     end
 end
 
