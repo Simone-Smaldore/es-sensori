@@ -1,13 +1,13 @@
-function [ZinAbs, FTTAbs] = simulaTrasduttoreBandaLarga(freq_vector, f0,areaPiezo, v_materiale,rho_materiale, z_carico, rho_p, Z1, Z2, C_0, spessore, h_33)
+function [ZinAbs, FTTAbs, l_adatt] = simulaTrasduttoreBandaLarga(freq_vector, f0,areaPiezo, v_materiale,rho_materiale, z_carico, rho_p, Z1, Z2, C_0, spessore, h_33, intOffset)
     z_ceramica = v_materiale * rho_materiale;
     %Impendenza specifica di adattamento per la massimizzazione della banda passante
     z_p = (2*(z_carico^2)*z_ceramica)^(1/3); 
     v_p = z_p/rho_p; % Velocita' di propagazione
     lambda_adatt = v_p/f0;
     l_adatt = lambda_adatt/4; % Spessore finale piastra di adattamento
-
-    offset = 0.0000;
-    l_adatt = l_adatt - offset;
+    offset = l_adatt / 50;
+    offset = offset * intOffset;
+    l_adatt = l_adatt + offset;
 
 
     n_freq = numel(freq_vector);
