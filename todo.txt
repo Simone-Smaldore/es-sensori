@@ -13,3 +13,8 @@
 - Decidere quale piezo utilizzare
 
 - Aggiungere metodo iterativo per il calcolo della banda massima a partire da lambda/4 (+- 5)
+
+Keff leggermente maggiore nel caso aria acqua rispetto ad aria aria poiché con delle perdite si aumenta di poco la frequenza massima e si diminuisce di poco la frequenza minima
+
+- Cambiare etichette in inglese
+- Aggiungere banda come parametro di funzione stampa

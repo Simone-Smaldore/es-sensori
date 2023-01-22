@@ -32,22 +32,25 @@ f0 = freq_vector(indexMin); % Trovo la frequenza di massimo spostamento del piez
 
 % 6) *** Calcolo della Zin e della FTT del trasduttore con e senza backing ***
 % **********************************************************************
-intOffset = 0;
+bandaDb = 6;
+
+intOffset =0;
 [Zintrasduttore,FTTtrasduttore, spessorePiastraIniziale] = simulaTrasduttoreBandaLarga(freq_vector, f0, areaPiezo, v, rho, z_acqua, rho_acqua, z_acqua, z_acqua, C_0, spessore, h_33, intOffset);
 [Zintrasduttore_backing,FTTtrasduttore_backing, spessorePiastraInizialeBacking] = simulaTrasduttoreBandaLarga(freq_vector, f0, areaPiezo, v, rho, z_acqua, rho_acqua, z_backing, z_acqua, C_0, spessore, h_33, intOffset);
-stampaGraficiConfronto(freq_vector, Zintrasduttore, FTTtrasduttore, Zintrasduttore_backing, FTTtrasduttore_backing);
+
+stampaGraficiConfronto(freq_vector, Zintrasduttore, FTTtrasduttore, Zintrasduttore_backing, FTTtrasduttore_backing, bandaDb);
 % **********************************************************************
 
 
 % 7) *** Calcolo delle informazioni sulla banda per le FTT ***
 % **********************************************************************
-bandaDb = 6;
 disp(newline + "***** Banda FTT senza backing *****");
 stampaInformazioniBanda(freq_vector, FTTtrasduttore, bandaDb, f0);
 disp(newline + "***** Banda FTT con backing *****");
 stampaInformazioniBanda(freq_vector, FTTtrasduttore_backing, bandaDb, f0);
 % **********************************************************************
 
+[banda_0, index0, index1, freqCentroBanda] = calcolaBanda(freq_vector,FTTtrasduttore_backing, bandaDb);
 
 % 8) *** Calcolo dello spessore ottimale all'ampiezza di banda ***
 % **********************************************************************

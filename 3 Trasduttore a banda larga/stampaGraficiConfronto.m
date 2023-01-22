@@ -1,12 +1,10 @@
-function stampaGraficiConfronto(freq_vector, Zintrasduttore, FTTtrasduttore, Zintrasduttore_backing, FTTtrasduttore_backing)
+function stampaGraficiConfronto(freq_vector, Zintrasduttore, FTTtrasduttore, Zintrasduttore_backing, FTTtrasduttore_backing, bandaDb)
     % PLOT CONFRONTO TRASDUTTORE BANDA LARGA CON E SENZA BACKING
     Zintrasduttore_plot = mag2db(abs(Zintrasduttore));
     FTTtrasduttore_plot = mag2db(abs(FTTtrasduttore));
     Zintrasduttore_backing_plot = mag2db(abs(Zintrasduttore_backing));
     FTTtrasduttore_backing_plot = mag2db(abs(FTTtrasduttore_backing));
     lineWidth = 1.5;
-
-    bandaDb = 6;
 
     freq_vector = freq_vector ./ 1e6;
     figure
