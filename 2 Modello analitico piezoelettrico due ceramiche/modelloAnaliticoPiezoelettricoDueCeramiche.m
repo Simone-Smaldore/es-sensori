@@ -3,18 +3,8 @@ addpath('../condivise');
 
 inizializzaPiezo();
 
-% 4) *** Condizioni al contorno ***
+% 4b) *** Condizioni al contorno specifiche ***
 % **********************************************************************
-rho_acqua = 997; % densità dell'acqua in [kg/m_3]
-v_acqua = 1484; % velocità di propagazione dell'onda nell'acqua [m/s]
-
-rho_aria = 1.225; % densità dell'aria in [kg/m_3]
-v_aria = 343; % velocità di propagazione dell'onda nell'aria [m/s]
-
-z_acqua = rho_acqua * v_acqua; % impedenza acustica specifica nell'acqua
-z_aria = rho_aria * v_aria; % impedenza acustica specifica nell'aria
-z_backing = 7e6;
-
 perdite_meccaniche = 0.1; % perdite meccaniche per rispecchiare caso reale
 z_acqua = z_acqua + perdite_meccaniche;
 z_aria = z_aria + perdite_meccaniche;

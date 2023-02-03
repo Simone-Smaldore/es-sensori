@@ -3,19 +3,10 @@ addpath('../condivise');
 
 inizializzaPiezo();
 
-% 4) *** Condizioni al contorno ***
+% 4b) *** Condizioni al contorno specifiche ***
 % **********************************************************************
-rho_acqua = 997; % densità dell'acqua in [kg/m_3]
-v_acqua = 1484; % velocità di propagazione dell'onda nell'acqua [m/s]
-
-rho_aria = 1.225; % densità dell'aria in [kg/m_3]
-v_aria = 343; % velocità di propagazione  dell'onda nell'aria [m/s]
-
 rho_titanio = 4.507 * 10^3; % Densità di massa del titanio [Kg/m^3]
 v_titanio = 6100; % Velocità di propagazione nel titanio [m/s]
-
-z_acqua = rho_acqua * v_acqua; % impedenza acustica specifica nell'acqua
-z_aria = rho_aria * v_aria; % impedenza acustica specifica nell'aria
 z_titanio = rho_titanio * v_titanio; % impedenza acustica specifica nel titanio
 
 
