@@ -7,13 +7,8 @@ inizializzaPiezo();
 % **********************************************************************
 rho_titanio = 4.507 * 10^3; % Densità di massa del titanio [Kg/m^3]
 v_titanio = 6100; % Velocità di propagazione nel titanio [m/s]
-z_titanio = rho_titanio * v_titanio; % impedenza acustica specifica nel titanio
-
 
 Z1 = z_aria * areaPiezo;
-Z0_massa_1 = z_titanio * areaPiezo; % Massa 1 in titanio
-Z0_massa_2 = z_titanio * areaPiezo; % Visto che considereremo le masse uguali
-
 % **********************************************************************
 
 % 5) *** Calcolo della dimensione a delle masse ***
@@ -32,7 +27,7 @@ f_low = 0.5 * freq_lavoro;
 f_high = 1.5 * freq_lavoro;
 freq_vector = linspace(f_low, f_high, N_Campioni);
 
-Y_titanio = v_titanio * v_titanio * rho_titanio; % Modulo di young del titanio
+%Y_titanio = v_titanio * v_titanio * rho_titanio; % Modulo di young del titanio
 Zacu_m1 = calcolaZacu(freq_vector, v_titanio, a_m1, rho_titanio, areaPiezo, Z1);
 Zacu_m2 = calcolaZacu(freq_vector, v_titanio, a_m2, rho_titanio, areaPiezo, Z1);
 % **********************************************************************
@@ -56,16 +51,8 @@ FTT = calcolaFTTZVector(Z_0_D, freq_vector, v, spessore, h_33, C_0, Zacu_m1, Zac
 FTT_new = calcolaFTTZVector(Z_0_D, freq_vector, v, spessore, h_33, C_0, Zacu_m1_new, Zacu_m2_new, useSingleCeramic);
 % **********************************************************************
 
-
-
-figure;
-plot(freq_vector, mag2db(abs(Zin)));
-hold on;
-plot(freq_vector, mag2db(abs(Zin_new)));
-
-figure;
-plot(freq_vector, mag2db(abs(FTT)));
-hold on;
-plot(freq_vector, mag2db(abs(FTT_new)));
-
+% 10) *** Stampa dei grafici ***
+% **********************************************************************
+stampaGraficiLangevin(Zin, Zin_new, FTT, FTT_new, freq_vector);
+% **********************************************************************
 

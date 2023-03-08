@@ -3,7 +3,6 @@ function [a_new, Zin_new, Zacu_m1_new, Zacu_m2_new] = calcolaSpessoreRealeMasse(
     [~, indexMax] = min(abs(Zin));
     f_max = freq_vector(indexMax);
     dim_offset = a / 10;
-    disp(f_max - freq_lavoro)
     while abs(f_max - freq_lavoro) > 10
         if f_max > freq_lavoro
             a_new = a_new + dim_offset;
