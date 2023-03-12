@@ -3,6 +3,7 @@ function stampaGraficiLangevin(Zin,Zin_new, FTT, FTT_new, FTT_i, FTT_i_new, freq
     figure;
     set(gcf,'WindowState','maximized')
     
+    subplot(3,1,1)
     plot(freq_vector, mag2db(abs(Zin)));
     hold on;
     plot(freq_vector, mag2db(abs(Zin_new)));
@@ -12,8 +13,7 @@ function stampaGraficiLangevin(Zin,Zin_new, FTT, FTT_new, FTT_i, FTT_i_new, freq
     ylabel('Zin [Ohm]')
     legend('Progetto Langevin','Nuovo criterio ottimizzato per generatore di tensione')
     
-    figure;
-    set(gcf,'WindowState','maximized')
+    subplot(3,1,2)
     plot(freq_vector, mag2db(abs(FTT)));
     hold on;
     plot(freq_vector, mag2db(abs(FTT_new)));
@@ -23,8 +23,7 @@ function stampaGraficiLangevin(Zin,Zin_new, FTT, FTT_new, FTT_i, FTT_i_new, freq
     ylabel('FTT[db] [V]')
     legend('Progetto Langevin','Nuovo criterio ottimizzato per generatore di tensione')
 
-    figure;
-    set(gcf,'WindowState','maximized')
+    subplot(3,1,3)
     plot(freq_vector, mag2db(abs(FTT_i)));
     hold on;
     plot(freq_vector, mag2db(abs(FTT_i_new)));
