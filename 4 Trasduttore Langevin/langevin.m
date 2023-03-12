@@ -48,21 +48,19 @@ a_m2_new = a_m1_new; % Sempre per simmetria si calcola solo uno dei valori
 % 9) *** Calcolo della FTT iniziale e con nuova massa ***
 % **********************************************************************
 FTT = calcolaFTTZVector(Z_0_D, freq_vector, v, spessore, h_33, C_0, Zacu_m1, Zacu_m2, useSingleCeramic);
+FTT_i = FTT .* Zin; % FTT pilotata in corrente
 FTT_new = calcolaFTTZVector(Z_0_D, freq_vector, v, spessore, h_33, C_0, Zacu_m1_new, Zacu_m2_new, useSingleCeramic);
+FTT_i_new = FTT_new .* Zin_new; % FTT pilotata in corrente
 % **********************************************************************
 
 % 10) *** Stampa dei grafici ***
 % **********************************************************************
-stampaGraficiLangevin(Zin, Zin_new, FTT, FTT_new, freq_vector);
+stampaGraficiLangevin(Zin, Zin_new, FTT, FTT_new, FTT_i, FTT_i_new, freq_vector);
 % **********************************************************************
 
 % 11) *** Calcolo valori per due ceramiche ***
 % **********************************************************************
-
-
 C_0_half = areaPiezo / (beta_33_S * spessore_half);
-
-
 a_m1_dc = calcolaDimensioneMasse(freq_lavoro, v_titanio, rho_titanio, v, rho, spessore_half);
 a_m2_dc = a_m1_dc; % visto che le due masse sono uguali
 Zacu_m1_dc = calcolaZacu(freq_vector, v_titanio, a_m1_dc, rho_titanio, areaPiezo, Z1);
@@ -73,22 +71,10 @@ Zin_dc = calcolaZinZVector(Z_0_D, freq_vector, v, spessore_half, h_33, C_0_half,
 a_m2_dc_new = a_m1_dc_new; % Sempre per simmetria si calcola solo uno dei valori
 FTT_dc = calcolaFTTZVector(Z_0_D, freq_vector, v, spessore_half, h_33, C_0_half, Zacu_m1_dc, Zacu_m2_dc, useSingleCeramic);
 FTT_dc_new = calcolaFTTZVector(Z_0_D, freq_vector, v, spessore_half, h_33, C_0_half, Zacu_m1_dc_new, Zacu_m2_dc_new, useSingleCeramic);
+FTT_dc_i = FTT_dc .* Zin_dc;
+FTT_dc_i_new = FTT_dc_new .* Zin_dc_new;
 
-stampaGraficiLangevin(Zin_dc, Zin_dc_new, FTT_dc, FTT_dc_new, freq_vector);
+stampaGraficiConfronto(Zin, Zin_new, Zin_dc, Zin_dc_new, freq_vector);
 % **********************************************************************
 
-figure;
-set(gcf,'WindowState','maximized')
 
-plot(freq_vector, mag2db(abs(Zin)));
-hold on;
-plot(freq_vector, mag2db(abs(Zin_dc)));
-grid on;
-
-figure;
-set(gcf,'WindowState','maximized')
-
-plot(freq_vector, mag2db(abs(Zin_new)));
-hold on;
-plot(freq_vector, mag2db(abs(Zin_dc_new)));
-grid on;

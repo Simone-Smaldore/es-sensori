@@ -1,4 +1,4 @@
-function stampaGraficiLangevin(Zin,Zin_new, FTT, FTT_new, freq_vector)
+function stampaGraficiLangevin(Zin,Zin_new, FTT, FTT_new, FTT_i, FTT_i_new, freq_vector)
     freq_vector = freq_vector./1e3;
     figure;
     set(gcf,'WindowState','maximized')
@@ -18,9 +18,20 @@ function stampaGraficiLangevin(Zin,Zin_new, FTT, FTT_new, freq_vector)
     hold on;
     plot(freq_vector, mag2db(abs(FTT_new)));
     grid on;
-    title('Funzione di trasferimento trasmissione')
+    title('Funzione di trasferimento trasmissione pilotata in tensione')
     xlabel('frequenza [KHz]')
-    ylabel('FTT[db]')
+    ylabel('FTT[db] [V]')
+    legend('Progetto Langevin','Nuovo criterio ottimizzato per generatore di tensione')
+
+    figure;
+    set(gcf,'WindowState','maximized')
+    plot(freq_vector, mag2db(abs(FTT_i)));
+    hold on;
+    plot(freq_vector, mag2db(abs(FTT_i_new)));
+    grid on;
+    title('Funzione di trasferimento trasmissione pilotata in corrente')
+    xlabel('frequenza [KHz]')
+    ylabel('FTT[db] [I]')
     legend('Progetto Langevin','Nuovo criterio ottimizzato per generatore di tensione')
 
 end
