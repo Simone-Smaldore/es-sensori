@@ -34,8 +34,6 @@ f0 = freq_vector(indexMin); % Trovo la frequenza di massimo spostamento del piez
 bandaDb = 6;
 
 intOffset = 0;
-%TODO Trovare un materiale con impedenza 7e6 e prendere la densità
-%associata per il calcolo. Usare al posto di rho_acqua
 [Zintrasduttore,FTTtrasduttore, spessorePiastraIniziale] = simulaTrasduttoreBandaLarga(freq_vector, f0, areaPiezo, v, rho, z_acqua, rho_acqua, z_acqua, z_acqua, C_0, spessore, h_33, intOffset);
 [Zintrasduttore_backing,FTTtrasduttore_backing, spessorePiastraInizialeBacking] = simulaTrasduttoreBandaLarga(freq_vector, f0, areaPiezo, v, rho, z_acqua, rho_acqua, z_backing, z_acqua, C_0, spessore, h_33, intOffset);
 
