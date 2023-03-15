@@ -9,8 +9,8 @@ function [Zin, FTT] = calcolaImpedenzaTrasduttoreBandaLarga(freq, areaPiezo, z_c
     T = calcolaMatriceG(A, M);
     B = calcolaMatriceB(T, Z1);
 
-    Zin = abs((B(2,2) - ((B(1,2)^2)/(Z2+B(1,1)))));
-    FTT = abs(Z2*B(1,2))/((B(2,2)*(B(1,1)+Z2)) - (B(2,1)*B(1,2)));
+    Zin = ((B(2,2) - ((B(1,2)^2)/(Z2+B(1,1)))));
+    FTT = (Z2*B(1,2))/((B(2,2)*(B(1,1)+Z2)) - (B(2,1)*B(1,2)));
 
 end
 

@@ -9,12 +9,12 @@ perdite_meccaniche = 0.1e6; % perdite meccaniche per rispecchiare caso reale
 z_acqua = z_acqua + perdite_meccaniche;
 z_backing = z_backing + perdite_meccaniche;
 
-rho_titanio = 4.507 * 10^3; % Densità di massa del titanio [Kg/m^3]
-v_titanio = 6100; % Velocità di propagazione nel titanio [m/s]
-z_titanio = rho_titanio * v_titanio;
-
 Z1 = z_backing * areaPiezo;
 Z2 = z_acqua * areaPiezo;
+
+rho_titanio = 4.507 * 10^3; % Densità di massa del titanio [Kg/m^3]
+v_titanio = 6100; % Velocità di propagazione nel titanio [m/s]
+ù
 % **********************************************************************
 
 % 5) *** Calcolo della frequenza di massimo spostamento ***
@@ -24,6 +24,7 @@ f_low = 0.5 * f_r;
 f_high = 1.5 * f_r;
 freq_vector = linspace(f_low, f_high, N_Campioni);
 
+%TODO: CALCOLARE CON Z1 = Z backing
 Zin = calcolaZin(Z_0_D, freq_vector, v, spessore, h_33, C_0, Z1, Z2, true);
 [Zmin, indexMin] = min(abs(Zin));
 f0 = freq_vector(indexMin); % Trovo la frequenza di massimo spostamento del piezoelettrico

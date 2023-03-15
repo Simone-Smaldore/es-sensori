@@ -44,5 +44,16 @@ function stampaGraficiConfronto(freq_vector, Zintrasduttore, FTTtrasduttore, Zin
     xlabel('Frequenza [MHz]')
     ylabel(' |FTT| [dB]')
     legend('Senza backing','Con backing');
+
+    figure
+    plot(freq_vector, angle(Zintrasduttore), 'LineWidth',lineWidth);
+    hold on;
+    plot(freq_vector, angle(Zintrasduttore_backing), 'LineWidth',lineWidth);
+       
+    hold off
+    grid on;
+    xlabel('Frequenza [MHz]')
+    ylabel(' Img |Zin| [Ohm] ')
+    legend('Senza backing','Con backing');
 end
 
