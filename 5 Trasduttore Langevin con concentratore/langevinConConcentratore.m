@@ -68,7 +68,7 @@ lambda = v_massa / freq_lavoro;
 l_4 = lambda / 4; % criterio di progetto ottimale
 l_3 = l_4;
 w_exp = 0.0001; % lunghezza dell'esponenziale(Molto piccolo per simulare il gradino)
-N = 1; % rapporto tra i raggi delle masse
+N = 2; % rapporto tra i raggi delle masse
 % **********************************************************************
 
 % 12) *** Calcolo Zacu ai capi delle masse ***
@@ -77,31 +77,25 @@ N = 1; % rapporto tra i raggi delle masse
 Z_massa4 = calcolaZacu(freq_vector, v_massa, l_4, rho_massa, areaPiezo, Z1);
 Z_concentratore = calcolaZConcentratore(v_massa, rho_massa, N, areaPiezo, w_exp, Z_massa4, freq_vector);
 
-[Z_massa3, M11, M12] = calcolaZacuVector(freq_vector, v_massa, l_4 + 0.00, rho_massa, areaPiezo, Z_concentratore);
+[Z_massa3, M11, M12] = calcolaZacuVector(freq_vector, v_massa, l_4, rho_massa, areaPiezo, Z_concentratore);
 [Z_massa1] = calcolaZacu(freq_vector, v_massa, a_m1_new, rho_massa, areaPiezo, Z1);
 
 [Zin_finale, FTT_finale] = calcolaParametriFinali(Z_0_D, freq_vector, v, spessore_half, h_33, C_0_half, Z_massa1, Z_massa3, Z1, M11, M12, true);
 % **********************************************************************
 
+% 13) *** Calcolo Keff ***
+% **********************************************************************
+keff = calcolaKeff(Zin_finale, freq_vector);
+disp("Il keff è uguale a " + keff);
+% **********************************************************************
 
-%TODO Separare grafici in un altro file
-%TODO Fare confronto con il due ceramiche ?
-%TODO Fare il confronto con un aumento  della x rispetto a lambda/4?
+% 14) *** Stampa grafici ***
+% **********************************************************************
+stampaGraficiLangevinConcentratore(Zin_finale, FTT_finale,freq_vector);
+% **********************************************************************
 
-fh2 = figure;
-fh2.WindowState = 'maximized';
-plot(freq_vector, mag2db(abs(Zin_finale)), 'LineWidth', 2)
-grid on
-title('Impedenza elettrica')
-xlabel('freq [KHz]')
-ylabel('Zin')
+%TODO Calcolare Spostamento
 
-fh2 = figure;
-fh2.WindowState = 'maximized';
-plot(freq_vector, mag2db(abs(FTT_finale)), 'LineWidth', 2)
-grid on
-title('Funzione di trasferimento in trasmissione')
-xlabel('freq [KHz]')
-ylabel('FTT [dB]')
+
 
 

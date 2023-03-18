@@ -57,3 +57,9 @@ FTT_i_conf_2 = FTT_conf_2 .* Zin_conf_2; % FTT pilotata in corrente
 stampaSoloImpedenza = false;
 stampaGraficiConfronto(freq_vector, Zin_conf_1, Zin_conf_2, FTT_conf_1, FTT_conf_2, FTR_conf_1, FTR_conf_2, stampaSoloImpedenza);
 % *******************************************************************************
+
+% 7) *** Calcolo Keff ***
+% **********************************************************************
+keff = calcolaKeff(Zin, freq_vector);
+disp("Il keff è uguale a " + keff);
+% **********************************************************************
