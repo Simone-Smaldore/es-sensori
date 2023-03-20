@@ -53,9 +53,9 @@ stampaInformazioniBanda(freq_vector, FTTtrasduttore_backing, bandaDb, f0);
 
 % 8) *** Calcolo dello spessore ottimale all'ampiezza di banda ***
 % **********************************************************************
-numOffset = 15;
+numOffset = 20;
 linspaceArray = linspace(-numOffset, numOffset, numOffset*2 + 1);
-analisiBacking = true;
+analisiBacking = false;
 if analisiBacking
     ZBack = z_backing;
 else
