@@ -14,6 +14,7 @@ v_titanio = 6100; % Velocità di propagazione nel titanio [m/s]
 z_titanio = rho_titanio * v_titanio;
 
 Z1 = z_backing * areaPiezo;
+%Z1 = z_acqua * areaPiezo;
 Z2 = z_acqua * areaPiezo;
 % **********************************************************************
 

@@ -93,27 +93,4 @@ disp("Il keff è uguale a " + keff);
 % **********************************************************************
 stampaGraficiLangevinConcentratore(Zin_finale, FTT_finale,freq_vector);
 % **********************************************************************
-
-% 15) *** Calcolo spostamento ***
-% **********************************************************************
-N_Campioni_Spostamento = 1000;
-z_low = -0.01;
-z_high = 0.01;
-z_vector = linspace(z_low, z_high, N_Campioni_Spostamento);
-spostamento = zeros(size(z_vector));
-for i = 1:length(z_vector)
-    omega = 2 * pi * freq_lavoro;
-    A = (h_33 * v) / (c_33_D * omega);
-    B = -((h_33 * v)/(c_33_D * omega)) * tand((omega*spessore)/(2*v));
-    spostamento(i) = A * sin(omega * z_vector(i) / v) + B * cos(omega * z_vector(i) / v);
-end
-fh2 = figure;
-fh2.WindowState = 'maximized';
-plot(z_vector, spostamento, 'LineWidth', 2)
-grid on
-title('Spostamento')
-xlabel('Z[m]')
-ylabel('Spostamento[m]')
-xline(spessore);
-xline(-spessore);
-% **********************************************************************    
+   
