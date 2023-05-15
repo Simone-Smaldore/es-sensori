@@ -1,0 +1,25 @@
+/COM,ANSYS RELEASE 2023 R1           BUILD 23.1      UP20221128       16:58:02
+
+ *** WARNING ***                         CP =       0.375   TIME= 16:58:03
+ Element shape checking is currently inactive.  Issue SHPP,ON or         
+ SHPP,WARN to reactivate, if desired.                                    
+
+ *** WARNING ***                         CP =       0.375   TIME= 16:58:03
+ No constraints have been defined using the D command.                   
+
+ *** WARNING ***                         CP =       0.375   TIME= 16:58:03
+ Contact element 274 is missing DOF VOLT (and possibly others) of        
+ underlying base element 2.  Similar mismatches may exist elsewhere,     
+ but checking for this is discontinued.                                  
+
+ *** WARNING ***                         CP =       0.391   TIME= 16:58:03
+ Maximum contact stiffness 4.560343321E+16 is too big which can cause an 
+ accuracy problem, you may scale the force units in the model.           
+
+ *** WARNING ***                         CP =       0.703   TIME= 16:58:03
+ The eigenproblem is ill-conditioned (relative residual from test linear 
+ solve: 2.385916E-02).  The accuracy of the solution may not be          
+ satisfactory.  Modifying the initial value of the frequency shift       
+ (FREQB in the MODOPT command) or changing the boundary conditions of    
+ the model might solve the problem.                                      
+                                                                         

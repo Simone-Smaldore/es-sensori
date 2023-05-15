@@ -1,0 +1,81 @@
+# encoding: utf-8
+# 2023 R1
+SetScriptVersion(Version="23.1.153")
+system1 = GetSystem(Name="ENGD")
+engineeringData1 = system1.GetContainer(ComponentName="Engineering Data")
+material1 = engineeringData1.GetMaterial(Name="PZT-26")
+material1.Delete()
+material2 = engineeringData1.GetMaterial(Name="PZ 21")
+matlProp1 = material2.CreateProperty(
+    Name="Density",
+    Qualifiers={"Definition": "", "Behavior": ""})
+matlProp1.SetData(
+    Index=-1,
+    Variables=["Density"],
+    Values=[["7780 [kg m^-3]"]])
+matlProp2 = material2.CreateProperty(
+    Name="Elasticity",
+    Behavior="Anisotropic",
+    Qualifiers={"Definition": "", "Behavior": "Anisotropic"})
+matlProp2.SetData(
+    SheetName="Elasticity",
+    SheetQualifiers={"Definition": "", "Behavior": "Anisotropic", "Matrix Type": "Stiffness", "Format": "MAPDL"},
+    Variables=["D[*,1]"],
+    Values=[["114000000000 [Pa]"]])
+matlProp2.SetData(
+    SheetName="Elasticity",
+    SheetQualifiers={"Definition": "", "Behavior": "Anisotropic", "Matrix Type": "Stiffness", "Format": "MAPDL"},
+    Index=1,
+    Variables=["D[*,1]"],
+    Values=[["75700000000 [Pa]"]])
+matlProp2.SetData(
+    SheetName="Elasticity",
+    SheetQualifiers={"Definition": "", "Behavior": "Anisotropic", "Matrix Type": "Stiffness", "Format": "MAPDL"},
+    Index=2,
+    Variables=["D[*,1]"],
+    Values=[["72400000000 [Pa]"]])
+matlProp2.SetData(
+    SheetName="Elasticity",
+    SheetQualifiers={"Definition": "", "Behavior": "Anisotropic", "Matrix Type": "Stiffness", "Format": "MAPDL"},
+    Index=2,
+    Variables=["D[*,3]"],
+    Values=[["142000000000 [Pa]"]])
+matlProp2.SetData(
+    SheetName="Elasticity",
+    SheetQualifiers={"Definition": "", "Behavior": "Anisotropic", "Matrix Type": "Stiffness", "Format": "MAPDL"},
+    Index=3,
+    Variables=["D[*,4]"],
+    Values=[["40300000000 [Pa]"]])
+matlProp2.SetData(
+    SheetName="Elasticity",
+    SheetQualifiers={"Definition": "", "Behavior": "Anisotropic", "Matrix Type": "Stiffness", "Format": "MAPDL"},
+    Index=4,
+    Variables=["D[*,5]"],
+    Values=[["40300000000 [Pa]"]])
+matlProp2.SetData(
+    SheetName="Elasticity",
+    SheetQualifiers={"Definition": "", "Behavior": "Anisotropic", "Matrix Type": "Stiffness", "Format": "MAPDL"},
+    Index=2,
+    Variables=["D[*,3]"],
+    Values=[["11100000000 [Pa]"]])
+matlProp2.SetData(
+    SheetName="Elasticity",
+    SheetQualifiers={"Definition": "", "Behavior": "Anisotropic", "Matrix Type": "Stiffness", "Format": "MAPDL"},
+    Index=3,
+    Variables=["D[*,4]"],
+    Values=[["26300000000 [Pa]"]])
+matlProp2.SetData(
+    SheetName="Elasticity",
+    SheetQualifiers={"Definition": "", "Behavior": "Anisotropic", "Matrix Type": "Stiffness", "Format": "MAPDL"},
+    Index=4,
+    Variables=["D[*,5]"],
+    Values=[["26300000000 [Pa]"]])
+matlProp2.SetData(
+    SheetName="Elasticity",
+    SheetQualifiers={"Definition": "", "Behavior": "Anisotropic", "Matrix Type": "Stiffness", "Format": "MAPDL"},
+    Index=5,
+    Variables=["D[*,6]"],
+    Values=[["19200000000 [Pa]"]])
+Save(Overwrite=True)
+Save(Overwrite=True)
+Open(FilePath="C:/Users/simon/Desktop/esercitazioni Lotito/Ansys/EsercizioAnsys/EsercizioAnsys.wbpj")

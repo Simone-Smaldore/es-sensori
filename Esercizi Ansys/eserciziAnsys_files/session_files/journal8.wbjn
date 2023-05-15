@@ -1,0 +1,53 @@
+# encoding: utf-8
+# 2023 R1
+SetScriptVersion(Version="23.1.153")
+template1 = GetTemplate(
+    TemplateName="Modal",
+    Solver="ANSYS")
+system1 = template1.CreateSystem()
+template2 = GetTemplate(TemplateName="Geometry")
+system2 = GetSystem(Name="Geom")
+geometryComponent1 = system2.GetComponent(Name="Geometry")
+componentTemplate1 = GetComponentTemplate(Name="GeometryCellTemplate")
+system3 = template2.CreateSystem(
+    DataTransferFrom=[Set(FromComponent=geometryComponent1, TransferName=None, ToComponentTemplate=componentTemplate1)],
+    RelativeTo=system2)
+system3.Delete()
+engineeringDataComponent1 = system1.GetComponent(Name="Engineering Data")
+system4 = GetSystem(Name="ENGD")
+engineeringDataComponent2 = system4.GetComponent(Name="Engineering Data")
+engineeringDataComponent1.ReplaceWithShare(
+    TargetSystem=system1,
+    ComponentToShare=engineeringDataComponent2,
+    SourceSystem=system4)
+geometryComponent2 = system1.GetComponent(Name="Geometry")
+geometryComponent2.ReplaceWithShare(
+    TargetSystem=system1,
+    ComponentToShare=geometryComponent1,
+    SourceSystem=system2)
+modelComponent1 = system1.GetComponent(Name="Model")
+modelComponent1.Refresh()
+model1 = system1.GetContainer(ComponentName="Model")
+model1.Edit()
+model1.Exit()
+template3 = GetTemplate(
+    TemplateName="Harmonic Response",
+    Solver="ANSYS")
+system5 = template3.CreateSystem(
+    Position="Right",
+    RelativeTo=system1)
+engineeringDataComponent3 = system5.GetComponent(Name="Engineering Data")
+engineeringDataComponent3.ReplaceWithShare(
+    TargetSystem=system5,
+    ComponentToShare=engineeringDataComponent1,
+    SourceSystem=system1)
+geometryComponent3 = system5.GetComponent(Name="Geometry")
+geometryComponent3.ReplaceWithShare(
+    TargetSystem=system5,
+    ComponentToShare=geometryComponent2,
+    SourceSystem=system1)
+model1.Edit()
+Save(Overwrite=True)
+model1.Exit()
+Save(Overwrite=True)
+Open(FilePath="C:/Users/simon/Desktop/esercitazioni Lotito/Ansys/EsercizioAnsys/EsercizioAnsys.wbpj")

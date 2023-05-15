@@ -1,0 +1,40 @@
+/COM,ANSYS RELEASE 2023 R1           BUILD 23.1      UP20221128       18:00:44
+
+ *** WARNING ***                         CP =       0.281   TIME= 18:00:45
+ The data for *GET entity NODE item CPS and NODE= 599 is not defined.    
+  The *GET command is ignored.                                           
+
+ *** WARNING ***                         CP =       0.281   TIME= 18:00:45
+ The data for *GET entity NODE item CPS and NODE= 1 is not defined.      
+  The *GET command is ignored.                                           
+
+ *** WARNING ***                         CP =       0.281   TIME= 18:00:45
+ The data for *GET entity NODE item CPS and NODE= 8 is not defined.      
+  The *GET command is ignored.                                           
+
+ *** WARNING ***                         CP =       0.531   TIME= 18:00:45
+ Element shape checking is currently inactive.  Issue SHPP,ON or         
+ SHPP,WARN to reactivate, if desired.                                    
+
+ *** WARNING ***                         CP =       0.562   TIME= 18:00:45
+ Contact element 427 is missing DOF VOLT (and possibly others) of        
+ underlying base element 259.  Similar mismatches may exist elsewhere,   
+ but checking for this is discontinued.                                  
+
+ *** WARNING ***                         CP =       0.562   TIME= 18:00:45
+ Element shape checking is currently inactive.  Issue SHPP,ON or         
+ SHPP,WARN to reactivate, if desired.                                    
+
+ *** WARNING ***                         CP =       0.562   TIME= 18:00:45
+ Contact element 427 is missing DOF VOLT (and possibly others) of        
+ underlying base element 259.  Similar mismatches may exist elsewhere,   
+ but checking for this is discontinued.                                  
+
+ *** WARNING ***                         CP =       0.562   TIME= 18:00:45
+ Maximum contact stiffness 5.156971667E+16 is too big which can cause an 
+ accuracy problem, you may scale the force units in the model.           
+
+ *** WARNING ***                         CP =       0.562   TIME= 18:00:45
+ Maximum contact stiffness 5.156971667E+16 is too big which can cause an 
+ accuracy problem, you may scale the force units in the model.           
+/COM,ANSYS RELEASE 2023 R1           BUILD 23.1      UP20221128       18:02:31

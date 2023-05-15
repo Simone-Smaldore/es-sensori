@@ -1,0 +1,13 @@
+# encoding: utf-8
+# 2023 R1
+SetScriptVersion(Version="23.1.153")
+system1 = GetSystem(Name="Geom 4")
+system1.Copy(KeepConnections=True)
+system2 = GetSystem(Name="Geom 3")
+system2.DisplayText = "Geometria Langevin Con Concentratore"
+geometry1 = system2.GetContainer(ComponentName="Geometry")
+geometry1.Edit()
+geometry1.Exit()
+system2.Delete()
+Save(Overwrite=True)
+Open(FilePath="C:/Users/simon/Desktop/esercitazioni Lotito/Ansys/EsercizioAnsys/EsercizioAnsys.wbpj")

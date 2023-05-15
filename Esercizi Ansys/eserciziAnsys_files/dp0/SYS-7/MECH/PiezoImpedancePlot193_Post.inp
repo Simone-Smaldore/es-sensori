@@ -1,0 +1,33 @@
+/batch
+/com,
+/com,***********  PiezoImpedancePlot193 ***********
+/com,
+/FILNAME, FILE, 0
+RESUME,FILE,DB
+CMBLOCK,Piezo Impedance Plot193,NODE,      15
+(8i10)
+         1        11        44        13        46        14        16        17
+        18        48        15        50        52        54        26
+/POST26
+NUMVAR,200
+SOLU,191,NCMIT
+STORE,MERGE
+FILLDATA,191,,,,1,1
+REALVAR,191,191
+LINES,99999,
+
+CMSEL,S,Piezo Impedance Plot193
+
+NODEID=NDNEXT(0)
+RFORC,2,NODEID,CHRG
+CFACT,0,1*2*ACOS(-1),-1
+PROD,3,1,2,,CURRENT
+NSOL,4,NODEID,VOLT
+QUOT,5,4,3,,IMPD
+REALVAR, 6, 5, , ,IMPD_REAL, , , 1
+IMAGIN, 7, 5, , ,IMPD_IMAG, , , 1 
+/OUTPUT,Piezo Impedance Plot193,txt
+*GET, ActiveUnits, ACTIVE, 0, UNITS
+PRVAR,6,7
+/OUTPUT
+/EXIT,NOSAVE

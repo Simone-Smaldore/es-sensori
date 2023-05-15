@@ -1,0 +1,1776 @@
+
+ Ansys Mechanical Enterprise Academic Student      
+
+
+ *------------------------------------------------------------------*
+ |                                                                  |
+ |   W E L C O M E   T O   T H E   A N S Y S (R)  P R O G R A M     |
+ |                                                                  |
+ *------------------------------------------------------------------*
+
+
+
+
+ ***************************************************************
+ *         ANSYS MAPDL 2023 R1          LEGAL NOTICES          *
+ ***************************************************************
+ *                                                             *
+ * Copyright 1971-2023 Ansys, Inc.  All rights reserved.       *
+ * Unauthorized use, distribution or duplication is            *
+ * prohibited.                                                 *
+ *                                                             *
+ * Ansys is a registered trademark of Ansys, Inc. or its       *
+ * subsidiaries in the United States or other countries.       *
+ * See the Ansys, Inc. online documentation or the Ansys, Inc. *
+ * documentation CD or online help for the complete Legal      *
+ * Notice.                                                     *
+ *                                                             *
+ ***************************************************************
+ *                                                             *
+ * THIS ANSYS SOFTWARE PRODUCT AND PROGRAM DOCUMENTATION       *
+ * INCLUDE TRADE SECRETS AND CONFIDENTIAL AND PROPRIETARY      *
+ * PRODUCTS OF ANSYS, INC., ITS SUBSIDIARIES, OR LICENSORS.    *
+ * The software products and documentation are furnished by    *
+ * Ansys, Inc. or its subsidiaries under a software license    *
+ * agreement that contains provisions concerning               *
+ * non-disclosure, copying, length and nature of use,          *
+ * compliance with exporting laws, warranties, disclaimers,    *
+ * limitations of liability, and remedies, and other           *
+ * provisions.  The software products and documentation may be *
+ * used, disclosed, transferred, or copied only in accordance  *
+ * with the terms and conditions of that software license      *
+ * agreement.                                                  *
+ *                                                             *
+ * Ansys, Inc. is a UL registered                              *
+ * ISO 9001:2015 company.                                      *
+ *                                                             *
+ ***************************************************************
+ *                                                             *
+ * This product is subject to U.S. laws governing export and   *
+ * re-export.                                                  *
+ *                                                             *
+ * For U.S. Government users, except as specifically granted   *
+ * by the Ansys, Inc. software license agreement, the use,     *
+ * duplication, or disclosure by the United States Government  *
+ * is subject to restrictions stated in the Ansys, Inc.        *
+ * software license agreement and FAR 12.212 (for non-DOD      *
+ * licenses).                                                  *
+ *                                                             *
+ ***************************************************************
+
+ 2023 R1 
+     
+ Point Releases and Patches installed:   
+     
+ Discovery 2023 R1   
+ Autodyn 2023 R1 
+ SpaceClaim 2023 R1  
+ CFX (includes CFD-Post) 2023 R1 
+ Chemkin 2023 R1 
+ EnSight 2023 R1 
+ FENSAP-ICE 2023 R1  
+ Fluent (includes CFD-Post) 2023 R1  
+ Polyflow (includes CFD-Post) 2023 R1
+ Forte (includes EnSight) 2023 R1
+ TurboGrid 2023 R1   
+ Aqwa 2023 R1
+ Speos 2023 R1   
+ Mechanical Products 2023 R1 
+ Material Calibration App 2023 R1
+ ACIS Geometry Interface 2023 R1 
+ AutoCAD Geometry Interface 2023 R1  
+ Catia, Version 4 Geometry Interface 2023 R1 
+ Catia, Version 5 Geometry Interface 2023 R1 
+ Catia, Version 6 Geometry Interface 2023 R1 
+ Creo Elements/Direct Modeling Geometry Interface 2023 R1
+ Creo Parametric Geometry Interface 2023 R1  
+ Inventor Geometry Interface 2023 R1 
+ JTOpen Geometry Interface 2023 R1   
+ NX Geometry Interface 2023 R1   
+ Parasolid Geometry Interface  2023 R1   
+ Solid Edge Geometry Interface 2023 R1   
+ SOLIDWORKS Geometry Interface 2023 R1   
+ Academic Student 2023 R1
+
+
+          *****  MAPDL COMMAND LINE ARGUMENTS  *****
+  BATCH MODE REQUESTED (-b)    = NOLIST
+  INPUT FILE COPY MODE (-c)    = COPY
+  DISTRIBUTED MEMORY PARALLEL REQUESTED
+       2 PARALLEL PROCESSES REQUESTED WITH SINGLE THREAD PER PROCESS
+    TOTAL OF     2 CORES REQUESTED
+  INPUT FILE NAME              = C:\Users\simon\Desktop\Test Ansys - Copia\_ProjectScratch\Scr6C67\dummy.dat
+  OUTPUT FILE NAME             = C:\Users\simon\Desktop\Test Ansys - Copia\_ProjectScratch\Scr6C67\solve.out
+  START-UP FILE MODE           = NOREAD
+  STOP FILE MODE               = NOREAD
+
+ RELEASE= 2023 R1              BUILD= 23.1      UP20221128   VERSION=WINDOWS x64 
+ CURRENT JOBNAME=file0  16:58:24  MAY 15, 2023 CP=      0.078
+
+
+ PARAMETER _DS_PROGRESS =     999.0000000    
+
+ /INPUT FILE= ds.dat  LINE=       0
+
+
+
+ *** NOTE ***                            CP =       0.219   TIME= 16:58:25
+ The /CONFIG,NOELDB command is not valid in a distributed memory         
+ parallel solution.  Command is ignored.                                 
+
+ *GET  _WALLSTRT  FROM  ACTI  ITEM=TIME WALL  VALUE=  16.9736111    
+
+ TITLE= 
+ test--Harmonic Response (L5)                                                  
+
+  ACT Extensions:
+      PiezoAndMEMS, 2020.1
+      0cd64874-101b-4182-aef8-530cf9982bb6, wbex
+ /COM,     LSDYNA, 2023.1
+      5f463412-bd3e-484b-87e7-cbc0a665e474, wbex
+ /COM,     ANSYSMotion, 2023.1
+      20180725-3f81-49eb-9f31-41364844c769, wbex
+  
+
+ SET PARAMETER DIMENSIONS ON  _WB_PROJECTSCRATCH_DIR
+  TYPE=STRI  DIMENSIONS=      248        1        1
+
+ PARAMETER _WB_PROJECTSCRATCH_DIR(1) = C:\Users\simon\Desktop\Test Ansys - Copia\_ProjectScratch\Scr6C67\
+
+ SET PARAMETER DIMENSIONS ON  _WB_SOLVERFILES_DIR
+  TYPE=STRI  DIMENSIONS=      248        1        1
+
+ PARAMETER _WB_SOLVERFILES_DIR(1) = C:\Users\simon\Desktop\Test Ansys - Copia\test_files\dp0\SYS-7\MECH\
+
+ SET PARAMETER DIMENSIONS ON  _WB_USERFILES_DIR
+  TYPE=STRI  DIMENSIONS=      248        1        1
+
+ PARAMETER _WB_USERFILES_DIR(1) = C:\Users\simon\Desktop\Test Ansys - Copia\test_files\user_files\
+ --- Data in consistent MKS units. See Solving Units in the help system for more
+
+ MKS UNITS SPECIFIED FOR INTERNAL    
+  LENGTH        (l)  = METER (M)
+  MASS          (M)  = KILOGRAM (KG)
+  TIME          (t)  = SECOND (SEC)
+  TEMPERATURE   (T)  = CELSIUS (C)
+  TOFFSET            = 273.0
+  CHARGE        (Q)  = COULOMB
+  FORCE         (f)  = NEWTON (N) (KG-M/SEC2)
+  HEAT               = JOULE (N-M)
+
+  PRESSURE           = PASCAL (NEWTON/M**2)
+  ENERGY        (W)  = JOULE (N-M)
+  POWER         (P)  = WATT (N-M/SEC)
+  CURRENT       (i)  = AMPERE (COULOMBS/SEC)
+  CAPACITANCE   (C)  = FARAD
+  INDUCTANCE    (L)  = HENRY
+  MAGNETIC FLUX      = WEBER
+  RESISTANCE    (R)  = OHM
+  ELECTRIC POTENTIAL = VOLT
+
+ INPUT  UNITS ARE ALSO SET TO MKS 
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2023 R1          23.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   16:58:25  MAY 15, 2023 CP=      0.250
+
+ test--Harmonic Response (L5)                                                  
+
+
+
+          ***** MAPDL ANALYSIS DEFINITION (PREP7) *****
+ *********** Nodes for the whole assembly ***********
+ *********** Elements for Body 1 "Surface Body" ***********
+ *********** Elements for Body 2 "Surface Body" ***********
+ *********** Elements for Body 3 "Surface Body" ***********
+ *********** Elements for Body 4 "Surface Body" ***********
+ *********** Send User Defined Coordinate System(s) ***********
+ *********** Set Reference Temperature ***********
+ *********** Send Materials ***********
+ *********** Send Sheet Properties ***********
+ *********** Create Contact "Contact Region" ***********
+             Real Constant Set For Above Contact Is 6 & 5
+ *********** Create Contact "Contact Region 2" ***********
+             Real Constant Set For Above Contact Is 8 & 7
+ *********** Create Contact "Contact Region 3" ***********
+             Real Constant Set For Above Contact Is 10 & 9
+ *********** Send Named Selection as Node Component ***********
+
+
+ ***** ROUTINE COMPLETED *****  CP =         0.250
+
+
+ --- Number of total nodes = 934
+ --- Number of contact elements = 84
+ --- Number of spring elements = 0
+ --- Number of bearing elements = 0
+ --- Number of solid elements = 266
+ --- Number of condensed parts = 0
+ --- Number of total elements = 350
+
+ *GET  _WALLBSOL  FROM  ACTI  ITEM=TIME WALL  VALUE=  16.9736111    
+
+ *****  MAPDL SOLUTION ROUTINE  *****
+
+
+ PERFORM A HARMONIC ANALYSIS
+  THIS WILL BE A NEW ANALYSIS
+
+
+ PERFORM A FULL HARMONIC RESPONSE ANALYSIS
+
+ THERMAL STRAINS ARE NOT INCLUDED IN THE LOAD VECTOR.
+
+ STEP BOUNDARY CONDITION KEY= 1
+
+ HARMONIC FREQUENCY RANGE - END= 0.14000E+06  BEGIN= 0.10000E+06
+
+ USE   300 SUBSTEP(S) THIS LOAD STEP FOR ALL  DEGREES OF FREEDOM
+
+ ERASE THE CURRENT DATABASE OUTPUT CONTROL TABLE.
+
+
+ WRITE ALL  ITEMS TO THE DATABASE WITH A FREQUENCY OF NONE
+   FOR ALL APPLICABLE ENTITIES
+
+ WRITE NSOL ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
+   FOR ALL APPLICABLE ENTITIES
+
+ WRITE EANG ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
+   FOR ALL APPLICABLE ENTITIES
+
+ WRITE ETMP ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
+   FOR ALL APPLICABLE ENTITIES
+
+ WRITE VENG ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
+   FOR ALL APPLICABLE ENTITIES
+
+ WRITE STRS ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
+   FOR ALL APPLICABLE ENTITIES
+
+ WRITE EPEL ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
+   FOR ALL APPLICABLE ENTITIES
+
+ WRITE RSOL ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
+   FOR ALL APPLICABLE ENTITIES
+
+ WRITE CONT ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
+   FOR ALL APPLICABLE ENTITIES
+  
+ ***********  Piezoelectric Body67 ***********
+  
+ CMBLOCK read of NODE component PIEZOELECTRICBODY67  completed
+
+ FINISH SOLUTION PROCESSING
+
+
+ ***** ROUTINE COMPLETED *****  CP =         0.250
+
+
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2023 R1          23.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   16:58:25  MAY 15, 2023 CP=      0.250
+
+ test--Harmonic Response (L5)                                                  
+
+
+
+          ***** MAPDL ANALYSIS DEFINITION (PREP7) *****
+
+ SELECT      COMPONENT PIEZOELECTRICBODY67                                                                                                                                                                                                                                             
+
+ SELECT      ONLY ELEMENTS COMPLETELY CONTAINED WITHIN NODE SET.
+
+         42 ELEMENTS (OF        350  DEFINED) SELECTED FROM
+       61 SELECTED NODES BY  ESLN COMMAND.
+
+ RESELECT     FOR ITEM=ENAM COMPONENT=    
+  IN RANGE       185 TO        185 STEP          1
+
+          0  ELEMENTS (OF        350  DEFINED) SELECTED BY  ESEL  COMMAND.
+
+ *GET  INUM185   FROM  ELEM  ITEM=COUN           VALUE=  0.00000000    
+
+ *IF  iNum185                           ( =   0.00000     )  GT  
+      0                                 ( =   0.00000     )  THEN    
+
+ *ENDIF
+
+ SELECT      COMPONENT PIEZOELECTRICBODY67                                                                                                                                                                                                                                             
+
+ SELECT      ONLY ELEMENTS COMPLETELY CONTAINED WITHIN NODE SET.
+
+         42 ELEMENTS (OF        350  DEFINED) SELECTED FROM
+       61 SELECTED NODES BY  ESLN COMMAND.
+
+ RESELECT     FOR ITEM=ENAM COMPONENT=    
+  IN RANGE       186 TO        186 STEP          1
+
+          0  ELEMENTS (OF        350  DEFINED) SELECTED BY  ESEL  COMMAND.
+
+ *GET  INUM186   FROM  ELEM  ITEM=COUN           VALUE=  0.00000000    
+
+ *IF  iNum186                           ( =   0.00000     )  GT  
+      0                                 ( =   0.00000     )  THEN    
+
+ *ENDIF
+
+ SELECT      COMPONENT PIEZOELECTRICBODY67                                                                                                                                                                                                                                             
+
+ SELECT      ONLY ELEMENTS COMPLETELY CONTAINED WITHIN NODE SET.
+
+         42 ELEMENTS (OF        350  DEFINED) SELECTED FROM
+       61 SELECTED NODES BY  ESLN COMMAND.
+
+ RESELECT     FOR ITEM=ENAM COMPONENT=    
+  IN RANGE       187 TO        187 STEP          1
+
+          0  ELEMENTS (OF        350  DEFINED) SELECTED BY  ESEL  COMMAND.
+
+ *GET  INUM187   FROM  ELEM  ITEM=COUN           VALUE=  0.00000000    
+
+ *IF  iNum187                           ( =   0.00000     )  GT  
+      0                                 ( =   0.00000     )  THEN    
+
+ *ENDIF
+
+ SELECT      COMPONENT PIEZOELECTRICBODY67                                                                                                                                                                                                                                             
+
+ SELECT      ONLY ELEMENTS COMPLETELY CONTAINED WITHIN NODE SET.
+
+         42 ELEMENTS (OF        350  DEFINED) SELECTED FROM
+       61 SELECTED NODES BY  ESLN COMMAND.
+
+ RESELECT     FOR ITEM=ENAM COMPONENT=    
+  IN RANGE       182 TO        182 STEP          1
+
+          0  ELEMENTS (OF        350  DEFINED) SELECTED BY  ESEL  COMMAND.
+
+ *GET  INUM182   FROM  ELEM  ITEM=COUN           VALUE=  0.00000000    
+
+ *IF  iNum182                           ( =   0.00000     )  GT  
+      0                                 ( =   0.00000     )  THEN    
+
+ *ENDIF
+
+ SELECT      COMPONENT PIEZOELECTRICBODY67                                                                                                                                                                                                                                             
+
+ SELECT      ONLY ELEMENTS COMPLETELY CONTAINED WITHIN NODE SET.
+
+         42 ELEMENTS (OF        350  DEFINED) SELECTED FROM
+       61 SELECTED NODES BY  ESLN COMMAND.
+
+ RESELECT     FOR ITEM=ENAM COMPONENT=    
+  IN RANGE       183 TO        183 STEP          1
+
+         14  ELEMENTS (OF        350  DEFINED) SELECTED BY  ESEL  COMMAND.
+
+ *GET  INUM183   FROM  ELEM  ITEM=COUN           VALUE=  14.0000000    
+
+ *IF  iNum183                           ( =   14.0000     )  GT  
+      0                                 ( =   0.00000     )  THEN    
+
+ PARAMETER _ICURRENTELEM =     0.000000000    
+
+ *DO LOOP ON PARAMETER= AR30 FROM  1.0000     TO  14.000     BY  1.0000    
+
+ PARAMETER _ICURRENTELEM =     1.000000000    
+
+ MODIFY ELEMENT         1 (IF SELECTED) TO HAVE  ESYS =      0
+     ELEM    MAT   TYP   REL   SEC   ESYS         NODES
+       1   1   1      1      1    0      24    13    14    19    47    46    49    58
+
+
+ *GET  _ICURRENTETYP  FROM  ELEM         1  ITEM=ATTR TYPE      VALUE=  1.00000000    
+
+ *GET  _PLANEBEHAVIOR  FROM  ETYP      1  ITEM=ATTR KOP3  VALUE=  1.00000000    
+
+ *IF  _planebehavior                    ( =   1.00000     )  EQ  
+      3                                 ( =   3.00000     )  THEN    
+
+ *ENDIF
+
+ ELEMENT TYPE          1 IS PLANE223     AXI 8-NODE STRU-ELECT SOLID 
+  KEYOPT( 1- 6)=     1001      0      1        0      0      0
+  KEYOPT( 7-12)=        0      0      0        0      0      0
+  KEYOPT(13-18)=        0      0      0        0      0      0
+
+ CURRENT NODAL DOF SET IS  UX    UY    VOLT
+  AXISYMMETRIC MODEL
+
+ *GET  _ICURRENTMAT  FROM  ELEM         1  ITEM=ATTR MAT       VALUE=  1.00000000    
+
+ DELETE PROPERTY  RSVX  FROM MATERIAL          1 TO          1 BY          1
+
+ DELETE PROPERTY  RSVY  FROM MATERIAL          1 TO          1 BY          1
+
+ DELETE PROPERTY  RSVZ  FROM MATERIAL          1 TO          1 BY          1
+
+ DEFINE DATA TABLE  PIEZ  FOR MATERIAL     1
+
+ DATA FOR  PIEZ  TABLE FOR MATERIAL   1
+ LOC=  2 -2.9200      0.0000      0.0000      0.0000      0.0000      0.0000    
+
+ DATA FOR  PIEZ  TABLE FOR MATERIAL   1
+ LOC=  5  23.400      0.0000      0.0000      0.0000      0.0000      0.0000    
+
+ DATA FOR  PIEZ  TABLE FOR MATERIAL   1
+ LOC=  8 -2.9200      0.0000      0.0000      0.0000      0.0000      0.0000    
+
+ DATA FOR  PIEZ  TABLE FOR MATERIAL   1
+ LOC= 10  16.190      0.0000      0.0000      0.0000      0.0000      0.0000    
+
+ DATA TABLE  DPER  FOR MATERIAL     1 IS REACTIVATED
+   PARAMETERS ASSOCIATED WITH IT ARE TO BE RESET
+   NUMBER OF TEMPERATURE POINTS -    0
+   NUMBER OF DATA POINTS        -    9
+   TB OPTION                    -    0
+
+ DATA FOR  DPER  TABLE FOR MATERIAL   1
+ LOC=  1  2120.0      1980.0      2120.0      0.0000      0.0000      0.0000    
+
+ *ENDDO  INDEX= AR30                            
+
+ *ENDIF
+
+ EM UNITS = USER  EPZERO= 0.88540E-11
+
+
+ ***** ROUTINE COMPLETED *****  CP =         0.281
+
+
+
+ *****  MAPDL SOLUTION ROUTINE  *****
+
+ SELECT ALL ENTITIES OF TYPE= ALL  AND BELOW
+
+ WRITE FGRA ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
+   FOR ALL APPLICABLE ENTITIES
+  
+ ***********  Piezoelectric Body 2100 ***********
+  
+ CMBLOCK read of NODE component PIEZOELECTRICBODY100  completed
+
+ FINISH SOLUTION PROCESSING
+
+
+ ***** ROUTINE COMPLETED *****  CP =         0.281
+
+
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2023 R1          23.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   16:58:25  MAY 15, 2023 CP=      0.281
+
+ test--Harmonic Response (L5)                                                  
+
+
+
+          ***** MAPDL ANALYSIS DEFINITION (PREP7) *****
+
+ SELECT      COMPONENT PIEZOELECTRICBODY100                                                                                                                                                                                                                                            
+
+ SELECT      ONLY ELEMENTS COMPLETELY CONTAINED WITHIN NODE SET.
+
+         42 ELEMENTS (OF        350  DEFINED) SELECTED FROM
+       61 SELECTED NODES BY  ESLN COMMAND.
+
+ RESELECT     FOR ITEM=ENAM COMPONENT=    
+  IN RANGE       185 TO        185 STEP          1
+
+          0  ELEMENTS (OF        350  DEFINED) SELECTED BY  ESEL  COMMAND.
+
+ *GET  INUM185   FROM  ELEM  ITEM=COUN           VALUE=  0.00000000    
+
+ *IF  iNum185                           ( =   0.00000     )  GT  
+      0                                 ( =   0.00000     )  THEN    
+
+ *ENDIF
+
+ SELECT      COMPONENT PIEZOELECTRICBODY100                                                                                                                                                                                                                                            
+
+ SELECT      ONLY ELEMENTS COMPLETELY CONTAINED WITHIN NODE SET.
+
+         42 ELEMENTS (OF        350  DEFINED) SELECTED FROM
+       61 SELECTED NODES BY  ESLN COMMAND.
+
+ RESELECT     FOR ITEM=ENAM COMPONENT=    
+  IN RANGE       186 TO        186 STEP          1
+
+          0  ELEMENTS (OF        350  DEFINED) SELECTED BY  ESEL  COMMAND.
+
+ *GET  INUM186   FROM  ELEM  ITEM=COUN           VALUE=  0.00000000    
+
+ *IF  iNum186                           ( =   0.00000     )  GT  
+      0                                 ( =   0.00000     )  THEN    
+
+ *ENDIF
+
+ SELECT      COMPONENT PIEZOELECTRICBODY100                                                                                                                                                                                                                                            
+
+ SELECT      ONLY ELEMENTS COMPLETELY CONTAINED WITHIN NODE SET.
+
+         42 ELEMENTS (OF        350  DEFINED) SELECTED FROM
+       61 SELECTED NODES BY  ESLN COMMAND.
+
+ RESELECT     FOR ITEM=ENAM COMPONENT=    
+  IN RANGE       187 TO        187 STEP          1
+
+          0  ELEMENTS (OF        350  DEFINED) SELECTED BY  ESEL  COMMAND.
+
+ *GET  INUM187   FROM  ELEM  ITEM=COUN           VALUE=  0.00000000    
+
+ *IF  iNum187                           ( =   0.00000     )  GT  
+      0                                 ( =   0.00000     )  THEN    
+
+ *ENDIF
+
+ SELECT      COMPONENT PIEZOELECTRICBODY100                                                                                                                                                                                                                                            
+
+ SELECT      ONLY ELEMENTS COMPLETELY CONTAINED WITHIN NODE SET.
+
+         42 ELEMENTS (OF        350  DEFINED) SELECTED FROM
+       61 SELECTED NODES BY  ESLN COMMAND.
+
+ RESELECT     FOR ITEM=ENAM COMPONENT=    
+  IN RANGE       182 TO        182 STEP          1
+
+          0  ELEMENTS (OF        350  DEFINED) SELECTED BY  ESEL  COMMAND.
+
+ *GET  INUM182   FROM  ELEM  ITEM=COUN           VALUE=  0.00000000    
+
+ *IF  iNum182                           ( =   0.00000     )  GT  
+      0                                 ( =   0.00000     )  THEN    
+
+ *ENDIF
+
+ SELECT      COMPONENT PIEZOELECTRICBODY100                                                                                                                                                                                                                                            
+
+ SELECT      ONLY ELEMENTS COMPLETELY CONTAINED WITHIN NODE SET.
+
+         42 ELEMENTS (OF        350  DEFINED) SELECTED FROM
+       61 SELECTED NODES BY  ESLN COMMAND.
+
+ RESELECT     FOR ITEM=ENAM COMPONENT=    
+  IN RANGE       183 TO        183 STEP          1
+
+         14  ELEMENTS (OF        350  DEFINED) SELECTED BY  ESEL  COMMAND.
+
+ *GET  INUM183   FROM  ELEM  ITEM=COUN           VALUE=  14.0000000    
+
+ *IF  iNum183                           ( =   14.0000     )  GT  
+      0                                 ( =   0.00000     )  THEN    
+
+ PARAMETER _ICURRENTELEM =     0.000000000    
+
+ *DO LOOP ON PARAMETER= AR30 FROM  1.0000     TO  14.000     BY  1.0000    
+
+ PARAMETER _ICURRENTELEM =     253.0000000    
+
+ MODIFY ELEMENT       253 (IF SELECTED) TO HAVE  ESYS =      0
+     ELEM    MAT   TYP   REL   SEC   ESYS         NODES
+     253   3   3      3      3    0     897   885   886   892   919   918   921   931
+
+
+ *GET  _ICURRENTETYP  FROM  ELEM       253  ITEM=ATTR TYPE      VALUE=  3.00000000    
+
+ *GET  _PLANEBEHAVIOR  FROM  ETYP      3  ITEM=ATTR KOP3  VALUE=  1.00000000    
+
+ *IF  _planebehavior                    ( =   1.00000     )  EQ  
+      3                                 ( =   3.00000     )  THEN    
+
+ *ENDIF
+
+ ELEMENT TYPE          3 IS PLANE223     AXI 8-NODE STRU-ELECT SOLID 
+  KEYOPT( 1- 6)=     1001      0      1        0      0      0
+  KEYOPT( 7-12)=        0      0      0        0      0      0
+  KEYOPT(13-18)=        0      0      0        0      0      0
+
+ CURRENT NODAL DOF SET IS  UX    UY    VOLT
+  AXISYMMETRIC MODEL
+
+ *GET  _ICURRENTMAT  FROM  ELEM       253  ITEM=ATTR MAT       VALUE=  3.00000000    
+
+ DELETE PROPERTY  RSVX  FROM MATERIAL          3 TO          3 BY          1
+
+ DELETE PROPERTY  RSVY  FROM MATERIAL          3 TO          3 BY          1
+
+ DELETE PROPERTY  RSVZ  FROM MATERIAL          3 TO          3 BY          1
+
+ DEFINE DATA TABLE  PIEZ  FOR MATERIAL     3
+
+ DATA FOR  PIEZ  TABLE FOR MATERIAL   3
+ LOC=  2 -2.9200      0.0000      0.0000      0.0000      0.0000      0.0000    
+
+ DATA FOR  PIEZ  TABLE FOR MATERIAL   3
+ LOC=  5  23.400      0.0000      0.0000      0.0000      0.0000      0.0000    
+
+ DATA FOR  PIEZ  TABLE FOR MATERIAL   3
+ LOC=  8 -2.9200      0.0000      0.0000      0.0000      0.0000      0.0000    
+
+ DATA FOR  PIEZ  TABLE FOR MATERIAL   3
+ LOC= 10  16.190      0.0000      0.0000      0.0000      0.0000      0.0000    
+
+ DATA TABLE  DPER  FOR MATERIAL     3 IS REACTIVATED
+   PARAMETERS ASSOCIATED WITH IT ARE TO BE RESET
+   NUMBER OF TEMPERATURE POINTS -    0
+   NUMBER OF DATA POINTS        -    9
+   TB OPTION                    -    0
+
+ DATA FOR  DPER  TABLE FOR MATERIAL   3
+ LOC=  1  2120.0      1980.0      2120.0      0.0000      0.0000      0.0000    
+
+ *ENDDO  INDEX= AR30                            
+
+ *ENDIF
+
+ EM UNITS = USER  EPZERO= 0.88540E-11
+
+
+ ***** ROUTINE COMPLETED *****  CP =         0.281
+
+
+
+ *****  MAPDL SOLUTION ROUTINE  *****
+
+ SELECT ALL ENTITIES OF TYPE= ALL  AND BELOW
+
+ WRITE FGRA ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
+   FOR ALL APPLICABLE ENTITIES
+  
+ ***********  Voltage133 ***********
+  
+ CMBLOCK read of NODE component VOLTAGE133  completed
+
+ SELECT      COMPONENT VOLTAGE133                                                                                                                                                                                                                                                      
+
+ *GET  _NUMMIN   FROM  NODE  ITEM=NUM  MIN   VALUE=  2.00000000     
+
+ PARAMETER _ISCP =     0.000000000    
+
+ *** WARNING ***                         CP =       0.312   TIME= 16:58:25
+ The data for *GET entity NODE item CPS and NODE= 2 is not defined.      
+  The *GET command is ignored.                                           
+
+ *IF  _isCP                             ( =   0.00000     )  EQ  
+      0                                 ( =   0.00000     )  THEN    
+
+ COUPLED SET =          1  DIRECTION= VOLT  TOTAL NODES=       15
+ MAXIMUM COUPLED SET NUMBER =          1
+
+ *ENDIF
+
+ SPECIFIED CONSTRAINT VOLT FOR SELECTED NODES            2 TO           2 BY           1
+ REAL=  0.00000000       IMAG=  0.00000000    
+
+ SELECT ALL ENTITIES OF TYPE= ALL  AND BELOW
+  
+ ***********  Voltage 2153 ***********
+  
+ CMBLOCK read of NODE component VOLTAGE153  completed
+
+ SELECT      COMPONENT VOLTAGE153                                                                                                                                                                                                                                                      
+
+ *GET  _NUMMIN   FROM  NODE  ITEM=NUM  MIN   VALUE=  1.00000000     
+
+ PARAMETER _ISCP =     0.000000000    
+
+ *** WARNING ***                         CP =       0.312   TIME= 16:58:25
+ The data for *GET entity NODE item CPS and NODE= 1 is not defined.      
+  The *GET command is ignored.                                           
+
+ *IF  _isCP                             ( =   0.00000     )  EQ  
+      0                                 ( =   0.00000     )  THEN    
+
+ COUPLED SET =          2  DIRECTION= VOLT  TOTAL NODES=       15
+ MAXIMUM COUPLED SET NUMBER =          2
+
+ *ENDIF
+
+ SPECIFIED CONSTRAINT VOLT FOR SELECTED NODES            1 TO           1 BY           1
+ REAL=  5.00000000       IMAG=  0.00000000    
+
+ SELECT ALL ENTITIES OF TYPE= ALL  AND BELOW
+  
+ ***********  Voltage 3173 ***********
+  
+ CMBLOCK read of NODE component VOLTAGE173  completed
+
+ SELECT      COMPONENT VOLTAGE173                                                                                                                                                                                                                                                      
+
+ *GET  _NUMMIN   FROM  NODE  ITEM=NUM  MIN   VALUE=  882.000000     
+
+ PARAMETER _ISCP =     0.000000000    
+
+ *** WARNING ***                         CP =       0.312   TIME= 16:58:25
+ The data for *GET entity NODE item CPS and NODE= 882 is not defined.    
+  The *GET command is ignored.                                           
+
+ *IF  _isCP                             ( =   0.00000     )  EQ  
+      0                                 ( =   0.00000     )  THEN    
+
+ COUPLED SET =          3  DIRECTION= VOLT  TOTAL NODES=       15
+ MAXIMUM COUPLED SET NUMBER =          3
+
+ *ENDIF
+
+ SPECIFIED CONSTRAINT VOLT FOR SELECTED NODES          882 TO         882 BY           1
+ REAL=  0.00000000       IMAG=  0.00000000    
+
+ SELECT ALL ENTITIES OF TYPE= ALL  AND BELOW
+
+ *GET  ANSINTER_  FROM  ACTI  ITEM=INT        VALUE=  0.00000000    
+
+ *IF  ANSINTER_                         ( =   0.00000     )  NE  
+      0                                 ( =   0.00000     )  THEN    
+
+ *ENDIF
+
+ *** NOTE ***                            CP =       0.406   TIME= 16:58:25
+ The automatic domain decomposition logic has selected the FREQ domain   
+ decomposition method with 1 processes per frequency solution.           
+
+ *****  MAPDL SOLVE    COMMAND  *****
+
+
+
+   D I S T R I B U T E D   D O M A I N   D E C O M P O S E R
+
+ ...Number of frequency solutions:  300
+ ...Decompose to 2 frequency domains (with 1 processes per domain)
+
+
+ *** WARNING ***                         CP =       0.500   TIME= 16:58:25
+ Element shape checking is currently inactive.  Issue SHPP,ON or         
+ SHPP,WARN to reactivate, if desired.                                    
+
+ *** NOTE ***                            CP =       0.500   TIME= 16:58:25
+ Axisymmetric elements are present.  The nodal loads input with the F    
+ commands and the reaction forces are on a full circle basis.  This      
+ differs from the pre-MAPDL 5.0 interpretation.                          
+
+ *** NOTE ***                            CP =       0.500   TIME= 16:58:25
+ The model data was checked and warning messages were found.             
+  Please review output or errors file ( C:\Users\simon\Desktop\Test      
+ Ansys - Copia\_ProjectScratch\Scr6C67\file0.err ) for these warning     
+ messages.                                                               
+
+ *** SELECTION OF ELEMENT TECHNOLOGIES FOR APPLICABLE ELEMENTS ***
+      --- GIVE SUGGESTIONS AND RESET THE KEY OPTIONS ---
+
+ ELEMENT TYPE         2 IS PLANE183 WITH AXISYMMETRIC OPTION. IT IS NOT ASSOCIATED
+ WITH FULLY INCOMPRESSIBLE HYPERELASTIC MATERIALS. NO SUGGESTION IS AVAILABLE
+ AND NO RESETTING IS NEEDED.
+
+ ELEMENT TYPE         4 IS PLANE183 WITH AXISYMMETRIC OPTION. IT IS NOT ASSOCIATED
+ WITH FULLY INCOMPRESSIBLE HYPERELASTIC MATERIALS. NO SUGGESTION IS AVAILABLE
+ AND NO RESETTING IS NEEDED.
+
+
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2023 R1          23.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   16:58:25  MAY 15, 2023 CP=      0.500
+
+ test--Harmonic Response (L5)                                                  
+
+
+
+                       S O L U T I O N   O P T I O N S
+
+   PROBLEM DIMENSIONALITY. . . . . . . . . . . . .AXISYMMETRIC         
+   DEGREES OF FREEDOM. . . . . . UX   UY   VOLT
+   ANALYSIS TYPE . . . . . . . . . . . . . . . . .HARMONIC             
+      SOLUTION METHOD. . . . . . . . . . . . . . .AUTO                 
+   OFFSET TEMPERATURE FROM ABSOLUTE ZERO . . . . .  273.15    
+   THERMAL EXPANSION . . . . . . . . . . . . . . .OFF
+   COMPLEX DISPLACEMENT PRINT OPTION . . . . . . .REAL AND IMAGINARY       
+   GLOBALLY ASSEMBLED MATRIX . . . . . . . . . . .SYMMETRIC  
+
+ *** NOTE ***                            CP =       0.500   TIME= 16:58:25
+ The structural-electrostatic analysis with KEYOPT(1) = 1001 of element  
+ PLANE223 will be piezoelectric.                                         
+
+ *** NOTE ***                            CP =       0.500   TIME= 16:58:25
+ The structural-electrostatic analysis with KEYOPT(1) = 1001 of element  
+ PLANE223 will be piezoelectric.                                         
+
+ *** NOTE ***                            CP =       0.500   TIME= 16:58:25
+ The conditions for direct assembly have been met.  No .emat or .erot    
+ files will be produced.                                                 
+
+ *** WARNING ***                         CP =       0.531   TIME= 16:58:25
+ Contact element 274 is missing DOF VOLT (and possibly others) of        
+ underlying base element 2.  Similar mismatches may exist elsewhere,     
+ but checking for this is discontinued.                                  
+
+ *** NOTE ***                            CP =       0.531   TIME= 16:58:25
+ Symmetric Deformable- deformable contact pair identified by real        
+ constant set 5 and contact element type 5 has been set up.  The         
+ companion pair has real constant set ID 6.  Both pairs should have the  
+ same behavior.                                                          
+ *WARNING*: The contact pairs have similar mesh patterns.  MAPDL will    
+ keep the current pair and deactivate its companion pair.                
+ Linear contact is defined
+ Contact algorithm: Augmented Lagrange method
+ Contact detection at: Gauss integration point
+ Contact stiffness factor FKN                  10.000    
+ The resulting initial contact stiffness      0.45603E+17
+ Default penetration tolerance factor FTOLN   0.10000    
+ The resulting penetration tolerance          0.49996E-04
+ Default opening contact stiffness OPSF will be used.
+ Default tangent stiffness factor FKT          1.0000    
+ Use constant contact stiffness
+ Default Max. friction stress TAUMAX          0.10000E+21
+ Average contact surface length               0.57143E-03
+ Average contact pair depth                   0.49996E-03
+ Average target surface length                0.57143E-03
+ User defined pinball region PINB             0.52953E-04
+ Initial penetration/gap is excluded.
+ Bonded contact (always) is defined.
+
+ *** NOTE ***                            CP =       0.531   TIME= 16:58:25
+ Max.  Initial penetration 1.642927352E-18 was detected between contact  
+ element 274 and target element 292.                                     
+ ****************************************
+  
+
+ *** WARNING ***                         CP =       0.531   TIME= 16:58:25
+ Element shape checking is currently inactive.  Issue SHPP,ON or         
+ SHPP,WARN to reactivate, if desired.                                    
+
+ *** NOTE ***                            CP =       0.531   TIME= 16:58:25
+ Symmetric Deformable- deformable contact pair identified by real        
+ constant set 6 and contact element type 5 has been set up.  The         
+ companion pair has real constant set ID 5.  Both pairs should have the  
+ same behavior.                                                          
+ MAPDL will deactivate the current pair and keep its companion pair,     
+ resulting in asymmetric contact.                                        
+ Linear contact is defined
+ Contact algorithm: Augmented Lagrange method
+ Contact detection at: Gauss integration point
+ Contact stiffness factor FKN                  10.000    
+ The resulting initial contact stiffness      0.45603E+17
+ Default penetration tolerance factor FTOLN   0.10000    
+ The resulting penetration tolerance          0.55709E-04
+ Default opening contact stiffness OPSF will be used.
+ Default tangent stiffness factor FKT          1.0000    
+ Use constant contact stiffness
+ Default Max. friction stress TAUMAX          0.10000E+21
+ Average contact surface length               0.57143E-03
+ Average contact pair depth                   0.55709E-03
+ Average target surface length                0.57143E-03
+ User defined pinball region PINB             0.52953E-04
+ Initial penetration/gap is excluded.
+ Bonded contact (always) is defined.
+
+ *** NOTE ***                            CP =       0.531   TIME= 16:58:25
+ Max.  Initial penetration 3.140327842E-18 was detected between contact  
+ element 287 and target element 272.                                     
+ ****************************************
+  
+
+ *** NOTE ***                            CP =       0.531   TIME= 16:58:25
+ Symmetric Deformable- deformable contact pair identified by real        
+ constant set 7 and contact element type 7 has been set up.  The         
+ companion pair has real constant set ID 8.  Both pairs should have the  
+ same behavior.                                                          
+ *WARNING*: The contact pairs have similar mesh patterns which can cause 
+ overconstraint.  MAPDL will deactivate the current pair and keep its    
+ companion pair.                                                         
+ Linear contact is defined
+ Contact algorithm: Augmented Lagrange method
+ Contact detection at: Gauss integration point
+ Contact stiffness factor FKN                  10.000    
+ The resulting initial contact stiffness      0.45597E+17
+ Default penetration tolerance factor FTOLN   0.10000    
+ The resulting penetration tolerance          0.50004E-04
+ Default opening contact stiffness OPSF will be used.
+ Default tangent stiffness factor FKT          1.0000    
+ Use constant contact stiffness
+ Default Max. friction stress TAUMAX          0.10000E+21
+ Average contact surface length               0.57143E-03
+ Average contact pair depth                   0.50004E-03
+ Average target surface length                0.57143E-03
+ User defined pinball region PINB             0.52953E-04
+ Initial penetration/gap is excluded.
+ Bonded contact (always) is defined.
+
+ *** NOTE ***                            CP =       0.531   TIME= 16:58:25
+ Max.  Initial penetration 1.220606494E-18 was detected between contact  
+ element 304 and target element 318.                                     
+ ****************************************
+  
+
+ *** NOTE ***                            CP =       0.531   TIME= 16:58:25
+ Symmetric Deformable- deformable contact pair identified by real        
+ constant set 8 and contact element type 7 has been set up.  The         
+ companion pair has real constant set ID 7.  Both pairs should have the  
+ same behavior.                                                          
+ MAPDL will keep the current pair and deactivate its companion pair,     
+ resulting in asymmetric contact.                                        
+ Linear contact is defined
+ Contact algorithm: Augmented Lagrange method
+ Contact detection at: Gauss integration point
+ Contact stiffness factor FKN                  10.000    
+ The resulting initial contact stiffness      0.45597E+17
+ Default penetration tolerance factor FTOLN   0.10000    
+ The resulting penetration tolerance          0.49996E-04
+ Default opening contact stiffness OPSF will be used.
+ Default tangent stiffness factor FKT          1.0000    
+ Use constant contact stiffness
+ Default Max. friction stress TAUMAX          0.10000E+21
+ Average contact surface length               0.57143E-03
+ Average contact pair depth                   0.49996E-03
+ Average target surface length                0.57143E-03
+ User defined pinball region PINB             0.52953E-04
+ Initial penetration/gap is excluded.
+ Bonded contact (always) is defined.
+
+ *** NOTE ***                            CP =       0.531   TIME= 16:58:25
+ Max.  Initial penetration 9.448203778E-19 was detected between contact  
+ element 310 and target element 296.                                     
+ ****************************************
+  
+
+ *** NOTE ***                            CP =       0.531   TIME= 16:58:25
+ Symmetric Deformable- deformable contact pair identified by real        
+ constant set 9 and contact element type 9 has been set up.  The         
+ companion pair has real constant set ID 10.  Both pairs should have     
+ the same behavior.                                                      
+ *WARNING*: The contact pairs have similar mesh patterns.  MAPDL will    
+ keep the current pair and deactivate its companion pair.                
+ Linear contact is defined
+ Contact algorithm: Augmented Lagrange method
+ Contact detection at: Gauss integration point
+ Contact stiffness factor FKN                  10.000    
+ The resulting initial contact stiffness      0.45597E+17
+ Default penetration tolerance factor FTOLN   0.10000    
+ The resulting penetration tolerance          0.50004E-04
+ Default opening contact stiffness OPSF will be used.
+ Default tangent stiffness factor FKT          1.0000    
+ Use constant contact stiffness
+ Default Max. friction stress TAUMAX          0.10000E+21
+ Average contact surface length               0.57143E-03
+ Average contact pair depth                   0.50004E-03
+ Average target surface length                0.57143E-03
+ User defined pinball region PINB             0.52953E-04
+ Initial penetration/gap is excluded.
+ Bonded contact (always) is defined.
+
+ *** NOTE ***                            CP =       0.531   TIME= 16:58:25
+ Max.  Initial penetration 1.520892757E-18 was detected between contact  
+ element 334 and target element 349.                                     
+ ****************************************
+  
+
+ *** NOTE ***                            CP =       0.531   TIME= 16:58:25
+ Symmetric Deformable- deformable contact pair identified by real        
+ constant set 10 and contact element type 9 has been set up.  The        
+ companion pair has real constant set ID 9.  Both pairs should have the  
+ same behavior.                                                          
+ MAPDL will deactivate the current pair and keep its companion pair,     
+ resulting in asymmetric contact.                                        
+ Linear contact is defined
+ Contact algorithm: Augmented Lagrange method
+ Contact detection at: Gauss integration point
+ Contact stiffness factor FKN                  10.000    
+ The resulting initial contact stiffness      0.45597E+17
+ Default penetration tolerance factor FTOLN   0.10000    
+ The resulting penetration tolerance          0.55690E-04
+ Default opening contact stiffness OPSF will be used.
+ Default tangent stiffness factor FKT          1.0000    
+ Use constant contact stiffness
+ Default Max. friction stress TAUMAX          0.10000E+21
+ Average contact surface length               0.57143E-03
+ Average contact pair depth                   0.55690E-03
+ Average target surface length                0.57143E-03
+ User defined pinball region PINB             0.52953E-04
+ Initial penetration/gap is excluded.
+ Bonded contact (always) is defined.
+
+ *** NOTE ***                            CP =       0.531   TIME= 16:58:25
+ Max.  Initial penetration 1.052854904E-18 was detected between contact  
+ element 339 and target element 324.                                     
+ ****************************************
+  
+
+ *** WARNING ***                         CP =       0.531   TIME= 16:58:25
+ Maximum contact stiffness 4.560343321E+16 is too big which can cause an 
+ accuracy problem, you may scale the force units in the model.           
+  
+  
+
+                      L O A D   S T E P   O P T I O N S
+
+   LOAD STEP NUMBER. . . . . . . . . . . . . . . .     1
+   FREQUENCY RANGE . . . . . . . . . . . . . . . . 0.10000E+06 TO  0.14000E+06
+   NUMBER OF SUBSTEPS. . . . . . . . . . . . . . .   300
+   STEP CHANGE BOUNDARY CONDITIONS . . . . . . . .   YES
+   PRINT OUTPUT CONTROLS . . . . . . . . . . . . .NO PRINTOUT
+   DATABASE OUTPUT CONTROLS
+      ITEM     FREQUENCY   COMPONENT
+       ALL       NONE               
+      NSOL        ALL               
+      EANG        ALL               
+      ETMP        ALL               
+      VENG        ALL               
+      STRS        ALL               
+      EPEL        ALL               
+      RSOL        ALL               
+      CONT        ALL               
+      FGRA        ALL               
+
+   AUTO SELECTION OF VT FOR FREQUENCY SWEEP. . . . NO
+
+ *** NOTE ***                            CP =       0.562   TIME= 16:58:25
+ Symmetric Deformable- deformable contact pair identified by real        
+ constant set 5 and contact element type 5 has been set up.  The         
+ companion pair has real constant set ID 6.  Both pairs should have the  
+ same behavior.                                                          
+ MAPDL will keep the current pair and deactivate its companion pair,     
+ resulting in asymmetric contact.                                        
+ Linear contact is defined
+ Contact algorithm: Augmented Lagrange method
+ Contact detection at: Gauss integration point
+ Contact stiffness factor FKN                  10.000    
+ The resulting initial contact stiffness      0.45603E+17
+ Default penetration tolerance factor FTOLN   0.10000    
+ The resulting penetration tolerance          0.49996E-04
+ Default opening contact stiffness OPSF will be used.
+ Default tangent stiffness factor FKT          1.0000    
+ Use constant contact stiffness
+ Default Max. friction stress TAUMAX          0.10000E+21
+ Average contact surface length               0.57143E-03
+ Average contact pair depth                   0.49996E-03
+ Average target surface length                0.57143E-03
+ User defined pinball region PINB             0.52953E-04
+ Initial penetration/gap is excluded.
+ Bonded contact (always) is defined.
+
+ *** NOTE ***                            CP =       0.562   TIME= 16:58:25
+ Max.  Initial penetration 1.642927352E-18 was detected between contact  
+ element 274 and target element 292.                                     
+ ****************************************
+  
+
+ *** WARNING ***                         CP =       0.562   TIME= 16:58:25
+ Contact element 274 is missing DOF VOLT (and possibly others) of        
+ underlying base element 2.  Similar mismatches may exist elsewhere,     
+ but checking for this is discontinued.                                  
+
+ *** NOTE ***                            CP =       0.562   TIME= 16:58:25
+ Symmetric Deformable- deformable contact pair identified by real        
+ constant set 6 and contact element type 5 has been set up.  The         
+ companion pair has real constant set ID 5.  Both pairs should have the  
+ same behavior.                                                          
+ MAPDL will deactivate the current pair and keep its companion pair,     
+ resulting in asymmetric contact.                                        
+ Linear contact is defined
+ Contact algorithm: Augmented Lagrange method
+ Contact detection at: Gauss integration point
+ Contact stiffness factor FKN                  10.000    
+ The resulting initial contact stiffness      0.45603E+17
+ Default penetration tolerance factor FTOLN   0.10000    
+ The resulting penetration tolerance          0.55709E-04
+ Default opening contact stiffness OPSF will be used.
+ Default tangent stiffness factor FKT          1.0000    
+ Use constant contact stiffness
+ Default Max. friction stress TAUMAX          0.10000E+21
+ Average contact surface length               0.57143E-03
+ Average contact pair depth                   0.55709E-03
+ Average target surface length                0.57143E-03
+ User defined pinball region PINB             0.52953E-04
+ Initial penetration/gap is excluded.
+ Bonded contact (always) is defined.
+
+ *** NOTE ***                            CP =       0.562   TIME= 16:58:25
+ Max.  Initial penetration 3.140327842E-18 was detected between contact  
+ element 287 and target element 272.                                     
+ ****************************************
+  
+
+ *** NOTE ***                            CP =       0.562   TIME= 16:58:25
+ Symmetric Deformable- deformable contact pair identified by real        
+ constant set 7 and contact element type 7 has been set up.  The         
+ companion pair has real constant set ID 8.  Both pairs should have the  
+ same behavior.                                                          
+ MAPDL will deactivate the current pair and keep its companion pair,     
+ resulting in asymmetric contact.                                        
+ Linear contact is defined
+ Contact algorithm: Augmented Lagrange method
+ Contact detection at: Gauss integration point
+ Contact stiffness factor FKN                  10.000    
+ The resulting initial contact stiffness      0.45597E+17
+ Default penetration tolerance factor FTOLN   0.10000    
+ The resulting penetration tolerance          0.50004E-04
+ Default opening contact stiffness OPSF will be used.
+ Default tangent stiffness factor FKT          1.0000    
+ Use constant contact stiffness
+ Default Max. friction stress TAUMAX          0.10000E+21
+ Average contact surface length               0.57143E-03
+ Average contact pair depth                   0.50004E-03
+ Average target surface length                0.57143E-03
+ User defined pinball region PINB             0.52953E-04
+ Initial penetration/gap is excluded.
+ Bonded contact (always) is defined.
+
+ *** NOTE ***                            CP =       0.562   TIME= 16:58:25
+ Max.  Initial penetration 1.220606494E-18 was detected between contact  
+ element 304 and target element 318.                                     
+ ****************************************
+  
+
+ *** WARNING ***                         CP =       0.562   TIME= 16:58:25
+ Maximum contact stiffness 4.560343321E+16 is too big which can cause an 
+ accuracy problem, you may scale the force units in the model.           
+
+ *** NOTE ***                            CP =       0.562   TIME= 16:58:25
+ Symmetric Deformable- deformable contact pair identified by real        
+ constant set 8 and contact element type 7 has been set up.  The         
+ companion pair has real constant set ID 7.  Both pairs should have the  
+ same behavior.                                                          
+ MAPDL will keep the current pair and deactivate its companion pair,     
+ resulting in asymmetric contact.                                        
+ Linear contact is defined
+ Contact algorithm: Augmented Lagrange method
+ Contact detection at: Gauss integration point
+ Contact stiffness factor FKN                  10.000    
+ The resulting initial contact stiffness      0.45597E+17
+ Default penetration tolerance factor FTOLN   0.10000    
+ The resulting penetration tolerance          0.49996E-04
+ Default opening contact stiffness OPSF will be used.
+ Default tangent stiffness factor FKT          1.0000    
+ Use constant contact stiffness
+ Default Max. friction stress TAUMAX          0.10000E+21
+ Average contact surface length               0.57143E-03
+ Average contact pair depth                   0.49996E-03
+ Average target surface length                0.57143E-03
+ User defined pinball region PINB             0.52953E-04
+ Initial penetration/gap is excluded.
+ Bonded contact (always) is defined.
+
+ *** NOTE ***                            CP =       0.562   TIME= 16:58:25
+ Max.  Initial penetration 9.448203778E-19 was detected between contact  
+ element 310 and target element 296.                                     
+ ****************************************
+  
+
+ *** NOTE ***                            CP =       0.562   TIME= 16:58:25
+ Symmetric Deformable- deformable contact pair identified by real        
+ constant set 9 and contact element type 9 has been set up.  The         
+ companion pair has real constant set ID 10.  Both pairs should have     
+ the same behavior.                                                      
+ MAPDL will keep the current pair and deactivate its companion pair,     
+ resulting in asymmetric contact.                                        
+ Linear contact is defined
+ Contact algorithm: Augmented Lagrange method
+ Contact detection at: Gauss integration point
+ Contact stiffness factor FKN                  10.000    
+ The resulting initial contact stiffness      0.45597E+17
+ Default penetration tolerance factor FTOLN   0.10000    
+ The resulting penetration tolerance          0.50004E-04
+ Default opening contact stiffness OPSF will be used.
+ Default tangent stiffness factor FKT          1.0000    
+ Use constant contact stiffness
+ Default Max. friction stress TAUMAX          0.10000E+21
+ Average contact surface length               0.57143E-03
+ Average contact pair depth                   0.50004E-03
+ Average target surface length                0.57143E-03
+ User defined pinball region PINB             0.52953E-04
+ Initial penetration/gap is excluded.
+ Bonded contact (always) is defined.
+
+ *** NOTE ***                            CP =       0.562   TIME= 16:58:25
+ Max.  Initial penetration 1.520892757E-18 was detected between contact  
+ element 334 and target element 349.                                     
+ ****************************************
+  
+
+ *** NOTE ***                            CP =       0.562   TIME= 16:58:25
+ Symmetric Deformable- deformable contact pair identified by real        
+ constant set 10 and contact element type 9 has been set up.  The        
+ companion pair has real constant set ID 9.  Both pairs should have the  
+ same behavior.                                                          
+ MAPDL will deactivate the current pair and keep its companion pair,     
+ resulting in asymmetric contact.                                        
+ Linear contact is defined
+ Contact algorithm: Augmented Lagrange method
+ Contact detection at: Gauss integration point
+ Contact stiffness factor FKN                  10.000    
+ The resulting initial contact stiffness      0.45597E+17
+ Default penetration tolerance factor FTOLN   0.10000    
+ The resulting penetration tolerance          0.55690E-04
+ Default opening contact stiffness OPSF will be used.
+ Default tangent stiffness factor FKT          1.0000    
+ Use constant contact stiffness
+ Default Max. friction stress TAUMAX          0.10000E+21
+ Average contact surface length               0.57143E-03
+ Average contact pair depth                   0.55690E-03
+ Average target surface length                0.57143E-03
+ User defined pinball region PINB             0.52953E-04
+ Initial penetration/gap is excluded.
+ Bonded contact (always) is defined.
+
+ *** NOTE ***                            CP =       0.562   TIME= 16:58:25
+ Max.  Initial penetration 1.052854904E-18 was detected between contact  
+ element 339 and target element 324.                                     
+ ****************************************
+  
+
+
+
+            **** CENTER OF MASS, MASS, AND MASS MOMENTS OF INERTIA ****
+
+  CALCULATIONS ASSUME ELEMENT MASS AT ELEMENT CENTROID
+
+  TOTAL MASS =  0.50412E-02
+
+
+ MASS AND MOMENT VALUES ARE EVALUATED FOR AN AXISYMMETRIC 360. DEGREE MODEL.
+
+                    MOM. OF INERTIA      MOM. OF INERTIA     RADIUS OF GYRATION
+ CENTER OF MASS      ABOUT ORIGIN     ABOUT CENTER OF MASS  ABOUT CENTER OF MASS
+
+ XC =   0.0000       IXX =   0.7351E-06   IXX =   0.1898E-06  RGX =   0.6136E-02
+ YC =  0.10400E-01   IYY =   0.3992E-07   IYY =   0.3992E-07  RGY =   0.2814E-02
+
+
+  *** MASS SUMMARY BY ELEMENT TYPE ***
+
+  TYPE      MASS
+     1  0.391065E-03
+     2  0.212954E-02
+     3  0.391065E-03
+     4  0.212954E-02
+
+ Range of element maximum matrix coefficients in global coordinates
+ Maximum = 2.702913507E+11 at element 279.                               
+ Minimum = 642943709 at element 266.                                     
+
+   *** ELEMENT MATRIX FORMULATION TIMES
+     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+        1        14  PLANE223      0.000   0.000000
+        2       119  PLANE183      0.031   0.000263
+        3        14  PLANE223      0.000   0.000000
+        4       119  PLANE183      0.031   0.000263
+        5        14  CONTA172      0.000   0.000000
+        6        14  TARGE169      0.000   0.000000
+        7        14  CONTA172      0.000   0.000000
+        8        14  TARGE169      0.000   0.000000
+        9        14  CONTA172      0.000   0.000000
+       10        14  TARGE169      0.000   0.000000
+ Time at end of element matrix formulation CP = 0.625.                   
+
+ SPARSE MATRIX DIRECT SOLVER.
+  Number of equations =        1945,    Maximum wavefront =     63
+  Memory allocated for solver              =     4.037 MB
+  Memory required for in-core solution     =     3.887 MB
+  Memory required for out-of-core solution =     2.095 MB
+
+ *** NOTE ***                            CP =       0.688   TIME= 16:58:25
+ The Sparse Matrix Solver is currently running in the in-core memory     
+ mode.  This memory mode uses the most amount of memory in order to      
+ avoid using the hard drive as much as possible, which most often        
+ results in the fastest solution time.  This mode is recommended if      
+ enough physical memory is present to accommodate all of the solver      
+ data.                                                                   
+ Sparse solver maximum pivot= 2.330457608E+11 at node 616 UY.            
+ Sparse solver minimum pivot= 40727959.5 at node 12 UY.                  
+ Sparse solver minimum pivot in absolute value= 40727959.5 at node 12    
+ UY.                                                                     
+
+   *** ELEMENT RESULT CALCULATION TIMES
+     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+        1        14  PLANE223      0.000   0.000000
+        2       119  PLANE183      0.000   0.000000
+        3        14  PLANE223      0.016   0.001116
+        4       119  PLANE183      0.000   0.000000
+        5        14  CONTA172      0.000   0.000000
+        7        14  CONTA172      0.000   0.000000
+        9        14  CONTA172      0.000   0.000000
+
+   *** NODAL LOAD CALCULATION TIMES
+     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+        1        14  PLANE223      0.000   0.000000
+        2       119  PLANE183      0.000   0.000000
+        3        14  PLANE223      0.000   0.000000
+        4       119  PLANE183      0.000   0.000000
+        5        14  CONTA172      0.000   0.000000
+        7        14  CONTA172      0.000   0.000000
+        9        14  CONTA172      0.000   0.000000
+ *** LOAD STEP     1   SUBSTEP     1  COMPLETED.  FREQUENCY=   100133.    
+ *** LOAD STEP     1   SUBSTEP     2  COMPLETED.  FREQUENCY=   100267.    
+ *** LOAD STEP     1   SUBSTEP     3  COMPLETED.  FREQUENCY=   100400.    
+ *** LOAD STEP     1   SUBSTEP     4  COMPLETED.  FREQUENCY=   100533.    
+ *** LOAD STEP     1   SUBSTEP     5  COMPLETED.  FREQUENCY=   100667.    
+ *** LOAD STEP     1   SUBSTEP     6  COMPLETED.  FREQUENCY=   100800.    
+ *** LOAD STEP     1   SUBSTEP     7  COMPLETED.  FREQUENCY=   100933.    
+ *** LOAD STEP     1   SUBSTEP     8  COMPLETED.  FREQUENCY=   101067.    
+ *** LOAD STEP     1   SUBSTEP     9  COMPLETED.  FREQUENCY=   101200.    
+ *** LOAD STEP     1   SUBSTEP    10  COMPLETED.  FREQUENCY=   101333.    
+ *** LOAD STEP     1   SUBSTEP    11  COMPLETED.  FREQUENCY=   101467.    
+ *** LOAD STEP     1   SUBSTEP    12  COMPLETED.  FREQUENCY=   101600.    
+ *** LOAD STEP     1   SUBSTEP    13  COMPLETED.  FREQUENCY=   101733.    
+ *** LOAD STEP     1   SUBSTEP    14  COMPLETED.  FREQUENCY=   101867.    
+ *** LOAD STEP     1   SUBSTEP    15  COMPLETED.  FREQUENCY=   102000.    
+ *** LOAD STEP     1   SUBSTEP    16  COMPLETED.  FREQUENCY=   102133.    
+ *** LOAD STEP     1   SUBSTEP    17  COMPLETED.  FREQUENCY=   102267.    
+ *** LOAD STEP     1   SUBSTEP    18  COMPLETED.  FREQUENCY=   102400.    
+ *** LOAD STEP     1   SUBSTEP    19  COMPLETED.  FREQUENCY=   102533.    
+ *** LOAD STEP     1   SUBSTEP    20  COMPLETED.  FREQUENCY=   102667.    
+ *** LOAD STEP     1   SUBSTEP    21  COMPLETED.  FREQUENCY=   102800.    
+ *** LOAD STEP     1   SUBSTEP    22  COMPLETED.  FREQUENCY=   102933.    
+ *** LOAD STEP     1   SUBSTEP    23  COMPLETED.  FREQUENCY=   103067.    
+ *** LOAD STEP     1   SUBSTEP    24  COMPLETED.  FREQUENCY=   103200.    
+ *** LOAD STEP     1   SUBSTEP    25  COMPLETED.  FREQUENCY=   103333.    
+ *** LOAD STEP     1   SUBSTEP    26  COMPLETED.  FREQUENCY=   103467.    
+ *** LOAD STEP     1   SUBSTEP    27  COMPLETED.  FREQUENCY=   103600.    
+ *** LOAD STEP     1   SUBSTEP    28  COMPLETED.  FREQUENCY=   103733.    
+ *** LOAD STEP     1   SUBSTEP    29  COMPLETED.  FREQUENCY=   103867.    
+ *** LOAD STEP     1   SUBSTEP    30  COMPLETED.  FREQUENCY=   104000.    
+ *** LOAD STEP     1   SUBSTEP    31  COMPLETED.  FREQUENCY=   104133.    
+ *** LOAD STEP     1   SUBSTEP    32  COMPLETED.  FREQUENCY=   104267.    
+ *** LOAD STEP     1   SUBSTEP    33  COMPLETED.  FREQUENCY=   104400.    
+ *** LOAD STEP     1   SUBSTEP    34  COMPLETED.  FREQUENCY=   104533.    
+ *** LOAD STEP     1   SUBSTEP    35  COMPLETED.  FREQUENCY=   104667.    
+ *** LOAD STEP     1   SUBSTEP    36  COMPLETED.  FREQUENCY=   104800.    
+ *** LOAD STEP     1   SUBSTEP    37  COMPLETED.  FREQUENCY=   104933.    
+ *** LOAD STEP     1   SUBSTEP    38  COMPLETED.  FREQUENCY=   105067.    
+ *** LOAD STEP     1   SUBSTEP    39  COMPLETED.  FREQUENCY=   105200.    
+ *** LOAD STEP     1   SUBSTEP    40  COMPLETED.  FREQUENCY=   105333.    
+ *** LOAD STEP     1   SUBSTEP    41  COMPLETED.  FREQUENCY=   105467.    
+ *** LOAD STEP     1   SUBSTEP    42  COMPLETED.  FREQUENCY=   105600.    
+ *** LOAD STEP     1   SUBSTEP    43  COMPLETED.  FREQUENCY=   105733.    
+ *** LOAD STEP     1   SUBSTEP    44  COMPLETED.  FREQUENCY=   105867.    
+ *** LOAD STEP     1   SUBSTEP    45  COMPLETED.  FREQUENCY=   106000.    
+ *** LOAD STEP     1   SUBSTEP    46  COMPLETED.  FREQUENCY=   106133.    
+ *** LOAD STEP     1   SUBSTEP    47  COMPLETED.  FREQUENCY=   106267.    
+ *** LOAD STEP     1   SUBSTEP    48  COMPLETED.  FREQUENCY=   106400.    
+ *** LOAD STEP     1   SUBSTEP    49  COMPLETED.  FREQUENCY=   106533.    
+ *** LOAD STEP     1   SUBSTEP    50  COMPLETED.  FREQUENCY=   106667.    
+ *** LOAD STEP     1   SUBSTEP    51  COMPLETED.  FREQUENCY=   106800.    
+ *** LOAD STEP     1   SUBSTEP    52  COMPLETED.  FREQUENCY=   106933.    
+ *** LOAD STEP     1   SUBSTEP    53  COMPLETED.  FREQUENCY=   107067.    
+ *** LOAD STEP     1   SUBSTEP    54  COMPLETED.  FREQUENCY=   107200.    
+ *** LOAD STEP     1   SUBSTEP    55  COMPLETED.  FREQUENCY=   107333.    
+ *** LOAD STEP     1   SUBSTEP    56  COMPLETED.  FREQUENCY=   107467.    
+ *** LOAD STEP     1   SUBSTEP    57  COMPLETED.  FREQUENCY=   107600.    
+ *** LOAD STEP     1   SUBSTEP    58  COMPLETED.  FREQUENCY=   107733.    
+ *** LOAD STEP     1   SUBSTEP    59  COMPLETED.  FREQUENCY=   107867.    
+ *** LOAD STEP     1   SUBSTEP    60  COMPLETED.  FREQUENCY=   108000.    
+ *** LOAD STEP     1   SUBSTEP    61  COMPLETED.  FREQUENCY=   108133.    
+ *** LOAD STEP     1   SUBSTEP    62  COMPLETED.  FREQUENCY=   108267.    
+ *** LOAD STEP     1   SUBSTEP    63  COMPLETED.  FREQUENCY=   108400.    
+ *** LOAD STEP     1   SUBSTEP    64  COMPLETED.  FREQUENCY=   108533.    
+ *** LOAD STEP     1   SUBSTEP    65  COMPLETED.  FREQUENCY=   108667.    
+ *** LOAD STEP     1   SUBSTEP    66  COMPLETED.  FREQUENCY=   108800.    
+ *** LOAD STEP     1   SUBSTEP    67  COMPLETED.  FREQUENCY=   108933.    
+ *** LOAD STEP     1   SUBSTEP    68  COMPLETED.  FREQUENCY=   109067.    
+ *** LOAD STEP     1   SUBSTEP    69  COMPLETED.  FREQUENCY=   109200.    
+ *** LOAD STEP     1   SUBSTEP    70  COMPLETED.  FREQUENCY=   109333.    
+ *** LOAD STEP     1   SUBSTEP    71  COMPLETED.  FREQUENCY=   109467.    
+ *** LOAD STEP     1   SUBSTEP    72  COMPLETED.  FREQUENCY=   109600.    
+ *** LOAD STEP     1   SUBSTEP    73  COMPLETED.  FREQUENCY=   109733.    
+ *** LOAD STEP     1   SUBSTEP    74  COMPLETED.  FREQUENCY=   109867.    
+ *** LOAD STEP     1   SUBSTEP    75  COMPLETED.  FREQUENCY=   110000.    
+ *** LOAD STEP     1   SUBSTEP    76  COMPLETED.  FREQUENCY=   110133.    
+ *** LOAD STEP     1   SUBSTEP    77  COMPLETED.  FREQUENCY=   110267.    
+ *** LOAD STEP     1   SUBSTEP    78  COMPLETED.  FREQUENCY=   110400.    
+ *** LOAD STEP     1   SUBSTEP    79  COMPLETED.  FREQUENCY=   110533.    
+ *** LOAD STEP     1   SUBSTEP    80  COMPLETED.  FREQUENCY=   110667.    
+ *** LOAD STEP     1   SUBSTEP    81  COMPLETED.  FREQUENCY=   110800.    
+ *** LOAD STEP     1   SUBSTEP    82  COMPLETED.  FREQUENCY=   110933.    
+ *** LOAD STEP     1   SUBSTEP    83  COMPLETED.  FREQUENCY=   111067.    
+ *** LOAD STEP     1   SUBSTEP    84  COMPLETED.  FREQUENCY=   111200.    
+ *** LOAD STEP     1   SUBSTEP    85  COMPLETED.  FREQUENCY=   111333.    
+ *** LOAD STEP     1   SUBSTEP    86  COMPLETED.  FREQUENCY=   111467.    
+ *** LOAD STEP     1   SUBSTEP    87  COMPLETED.  FREQUENCY=   111600.    
+ *** LOAD STEP     1   SUBSTEP    88  COMPLETED.  FREQUENCY=   111733.    
+ *** LOAD STEP     1   SUBSTEP    89  COMPLETED.  FREQUENCY=   111867.    
+ *** LOAD STEP     1   SUBSTEP    90  COMPLETED.  FREQUENCY=   112000.    
+ *** LOAD STEP     1   SUBSTEP    91  COMPLETED.  FREQUENCY=   112133.    
+ *** LOAD STEP     1   SUBSTEP    92  COMPLETED.  FREQUENCY=   112267.    
+ *** LOAD STEP     1   SUBSTEP    93  COMPLETED.  FREQUENCY=   112400.    
+ *** LOAD STEP     1   SUBSTEP    94  COMPLETED.  FREQUENCY=   112533.    
+ *** LOAD STEP     1   SUBSTEP    95  COMPLETED.  FREQUENCY=   112667.    
+ *** LOAD STEP     1   SUBSTEP    96  COMPLETED.  FREQUENCY=   112800.    
+ *** LOAD STEP     1   SUBSTEP    97  COMPLETED.  FREQUENCY=   112933.    
+ *** LOAD STEP     1   SUBSTEP    98  COMPLETED.  FREQUENCY=   113067.    
+ *** LOAD STEP     1   SUBSTEP    99  COMPLETED.  FREQUENCY=   113200.    
+ *** LOAD STEP     1   SUBSTEP   100  COMPLETED.  FREQUENCY=   113333.    
+ *** LOAD STEP     1   SUBSTEP   101  COMPLETED.  FREQUENCY=   113467.    
+ *** LOAD STEP     1   SUBSTEP   102  COMPLETED.  FREQUENCY=   113600.    
+ *** LOAD STEP     1   SUBSTEP   103  COMPLETED.  FREQUENCY=   113733.    
+ *** LOAD STEP     1   SUBSTEP   104  COMPLETED.  FREQUENCY=   113867.    
+ *** LOAD STEP     1   SUBSTEP   105  COMPLETED.  FREQUENCY=   114000.    
+ *** LOAD STEP     1   SUBSTEP   106  COMPLETED.  FREQUENCY=   114133.    
+ *** LOAD STEP     1   SUBSTEP   107  COMPLETED.  FREQUENCY=   114267.    
+ *** LOAD STEP     1   SUBSTEP   108  COMPLETED.  FREQUENCY=   114400.    
+ *** LOAD STEP     1   SUBSTEP   109  COMPLETED.  FREQUENCY=   114533.    
+ *** LOAD STEP     1   SUBSTEP   110  COMPLETED.  FREQUENCY=   114667.    
+ *** LOAD STEP     1   SUBSTEP   111  COMPLETED.  FREQUENCY=   114800.    
+ *** LOAD STEP     1   SUBSTEP   112  COMPLETED.  FREQUENCY=   114933.    
+ *** LOAD STEP     1   SUBSTEP   113  COMPLETED.  FREQUENCY=   115067.    
+ *** LOAD STEP     1   SUBSTEP   114  COMPLETED.  FREQUENCY=   115200.    
+ *** LOAD STEP     1   SUBSTEP   115  COMPLETED.  FREQUENCY=   115333.    
+ *** LOAD STEP     1   SUBSTEP   116  COMPLETED.  FREQUENCY=   115467.    
+ *** LOAD STEP     1   SUBSTEP   117  COMPLETED.  FREQUENCY=   115600.    
+ *** LOAD STEP     1   SUBSTEP   118  COMPLETED.  FREQUENCY=   115733.    
+ *** LOAD STEP     1   SUBSTEP   119  COMPLETED.  FREQUENCY=   115867.    
+ *** LOAD STEP     1   SUBSTEP   120  COMPLETED.  FREQUENCY=   116000.    
+ *** LOAD STEP     1   SUBSTEP   121  COMPLETED.  FREQUENCY=   116133.    
+ *** LOAD STEP     1   SUBSTEP   122  COMPLETED.  FREQUENCY=   116267.    
+ *** LOAD STEP     1   SUBSTEP   123  COMPLETED.  FREQUENCY=   116400.    
+ *** LOAD STEP     1   SUBSTEP   124  COMPLETED.  FREQUENCY=   116533.    
+ *** LOAD STEP     1   SUBSTEP   125  COMPLETED.  FREQUENCY=   116667.    
+ *** LOAD STEP     1   SUBSTEP   126  COMPLETED.  FREQUENCY=   116800.    
+ *** LOAD STEP     1   SUBSTEP   127  COMPLETED.  FREQUENCY=   116933.    
+ *** LOAD STEP     1   SUBSTEP   128  COMPLETED.  FREQUENCY=   117067.    
+ *** LOAD STEP     1   SUBSTEP   129  COMPLETED.  FREQUENCY=   117200.    
+ *** LOAD STEP     1   SUBSTEP   130  COMPLETED.  FREQUENCY=   117333.    
+ *** LOAD STEP     1   SUBSTEP   131  COMPLETED.  FREQUENCY=   117467.    
+ *** LOAD STEP     1   SUBSTEP   132  COMPLETED.  FREQUENCY=   117600.    
+ *** LOAD STEP     1   SUBSTEP   133  COMPLETED.  FREQUENCY=   117733.    
+ *** LOAD STEP     1   SUBSTEP   134  COMPLETED.  FREQUENCY=   117867.    
+ *** LOAD STEP     1   SUBSTEP   135  COMPLETED.  FREQUENCY=   118000.    
+ *** LOAD STEP     1   SUBSTEP   136  COMPLETED.  FREQUENCY=   118133.    
+ *** LOAD STEP     1   SUBSTEP   137  COMPLETED.  FREQUENCY=   118267.    
+ *** LOAD STEP     1   SUBSTEP   138  COMPLETED.  FREQUENCY=   118400.    
+ *** LOAD STEP     1   SUBSTEP   139  COMPLETED.  FREQUENCY=   118533.    
+ *** LOAD STEP     1   SUBSTEP   140  COMPLETED.  FREQUENCY=   118667.    
+ *** LOAD STEP     1   SUBSTEP   141  COMPLETED.  FREQUENCY=   118800.    
+ *** LOAD STEP     1   SUBSTEP   142  COMPLETED.  FREQUENCY=   118933.    
+ *** LOAD STEP     1   SUBSTEP   143  COMPLETED.  FREQUENCY=   119067.    
+ *** LOAD STEP     1   SUBSTEP   144  COMPLETED.  FREQUENCY=   119200.    
+ *** LOAD STEP     1   SUBSTEP   145  COMPLETED.  FREQUENCY=   119333.    
+ *** LOAD STEP     1   SUBSTEP   146  COMPLETED.  FREQUENCY=   119467.    
+ *** LOAD STEP     1   SUBSTEP   147  COMPLETED.  FREQUENCY=   119600.    
+ *** LOAD STEP     1   SUBSTEP   148  COMPLETED.  FREQUENCY=   119733.    
+ *** LOAD STEP     1   SUBSTEP   149  COMPLETED.  FREQUENCY=   119867.    
+ *** LOAD STEP     1   SUBSTEP   150  COMPLETED.  FREQUENCY=   120000.    
+ *** LOAD STEP     1   SUBSTEP   151  COMPLETED.  FREQUENCY=   120133.    
+ *** LOAD STEP     1   SUBSTEP   152  COMPLETED.  FREQUENCY=   120267.    
+ *** LOAD STEP     1   SUBSTEP   153  COMPLETED.  FREQUENCY=   120400.    
+ *** LOAD STEP     1   SUBSTEP   154  COMPLETED.  FREQUENCY=   120533.    
+ *** LOAD STEP     1   SUBSTEP   155  COMPLETED.  FREQUENCY=   120667.    
+ *** LOAD STEP     1   SUBSTEP   156  COMPLETED.  FREQUENCY=   120800.    
+ *** LOAD STEP     1   SUBSTEP   157  COMPLETED.  FREQUENCY=   120933.    
+ *** LOAD STEP     1   SUBSTEP   158  COMPLETED.  FREQUENCY=   121067.    
+ *** LOAD STEP     1   SUBSTEP   159  COMPLETED.  FREQUENCY=   121200.    
+ *** LOAD STEP     1   SUBSTEP   160  COMPLETED.  FREQUENCY=   121333.    
+ *** LOAD STEP     1   SUBSTEP   161  COMPLETED.  FREQUENCY=   121467.    
+ *** LOAD STEP     1   SUBSTEP   162  COMPLETED.  FREQUENCY=   121600.    
+ *** LOAD STEP     1   SUBSTEP   163  COMPLETED.  FREQUENCY=   121733.    
+ *** LOAD STEP     1   SUBSTEP   164  COMPLETED.  FREQUENCY=   121867.    
+ *** LOAD STEP     1   SUBSTEP   165  COMPLETED.  FREQUENCY=   122000.    
+ *** LOAD STEP     1   SUBSTEP   166  COMPLETED.  FREQUENCY=   122133.    
+ *** LOAD STEP     1   SUBSTEP   167  COMPLETED.  FREQUENCY=   122267.    
+ *** LOAD STEP     1   SUBSTEP   168  COMPLETED.  FREQUENCY=   122400.    
+ *** LOAD STEP     1   SUBSTEP   169  COMPLETED.  FREQUENCY=   122533.    
+ *** LOAD STEP     1   SUBSTEP   170  COMPLETED.  FREQUENCY=   122667.    
+ *** LOAD STEP     1   SUBSTEP   171  COMPLETED.  FREQUENCY=   122800.    
+ *** LOAD STEP     1   SUBSTEP   172  COMPLETED.  FREQUENCY=   122933.    
+ *** LOAD STEP     1   SUBSTEP   173  COMPLETED.  FREQUENCY=   123067.    
+ *** LOAD STEP     1   SUBSTEP   174  COMPLETED.  FREQUENCY=   123200.    
+ *** LOAD STEP     1   SUBSTEP   175  COMPLETED.  FREQUENCY=   123333.    
+ *** LOAD STEP     1   SUBSTEP   176  COMPLETED.  FREQUENCY=   123467.    
+ *** LOAD STEP     1   SUBSTEP   177  COMPLETED.  FREQUENCY=   123600.    
+ *** LOAD STEP     1   SUBSTEP   178  COMPLETED.  FREQUENCY=   123733.    
+ *** LOAD STEP     1   SUBSTEP   179  COMPLETED.  FREQUENCY=   123867.    
+ *** LOAD STEP     1   SUBSTEP   180  COMPLETED.  FREQUENCY=   124000.    
+ *** LOAD STEP     1   SUBSTEP   181  COMPLETED.  FREQUENCY=   124133.    
+ *** LOAD STEP     1   SUBSTEP   182  COMPLETED.  FREQUENCY=   124267.    
+ *** LOAD STEP     1   SUBSTEP   183  COMPLETED.  FREQUENCY=   124400.    
+ *** LOAD STEP     1   SUBSTEP   184  COMPLETED.  FREQUENCY=   124533.    
+ *** LOAD STEP     1   SUBSTEP   185  COMPLETED.  FREQUENCY=   124667.    
+ *** LOAD STEP     1   SUBSTEP   186  COMPLETED.  FREQUENCY=   124800.    
+ *** LOAD STEP     1   SUBSTEP   187  COMPLETED.  FREQUENCY=   124933.    
+ *** LOAD STEP     1   SUBSTEP   188  COMPLETED.  FREQUENCY=   125067.    
+ *** LOAD STEP     1   SUBSTEP   189  COMPLETED.  FREQUENCY=   125200.    
+ *** LOAD STEP     1   SUBSTEP   190  COMPLETED.  FREQUENCY=   125333.    
+ *** LOAD STEP     1   SUBSTEP   191  COMPLETED.  FREQUENCY=   125467.    
+ *** LOAD STEP     1   SUBSTEP   192  COMPLETED.  FREQUENCY=   125600.    
+ *** LOAD STEP     1   SUBSTEP   193  COMPLETED.  FREQUENCY=   125733.    
+ *** LOAD STEP     1   SUBSTEP   194  COMPLETED.  FREQUENCY=   125867.    
+ *** LOAD STEP     1   SUBSTEP   195  COMPLETED.  FREQUENCY=   126000.    
+ *** LOAD STEP     1   SUBSTEP   196  COMPLETED.  FREQUENCY=   126133.    
+ *** LOAD STEP     1   SUBSTEP   197  COMPLETED.  FREQUENCY=   126267.    
+ *** LOAD STEP     1   SUBSTEP   198  COMPLETED.  FREQUENCY=   126400.    
+ *** LOAD STEP     1   SUBSTEP   199  COMPLETED.  FREQUENCY=   126533.    
+ *** LOAD STEP     1   SUBSTEP   200  COMPLETED.  FREQUENCY=   126667.    
+ *** LOAD STEP     1   SUBSTEP   201  COMPLETED.  FREQUENCY=   126800.    
+ *** LOAD STEP     1   SUBSTEP   202  COMPLETED.  FREQUENCY=   126933.    
+ *** LOAD STEP     1   SUBSTEP   203  COMPLETED.  FREQUENCY=   127067.    
+ *** LOAD STEP     1   SUBSTEP   204  COMPLETED.  FREQUENCY=   127200.    
+ *** LOAD STEP     1   SUBSTEP   205  COMPLETED.  FREQUENCY=   127333.    
+ *** LOAD STEP     1   SUBSTEP   206  COMPLETED.  FREQUENCY=   127467.    
+ *** LOAD STEP     1   SUBSTEP   207  COMPLETED.  FREQUENCY=   127600.    
+ *** LOAD STEP     1   SUBSTEP   208  COMPLETED.  FREQUENCY=   127733.    
+ *** LOAD STEP     1   SUBSTEP   209  COMPLETED.  FREQUENCY=   127867.    
+ *** LOAD STEP     1   SUBSTEP   210  COMPLETED.  FREQUENCY=   128000.    
+ *** LOAD STEP     1   SUBSTEP   211  COMPLETED.  FREQUENCY=   128133.    
+ *** LOAD STEP     1   SUBSTEP   212  COMPLETED.  FREQUENCY=   128267.    
+ *** LOAD STEP     1   SUBSTEP   213  COMPLETED.  FREQUENCY=   128400.    
+ *** LOAD STEP     1   SUBSTEP   214  COMPLETED.  FREQUENCY=   128533.    
+ *** LOAD STEP     1   SUBSTEP   215  COMPLETED.  FREQUENCY=   128667.    
+ *** LOAD STEP     1   SUBSTEP   216  COMPLETED.  FREQUENCY=   128800.    
+ *** LOAD STEP     1   SUBSTEP   217  COMPLETED.  FREQUENCY=   128933.    
+ *** LOAD STEP     1   SUBSTEP   218  COMPLETED.  FREQUENCY=   129067.    
+ *** LOAD STEP     1   SUBSTEP   219  COMPLETED.  FREQUENCY=   129200.    
+ *** LOAD STEP     1   SUBSTEP   220  COMPLETED.  FREQUENCY=   129333.    
+ *** LOAD STEP     1   SUBSTEP   221  COMPLETED.  FREQUENCY=   129467.    
+ *** LOAD STEP     1   SUBSTEP   222  COMPLETED.  FREQUENCY=   129600.    
+ *** LOAD STEP     1   SUBSTEP   223  COMPLETED.  FREQUENCY=   129733.    
+ *** LOAD STEP     1   SUBSTEP   224  COMPLETED.  FREQUENCY=   129867.    
+ *** LOAD STEP     1   SUBSTEP   225  COMPLETED.  FREQUENCY=   130000.    
+ *** LOAD STEP     1   SUBSTEP   226  COMPLETED.  FREQUENCY=   130133.    
+ *** LOAD STEP     1   SUBSTEP   227  COMPLETED.  FREQUENCY=   130267.    
+ *** LOAD STEP     1   SUBSTEP   228  COMPLETED.  FREQUENCY=   130400.    
+ *** LOAD STEP     1   SUBSTEP   229  COMPLETED.  FREQUENCY=   130533.    
+ *** LOAD STEP     1   SUBSTEP   230  COMPLETED.  FREQUENCY=   130667.    
+ *** LOAD STEP     1   SUBSTEP   231  COMPLETED.  FREQUENCY=   130800.    
+ *** LOAD STEP     1   SUBSTEP   232  COMPLETED.  FREQUENCY=   130933.    
+ *** LOAD STEP     1   SUBSTEP   233  COMPLETED.  FREQUENCY=   131067.    
+ *** LOAD STEP     1   SUBSTEP   234  COMPLETED.  FREQUENCY=   131200.    
+ *** LOAD STEP     1   SUBSTEP   235  COMPLETED.  FREQUENCY=   131333.    
+ *** LOAD STEP     1   SUBSTEP   236  COMPLETED.  FREQUENCY=   131467.    
+ *** LOAD STEP     1   SUBSTEP   237  COMPLETED.  FREQUENCY=   131600.    
+ *** LOAD STEP     1   SUBSTEP   238  COMPLETED.  FREQUENCY=   131733.    
+ *** LOAD STEP     1   SUBSTEP   239  COMPLETED.  FREQUENCY=   131867.    
+ *** LOAD STEP     1   SUBSTEP   240  COMPLETED.  FREQUENCY=   132000.    
+ *** LOAD STEP     1   SUBSTEP   241  COMPLETED.  FREQUENCY=   132133.    
+ *** LOAD STEP     1   SUBSTEP   242  COMPLETED.  FREQUENCY=   132267.    
+ *** LOAD STEP     1   SUBSTEP   243  COMPLETED.  FREQUENCY=   132400.    
+ *** LOAD STEP     1   SUBSTEP   244  COMPLETED.  FREQUENCY=   132533.    
+ *** LOAD STEP     1   SUBSTEP   245  COMPLETED.  FREQUENCY=   132667.    
+ *** LOAD STEP     1   SUBSTEP   246  COMPLETED.  FREQUENCY=   132800.    
+ *** LOAD STEP     1   SUBSTEP   247  COMPLETED.  FREQUENCY=   132933.    
+ *** LOAD STEP     1   SUBSTEP   248  COMPLETED.  FREQUENCY=   133067.    
+ *** LOAD STEP     1   SUBSTEP   249  COMPLETED.  FREQUENCY=   133200.    
+ *** LOAD STEP     1   SUBSTEP   250  COMPLETED.  FREQUENCY=   133333.    
+ *** LOAD STEP     1   SUBSTEP   251  COMPLETED.  FREQUENCY=   133467.    
+ *** LOAD STEP     1   SUBSTEP   252  COMPLETED.  FREQUENCY=   133600.    
+ *** LOAD STEP     1   SUBSTEP   253  COMPLETED.  FREQUENCY=   133733.    
+ *** LOAD STEP     1   SUBSTEP   254  COMPLETED.  FREQUENCY=   133867.    
+ *** LOAD STEP     1   SUBSTEP   255  COMPLETED.  FREQUENCY=   134000.    
+ *** LOAD STEP     1   SUBSTEP   256  COMPLETED.  FREQUENCY=   134133.    
+ *** LOAD STEP     1   SUBSTEP   257  COMPLETED.  FREQUENCY=   134267.    
+ *** LOAD STEP     1   SUBSTEP   258  COMPLETED.  FREQUENCY=   134400.    
+ *** LOAD STEP     1   SUBSTEP   259  COMPLETED.  FREQUENCY=   134533.    
+ *** LOAD STEP     1   SUBSTEP   260  COMPLETED.  FREQUENCY=   134667.    
+ *** LOAD STEP     1   SUBSTEP   261  COMPLETED.  FREQUENCY=   134800.    
+ *** LOAD STEP     1   SUBSTEP   262  COMPLETED.  FREQUENCY=   134933.    
+ *** LOAD STEP     1   SUBSTEP   263  COMPLETED.  FREQUENCY=   135067.    
+ *** LOAD STEP     1   SUBSTEP   264  COMPLETED.  FREQUENCY=   135200.    
+ *** LOAD STEP     1   SUBSTEP   265  COMPLETED.  FREQUENCY=   135333.    
+ *** LOAD STEP     1   SUBSTEP   266  COMPLETED.  FREQUENCY=   135467.    
+ *** LOAD STEP     1   SUBSTEP   267  COMPLETED.  FREQUENCY=   135600.    
+ *** LOAD STEP     1   SUBSTEP   268  COMPLETED.  FREQUENCY=   135733.    
+ *** LOAD STEP     1   SUBSTEP   269  COMPLETED.  FREQUENCY=   135867.    
+ *** LOAD STEP     1   SUBSTEP   270  COMPLETED.  FREQUENCY=   136000.    
+ *** LOAD STEP     1   SUBSTEP   271  COMPLETED.  FREQUENCY=   136133.    
+ *** LOAD STEP     1   SUBSTEP   272  COMPLETED.  FREQUENCY=   136267.    
+ *** LOAD STEP     1   SUBSTEP   273  COMPLETED.  FREQUENCY=   136400.    
+ *** LOAD STEP     1   SUBSTEP   274  COMPLETED.  FREQUENCY=   136533.    
+ *** LOAD STEP     1   SUBSTEP   275  COMPLETED.  FREQUENCY=   136667.    
+ *** LOAD STEP     1   SUBSTEP   276  COMPLETED.  FREQUENCY=   136800.    
+ *** LOAD STEP     1   SUBSTEP   277  COMPLETED.  FREQUENCY=   136933.    
+ *** LOAD STEP     1   SUBSTEP   278  COMPLETED.  FREQUENCY=   137067.    
+ *** LOAD STEP     1   SUBSTEP   279  COMPLETED.  FREQUENCY=   137200.    
+ *** LOAD STEP     1   SUBSTEP   280  COMPLETED.  FREQUENCY=   137333.    
+ *** LOAD STEP     1   SUBSTEP   281  COMPLETED.  FREQUENCY=   137467.    
+ *** LOAD STEP     1   SUBSTEP   282  COMPLETED.  FREQUENCY=   137600.    
+ *** LOAD STEP     1   SUBSTEP   283  COMPLETED.  FREQUENCY=   137733.    
+ *** LOAD STEP     1   SUBSTEP   284  COMPLETED.  FREQUENCY=   137867.    
+ *** LOAD STEP     1   SUBSTEP   285  COMPLETED.  FREQUENCY=   138000.    
+ *** LOAD STEP     1   SUBSTEP   286  COMPLETED.  FREQUENCY=   138133.    
+ *** LOAD STEP     1   SUBSTEP   287  COMPLETED.  FREQUENCY=   138267.    
+ *** LOAD STEP     1   SUBSTEP   288  COMPLETED.  FREQUENCY=   138400.    
+ *** LOAD STEP     1   SUBSTEP   289  COMPLETED.  FREQUENCY=   138533.    
+ *** LOAD STEP     1   SUBSTEP   290  COMPLETED.  FREQUENCY=   138667.    
+ *** LOAD STEP     1   SUBSTEP   291  COMPLETED.  FREQUENCY=   138800.    
+ *** LOAD STEP     1   SUBSTEP   292  COMPLETED.  FREQUENCY=   138933.    
+ *** LOAD STEP     1   SUBSTEP   293  COMPLETED.  FREQUENCY=   139067.    
+ *** LOAD STEP     1   SUBSTEP   294  COMPLETED.  FREQUENCY=   139200.    
+ *** LOAD STEP     1   SUBSTEP   295  COMPLETED.  FREQUENCY=   139333.    
+ *** LOAD STEP     1   SUBSTEP   296  COMPLETED.  FREQUENCY=   139467.    
+ *** LOAD STEP     1   SUBSTEP   297  COMPLETED.  FREQUENCY=   139600.    
+ *** LOAD STEP     1   SUBSTEP   298  COMPLETED.  FREQUENCY=   139733.    
+ *** LOAD STEP     1   SUBSTEP   299  COMPLETED.  FREQUENCY=   139867.    
+ *** LOAD STEP     1   SUBSTEP   300  COMPLETED.  FREQUENCY=   140000.    
+
+
+ *** MAPDL BINARY FILE STATISTICS
+  BUFFER SIZE USED= 16384
+        0.312 MB WRITTEN ON ELEMENT SAVED DATA FILE: file0.esav
+        0.625 MB WRITTEN ON ASSEMBLED MATRIX FILE: file0.full
+       21.750 MB WRITTEN ON RESULTS FILE: file0.rst
+ *************** Write FE CONNECTORS *********
+
+ WRITE OUT CONSTRAINT EQUATIONS TO FILE= file.ce                                                                                                                                                                                                                                                             
+
+ ALL CURRENT MAPDL DATA WRITTEN TO FILE NAME= file.db
+  FOR POSSIBLE RESUME FROM THIS POINT
+
+ FINISH SOLUTION PROCESSING
+
+
+ ***** ROUTINE COMPLETED *****  CP =        12.656
+
+
+
+ PRINTOUT RESUMED BY /GOP
+
+ *GET  _WALLASOL  FROM  ACTI  ITEM=TIME WALL  VALUE=  16.9769444    
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2023 R1          23.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   16:58:37  MAY 15, 2023 CP=     12.672
+
+ test--Harmonic Response (L5)                                                  
+
+
+
+          ***** MAPDL RESULTS INTERPRETATION (POST1) *****
+
+ *** NOTE ***                            CP =      12.672   TIME= 16:58:37
+ Reading results into the database (SET command) will update the current 
+ displacement and force boundary conditions in the database with the     
+ values from the results file for that load set.  Note that any          
+ subsequent solutions will use these values unless action is taken to    
+ either SAVE the current values or not overwrite them (/EXIT,NOSAVE).    
+
+ Set Encoding of XML File to:ISO-8859-1
+
+ Set Output of XML File to:
+     PARM,     ,     ,     ,     ,     ,     ,     ,     ,     ,     ,     ,
+         ,     ,     ,     ,     ,     ,     ,
+
+ DATABASE WRITTEN ON FILE  parm.xml                                                                                                                                                                                                                                                            
+
+ EXIT THE MAPDL POST1 DATABASE PROCESSOR
+
+
+ ***** ROUTINE COMPLETED *****  CP =        12.672
+
+
+
+ PRINTOUT RESUMED BY /GOP
+
+ *GET  _WALLDONE  FROM  ACTI  ITEM=TIME WALL  VALUE=  16.9769444    
+
+ PARAMETER _PREPTIME =     0.000000000    
+
+ PARAMETER _SOLVTIME =     12.00000000    
+
+ PARAMETER _POSTTIME =     0.000000000    
+
+ PARAMETER _TOTALTIM =     12.00000000    
+
+ *GET  _DLBRATIO  FROM  ACTI  ITEM=SOLU DLBR  VALUE=  0.00000000    
+
+ *GET  _COMBTIME  FROM  ACTI  ITEM=SOLU COMB  VALUE= 0.975997000E-01
+
+ *GET  _SSMODE   FROM  ACTI  ITEM=SOLU SSMM  VALUE=  2.00000000    
+
+ *GET  _NDOFS    FROM  ACTI  ITEM=SOLU NDOF  VALUE=  1945.00000    
+
+ /FCLEAN COMMAND REMOVING ALL LOCAL FILES
+ --- Total number of nodes = 934
+ --- Total number of elements = 350
+ --- Element load balance ratio = 0
+ --- Time to combine distributed files = 9.75997E-02
+ --- Sparse memory mode = 2
+ --- Number of DOF = 1945
+
+ EXIT MAPDL WITHOUT SAVING DATABASE
+
+
+ NUMBER OF WARNING MESSAGES ENCOUNTERED=          9
+ NUMBER OF ERROR   MESSAGES ENCOUNTERED=          0
+
++--------------------- M A P D L   S T A T I S T I C S ------------------------+
+
+Release: 2023 R1            Build: 23.1       Update: UP20221128   Platform: WINDOWS x64 
+Date Run: 05/15/2023   Time: 16:58     Process ID: 6616
+Operating System: Windows 10  (Build: 19044)
+
+Processor Model: Intel(R) Core(TM) i7-7500U CPU @ 2.70GHz
+
+Compiler: Intel(R) Fortran Compiler Version 19.0.5  (Build: 20190815)
+          Intel(R) C/C++ Compiler Version 19.0.5  (Build: 20190815)
+          Intel(R) Math Kernel Library Version 2020.0.0 Product Build 20191125
+          BLAS Library supplied by Intel(R) MKL
+
+Number of machines requested            :    1
+Total number of cores available         :    4
+Number of physical cores available      :    2
+Number of processes requested           :    2
+Number of threads per process requested :    1
+Total number of cores requested         :    2 (Distributed Memory Parallel)               
+MPI Type: INTELMPI
+MPI Version: Intel(R) MPI Library 2021.5 for Windows* OS
+
+
+GPU Acceleration: Not Requested
+
+Job Name: file0
+Input File: dummy.dat
+
+  Core                Machine Name   Working Directory
+ -----------------------------------------------------
+     0             DESKTOP-7T7IURO   C:\Users\simon\Desktop\Test Ansys - Copia\_ProjectScratch\Scr6C67
+     1             DESKTOP-7T7IURO   C:\Users\simon\Desktop\Test Ansys - Copia\_ProjectScratch\Scr6C67
+ 
+Latency time from master to core     1 =   14.346 microseconds
+ 
+Communication speed from master to core     1 =  1964.53 MB/sec
+
+Total CPU time for main thread                    :       12.8 seconds
+Total CPU time summed for all threads             :       13.0 seconds
+
+Elapsed time spent obtaining a license            :        0.4 seconds
+Elapsed time spent pre-processing model (/PREP7)  :        0.0 seconds
+Elapsed time spent solution - preprocessing       :        0.1 seconds
+Elapsed time spent computing solution             :       12.1 seconds
+Elapsed time spent solution - postprocessing      :        0.1 seconds
+Elapsed time spent post-processing model (/POST1) :        0.0 seconds
+ 
+Equation solver used                              :            Sparse (symmetric)
+
+Sum of memory used on all processes               :       88.0 MB
+Sum of memory allocated on all processes          :     3136.0 MB
+Physical memory available                         :          8 GB
+
+Total amount of I/O written to disk               :        0.1 GB
+Total amount of I/O read from disk                :        0.2 GB
+
++------------------ E N D   M A P D L   S T A T I S T I C S -------------------+
+
+
+ *-----------------------------------------------------------------------------*
+ |                                                                             |
+ |                               RUN COMPLETED                                 |
+ |                                                                             |
+ |-----------------------------------------------------------------------------|
+ |                                                                             |
+ |  Ansys MAPDL 2023 R1         Build 23.1         UP20221128    WINDOWS x64   |
+ |                                                                             |
+ |-----------------------------------------------------------------------------|
+ |                                                                             |
+ |  Database Requested(-db)     1024 MB     Scratch Memory Requested   1024 MB |
+ |  Max Database Used(Master)      1 MB     Max Scratch Used(Master)     43 MB |
+ |  Max Database Used(Workers)     1 MB     Max Scratch Used(Workers)    43 MB |
+ |  Sum Database Used(All)         2 MB     Sum Scratch Used(All)        86 MB |
+ |                                                                             |
+ |-----------------------------------------------------------------------------|
+ |                                                                             |
+ |        CP Time      (sec) =         12.969       Time  =  16:58:37          |
+ |        Elapsed Time (sec) =         14.000       Date  =  05/15/2023        |
+ |                                                                             |
+ *-----------------------------------------------------------------------------*

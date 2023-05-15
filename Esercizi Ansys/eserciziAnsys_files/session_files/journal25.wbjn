@@ -1,0 +1,80 @@
+# encoding: utf-8
+# 2023 R1
+SetScriptVersion(Version="23.1.153")
+system1 = GetSystem(Name="SYS 2")
+model1 = system1.GetContainer(ComponentName="Model")
+model1.Edit()
+Save(Overwrite=True)
+model1.Exit()
+system2 = GetSystem(Name="Geom")
+geometry1 = system2.GetContainer(ComponentName="Geometry")
+geometry1.Edit()
+geometry1.Exit()
+geometry2 = system1.GetContainer(ComponentName="Geometry")
+geometry2.Edit()
+geometry2.Exit()
+model1.Edit()
+model1.Exit()
+template1 = GetTemplate(
+    TemplateName="Modal",
+    Solver="ANSYS")
+system3 = template1.CreateSystem()
+geometryComponent1 = system3.GetComponent(Name="Geometry")
+system4 = GetSystem(Name="Geom 2")
+geometryComponent2 = system4.GetComponent(Name="Geometry")
+geometryComponent1.ReplaceWithShare(
+    TargetSystem=system3,
+    ComponentToShare=geometryComponent2,
+    SourceSystem=system4)
+engineeringDataComponent1 = system3.GetComponent(Name="Engineering Data")
+system5 = GetSystem(Name="ENGD")
+engineeringDataComponent2 = system5.GetComponent(Name="Engineering Data")
+engineeringDataComponent1.ReplaceWithShare(
+    TargetSystem=system3,
+    ComponentToShare=engineeringDataComponent2,
+    SourceSystem=system5)
+modelComponent1 = system3.GetComponent(Name="Model")
+modelComponent1.Refresh()
+model2 = system3.GetContainer(ComponentName="Model")
+model2.Edit()
+model2.Edit()
+model2.Edit()
+model2.Edit()
+system5.Copy(KeepConnections=True)
+system6 = system4.Duplicate(
+    ComponentsToShare=[],
+    RelativeTo=system4)
+system6.DisplayText = "Geometria finale"
+system7 = GetSystem(Name="ENGD 1")
+system7.DisplayText = "Dati Finali"
+geometry3 = system6.GetContainer(ComponentName="Geometry")
+geometry3.Edit()
+geometry3.Exit()
+system8 = template1.CreateSystem()
+system8.DisplayText = "Langevin"
+engineeringDataComponent3 = system8.GetComponent(Name="Engineering Data")
+engineeringDataComponent4 = system7.GetComponent(Name="Engineering Data")
+engineeringDataComponent3.ReplaceWithShare(
+    TargetSystem=system8,
+    ComponentToShare=engineeringDataComponent4,
+    SourceSystem=system7)
+geometryComponent3 = system8.GetComponent(Name="Geometry")
+geometryComponent4 = system6.GetComponent(Name="Geometry")
+geometryComponent3.ReplaceWithShare(
+    TargetSystem=system8,
+    ComponentToShare=geometryComponent4,
+    SourceSystem=system6)
+modelComponent2 = system8.GetComponent(Name="Model")
+modelComponent2.Refresh()
+model3 = system8.GetContainer(ComponentName="Model")
+model3.Edit()
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+model3.Exit()
+model3.Edit()
+model3.Edit()
+model3.Exit()
+Save(Overwrite=True)

@@ -1,0 +1,54 @@
+# encoding: utf-8
+# 2023 R1
+SetScriptVersion(Version="23.1.153")
+system1 = GetSystem(Name="SYS 2")
+system1.Delete()
+system2 = GetSystem(Name="Geom 1")
+system2.Delete()
+template1 = GetTemplate(TemplateName="Geometry")
+system3 = template1.CreateSystem()
+geometry1 = system3.GetContainer(ComponentName="Geometry")
+geometry1.Edit()
+Save(Overwrite=True)
+geometry1.Exit()
+template2 = GetTemplate(
+    TemplateName="Modal",
+    Solver="ANSYS")
+system4 = template2.CreateSystem()
+geometryComponent1 = system4.GetComponent(Name="Geometry")
+geometryComponent2 = system3.GetComponent(Name="Geometry")
+geometryComponent1.ReplaceWithShare(
+    TargetSystem=system4,
+    ComponentToShare=geometryComponent2,
+    SourceSystem=system3)
+engineeringDataComponent1 = system4.GetComponent(Name="Engineering Data")
+system5 = GetSystem(Name="ENGD")
+engineeringDataComponent2 = system5.GetComponent(Name="Engineering Data")
+engineeringDataComponent1.ReplaceWithShare(
+    TargetSystem=system4,
+    ComponentToShare=engineeringDataComponent2,
+    SourceSystem=system5)
+modelComponent1 = system4.GetComponent(Name="Model")
+modelComponent1.Refresh()
+model1 = system4.GetContainer(ComponentName="Model")
+model1.Edit()
+model1.Exit()
+geometry1.Edit()
+geometry1.Exit()
+system3.Delete()
+system6 = template1.CreateSystem()
+geometry2 = system6.GetContainer(ComponentName="Geometry")
+geometry2.Edit()
+Save(Overwrite=True)
+geometry2.Exit()
+geometryComponent3 = system6.GetComponent(Name="Geometry")
+geometryComponent1.ReplaceWithShare(
+    TargetSystem=system4,
+    ComponentToShare=geometryComponent3,
+    SourceSystem=system6)
+modelComponent1.Refresh()
+model1.Edit()
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+Open(FilePath="C:/Users/simon/Desktop/esercitazioni Lotito/Ansys/EsercizioAnsys/EsercizioAnsys.wbpj")

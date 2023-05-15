@@ -1,0 +1,29 @@
+# encoding: utf-8
+# 2023 R1
+SetScriptVersion(Version="23.1.153")
+template1 = GetTemplate(TemplateName="EngData")
+system1 = template1.CreateSystem()
+engineeringData1 = system1.GetContainer(ComponentName="Engineering Data")
+matl1 = engineeringData1.CreateMaterial(Name="PZ 21")
+matl1.SetSuppression(Suppressed=True)
+matl1.SetSuppression(Suppressed=False)
+Save(Overwrite=True)
+favorites1 = EngData.LoadFavoriteItems()
+EngData.EnableFilter(Enable=False)
+matl1.SetColor(
+    Red=58,
+    Green=80,
+    Blue=244)
+matl1.SetColor(
+    Red=58,
+    Green=80,
+    Blue=244)
+library1 = EngData.OpenLibrary(
+    Name="Piezoelectric Materials",
+    Source="Piezoelectric_Materials.xml")
+matl2 = engineeringData1.ImportMaterial(
+    Name="PZT-26",
+    Source="Piezoelectric_Materials.xml")
+EngData.EnableFilter()
+Save(Overwrite=True)
+Open(FilePath="C:/Users/simon/Desktop/esercitazioni Lotito/Ansys/EsercizioAnsys/EsercizioAnsys.wbpj")
