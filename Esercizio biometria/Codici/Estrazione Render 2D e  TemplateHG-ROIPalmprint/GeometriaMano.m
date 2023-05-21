@@ -1,4 +1,4 @@
-j%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                       Geometria Mano 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -202,45 +202,45 @@ LunghezzaDitoMignolo = round(sqrt((XmassimoMignolo-XMedioMignolo).^2+(YmassimoMi
 % %    Plot dei minimi sulle distanza smooth 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 
-figure,plot(distanzeSmooth)
- hold on 
- plot(SecondoMinimoMignolo,distanzeSmooth(SecondoMinimoMignolo,1),'og')
- plot(iMin(4),distanzeSmooth(iMin(4),1),'og')
- plot(indiciLL(5),distanzeSmooth(indiciLL(5),1),'or')
- plot(iMin(2),distanzeSmooth(iMin(2),1),'og')
- plot(indiciLL(4),distanzeSmooth(indiciLL(4),1),'or')
- plot(iMin(3),distanzeSmooth(iMin(3),1),'og')
- plot(indiciLL(3),distanzeSmooth(indiciLL(3),1),'or')
- plot(PrimoMinimoIndice,distanzeSmooth(PrimoMinimoIndice,1),'og')
- plot(indiciLL(2),distanzeSmooth(indiciLL(2),1),'or')
- plot(iMin(1),distanzeSmooth(iMin(1),1),'og')
- plot(PrimoMinimoPollice,distanzeSmooth(PrimoMinimoPollice,1),'og')
- plot(indiciLL(1),distanzeSmooth(indiciLL(1),1),'or')
- xlabel('Indice delle distanze')
- ylabel('Distanze')
+% figure,plot(distanzeSmooth)
+%  hold on 
+%  plot(SecondoMinimoMignolo,distanzeSmooth(SecondoMinimoMignolo,1),'og')
+%  plot(iMin(4),distanzeSmooth(iMin(4),1),'og')
+%  plot(indiciLL(5),distanzeSmooth(indiciLL(5),1),'or')
+%  plot(iMin(2),distanzeSmooth(iMin(2),1),'og')
+%  plot(indiciLL(4),distanzeSmooth(indiciLL(4),1),'or')
+%  plot(iMin(3),distanzeSmooth(iMin(3),1),'og')
+%  plot(indiciLL(3),distanzeSmooth(indiciLL(3),1),'or')
+%  plot(PrimoMinimoIndice,distanzeSmooth(PrimoMinimoIndice,1),'og')
+%  plot(indiciLL(2),distanzeSmooth(indiciLL(2),1),'or')
+%  plot(iMin(1),distanzeSmooth(iMin(1),1),'og')
+%  plot(PrimoMinimoPollice,distanzeSmooth(PrimoMinimoPollice,1),'og')
+%  plot(indiciLL(1),distanzeSmooth(indiciLL(1),1),'or')
+%  xlabel('Indice delle distanze')
+%  ylabel('Distanze')
 % 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % % Rappresentazione grafica di tutti i minimi  e massimi sulla mano
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  
-figure,
-imshow(~edgeBw2)
-hold on
-plot(XsecondoAnulare ,YsecondoAnulare,'.y','MarkerSize', 16)
-plot(XprimoAnulare ,YprimoAnulare,'.y','MarkerSize', 16)
-plot(XmassimoAnulare ,YmassimoAnulare,'.r','MarkerSize', 16)
-plot(XsecondoMignolo ,YsecondoMignolo,'.g','MarkerSize', 16)
-plot(XprimoMignolo ,YprimoMignolo,'.y','MarkerSize', 16)
-plot(XmassimoMignolo ,YmassimoMignolo,'.r','MarkerSize', 16)
-plot(XsecondoMedio ,YsecondoMedio,'.y','MarkerSize', 16)
-plot(XprimoMedio ,YprimoMedio,'.y','MarkerSize', 16)
-plot(XmassimoMedio ,YmassimoMedio,'.r','MarkerSize', 16)
-plot(XsecondoIndice ,YsecondoIndice,'.y','MarkerSize', 16)
-plot(XprimoIndice,YprimoIndice,'.g','MarkerSize', 16)
-plot(XmassimoIndice ,YmassimoIndice,'.r','MarkerSize', 16)
-plot(XsecondoPollice ,YsecondoPollice,'.y','MarkerSize', 16)
-plot(XprimoPollice,YprimoPollice,'.g','MarkerSize', 16)
-plot(XmassimoPollice ,YmassimoPollice,'.r','MarkerSize', 16)
+% figure,
+% imshow(~edgeBw2)
+% hold on
+% plot(XsecondoAnulare ,YsecondoAnulare,'.y','MarkerSize', 16)
+% plot(XprimoAnulare ,YprimoAnulare,'.y','MarkerSize', 16)
+% plot(XmassimoAnulare ,YmassimoAnulare,'.r','MarkerSize', 16)
+% plot(XsecondoMignolo ,YsecondoMignolo,'.g','MarkerSize', 16)
+% plot(XprimoMignolo ,YprimoMignolo,'.y','MarkerSize', 16)
+% plot(XmassimoMignolo ,YmassimoMignolo,'.r','MarkerSize', 16)
+% plot(XsecondoMedio ,YsecondoMedio,'.y','MarkerSize', 16)
+% plot(XprimoMedio ,YprimoMedio,'.y','MarkerSize', 16)
+% plot(XmassimoMedio ,YmassimoMedio,'.r','MarkerSize', 16)
+% plot(XsecondoIndice ,YsecondoIndice,'.y','MarkerSize', 16)
+% plot(XprimoIndice,YprimoIndice,'.g','MarkerSize', 16)
+% plot(XmassimoIndice ,YmassimoIndice,'.r','MarkerSize', 16)
+% plot(XsecondoPollice ,YsecondoPollice,'.y','MarkerSize', 16)
+% plot(XprimoPollice,YprimoPollice,'.g','MarkerSize', 16)
+% plot(XmassimoPollice ,YmassimoPollice,'.r','MarkerSize', 16)
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % % % %   Rappresentazione grafica di tutti massimi e punti medi della mano
@@ -258,9 +258,9 @@ plot(XMedioPollice ,YMedioPollice,'.b','MarkerSize', 16)
 % %%   Rappresentazione grafica lunghezze dita
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 
- figure,
- imshow(aa)
- hold on
+%  figure,
+%  imshow(aa)
+%  hold on
  A1 = [XmassimoMignolo XMedioMignolo];
  A2 = [YmassimoMignolo YMedioMignolo];
  A3 = [XmassimoAnulare XMedioAnulare];
@@ -271,11 +271,11 @@ plot(XMedioPollice ,YMedioPollice,'.b','MarkerSize', 16)
  A8 = [YmassimoIndice YMedioIndice];
  A9 = [XmassimoPollice XMedioPollice];
  A10 = [YmassimoPollice YMedioPollice];
- plot(A1,A2);
- plot(A3,A4);
- plot(A5,A6);
- plot(A7,A8);
- plot(A9,A10);
+%  plot(A1,A2);
+%  plot(A3,A4);
+%  plot(A5,A6);
+%  plot(A7,A8);
+%  plot(A9,A10);
 % 
 % 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -622,77 +622,77 @@ Larghezza23Pollice = round(sqrt((x23Po3-x23Po4).^2+(y23Po3-y23Po4).^2));
 Larghezza33Pollice = round(sqrt((XprimoPollice-XsecondoPollice).^2+(YprimoPollice-YsecondoPollice).^2)); 
 
 
- figure,
- imshow(aa)
- hold on
- plot(x13Mi ,y13Mi,'og')
- plot(x13Mi2 ,y13Mi2,'og')
- plot(x23Mi3 ,y23Mi3,'og')
- plot(x23Mi4 ,y23Mi4,'og')
- plot(XprimoMignolo,YprimoMignolo,'og')
- plot(XsecondoMignolo,YsecondoMignolo,'og')
- plot(x13An ,y13An,'og')
- plot(x13An2 ,y13An2,'og')
- plot(x23An3 ,y23An3,'og')
- plot(x23An4 ,y23An4,'og')
- plot(XprimoAnulare,YprimoAnulare,'og')
- plot(XsecondoAnulare,YsecondoAnulare,'og')
- plot(x13Me ,y13Me,'og')
- plot(x13Me2 ,y13Me2,'og')
- plot(x23Me3 ,y23Me3,'og')
- plot(x23Me4 ,y23Me4,'og')
- plot(XprimoMedio,YprimoMedio,'og')
- plot(XsecondoMedio,YsecondoMedio,'og')
- plot(x13In ,y13In,'og')
- plot(x13In2 ,y13In2,'og')
- plot(x23In3 ,y23In3,'og')
- plot(x23In4 ,y23In4,'og')
- plot(XprimoIndice,YprimoIndice,'og')
- plot(XsecondoIndice,YsecondoIndice,'og')
- plot(x13Po,y13Po,'og')
- plot(x13Po2,y13Po2,'og')
- plot(x23Po3,y23Po3,'og')
- plot(x23Po4,y23Po4,'og')
- plot(XprimoPollice,YprimoPollice,'og')
- plot(XsecondoPollice,YsecondoPollice,'og')
-
- figure,plot(distanzeSmooth)
- hold on 
- plot(indiciLL(5),distanzeSmooth(indiciLL(5),1),'or')
- plot(inlargMi(end),distanzeSmooth(inlargMi(end),1),'og')
- plot(inlargMi2(1),distanzeSmooth(inlargMi2(1),1),'og')
- plot(inlargMi3(end),distanzeSmooth(inlargMi3(end),1),'og')
- plot(inlargMi4(1),distanzeSmooth(inlargMi4(1),1),'og')
- plot(indiciLL(4),distanzeSmooth(indiciLL(4),1),'or')
- plot(inlargAn(end),distanzeSmooth(inlargAn(end),1),'og')
- plot(inlargAn2(1),distanzeSmooth(inlargAn2(1),1),'og')
- plot(inlargAn3(end),distanzeSmooth(inlargAn3(end),1),'og')
- plot(inlargAn4(1),distanzeSmooth(inlargAn4(1),1),'og')
- plot(indiciLL(3),distanzeSmooth(indiciLL(3),1),'or')
- plot(inlargMe(end),distanzeSmooth(inlargMe(end),1),'og')
- plot(inlargMe2(1),distanzeSmooth(inlargMe2(1),1),'og')
- plot(inlargMe3(end),distanzeSmooth(inlargMe3(end),1),'og')
- plot(inlargMe4(1),distanzeSmooth(inlargMe4(1),1),'og')
- plot(indiciLL(2),distanzeSmooth(indiciLL(2),1),'or')
- plot(inlargIn(end),distanzeSmooth(inlargIn(end),1),'og')
- plot(inlargIn2(1),distanzeSmooth(inlargIn2(1),1),'og')
- plot(inlargIn3(end),distanzeSmooth(inlargIn3(end),1),'og')
- plot(inlargIn4(1),distanzeSmooth(inlargIn4(1),1),'og')
- plot(indiciLL(1),distanzeSmooth(indiciLL(1),1),'or')
- plot(inlargPo(end),distanzeSmooth(inlargPo(end),1),'og')
- plot(inlargPo2(1),distanzeSmooth(inlargPo2(1),1),'og')
- plot(inlargPo3(end),distanzeSmooth(inlargPo3(end),1),'og') 
- plot(inlargPo4(1),distanzeSmooth(inlargPo4(1),1),'og')
- xlabel('Indice delle distanze')
- ylabel('Distanze')
+%  figure,
+%  imshow(aa)
+%  hold on
+%  plot(x13Mi ,y13Mi,'og')
+%  plot(x13Mi2 ,y13Mi2,'og')
+%  plot(x23Mi3 ,y23Mi3,'og')
+%  plot(x23Mi4 ,y23Mi4,'og')
+%  plot(XprimoMignolo,YprimoMignolo,'og')
+%  plot(XsecondoMignolo,YsecondoMignolo,'og')
+%  plot(x13An ,y13An,'og')
+%  plot(x13An2 ,y13An2,'og')
+%  plot(x23An3 ,y23An3,'og')
+%  plot(x23An4 ,y23An4,'og')
+%  plot(XprimoAnulare,YprimoAnulare,'og')
+%  plot(XsecondoAnulare,YsecondoAnulare,'og')
+%  plot(x13Me ,y13Me,'og')
+%  plot(x13Me2 ,y13Me2,'og')
+%  plot(x23Me3 ,y23Me3,'og')
+%  plot(x23Me4 ,y23Me4,'og')
+%  plot(XprimoMedio,YprimoMedio,'og')
+%  plot(XsecondoMedio,YsecondoMedio,'og')
+%  plot(x13In ,y13In,'og')
+%  plot(x13In2 ,y13In2,'og')
+%  plot(x23In3 ,y23In3,'og')
+%  plot(x23In4 ,y23In4,'og')
+%  plot(XprimoIndice,YprimoIndice,'og')
+%  plot(XsecondoIndice,YsecondoIndice,'og')
+%  plot(x13Po,y13Po,'og')
+%  plot(x13Po2,y13Po2,'og')
+%  plot(x23Po3,y23Po3,'og')
+%  plot(x23Po4,y23Po4,'og')
+%  plot(XprimoPollice,YprimoPollice,'og')
+%  plot(XsecondoPollice,YsecondoPollice,'og')
 % 
+%  figure,plot(distanzeSmooth)
+%  hold on 
+%  plot(indiciLL(5),distanzeSmooth(indiciLL(5),1),'or')
+%  plot(inlargMi(end),distanzeSmooth(inlargMi(end),1),'og')
+%  plot(inlargMi2(1),distanzeSmooth(inlargMi2(1),1),'og')
+%  plot(inlargMi3(end),distanzeSmooth(inlargMi3(end),1),'og')
+%  plot(inlargMi4(1),distanzeSmooth(inlargMi4(1),1),'og')
+%  plot(indiciLL(4),distanzeSmooth(indiciLL(4),1),'or')
+%  plot(inlargAn(end),distanzeSmooth(inlargAn(end),1),'og')
+%  plot(inlargAn2(1),distanzeSmooth(inlargAn2(1),1),'og')
+%  plot(inlargAn3(end),distanzeSmooth(inlargAn3(end),1),'og')
+%  plot(inlargAn4(1),distanzeSmooth(inlargAn4(1),1),'og')
+%  plot(indiciLL(3),distanzeSmooth(indiciLL(3),1),'or')
+%  plot(inlargMe(end),distanzeSmooth(inlargMe(end),1),'og')
+%  plot(inlargMe2(1),distanzeSmooth(inlargMe2(1),1),'og')
+%  plot(inlargMe3(end),distanzeSmooth(inlargMe3(end),1),'og')
+%  plot(inlargMe4(1),distanzeSmooth(inlargMe4(1),1),'og')
+%  plot(indiciLL(2),distanzeSmooth(indiciLL(2),1),'or')
+%  plot(inlargIn(end),distanzeSmooth(inlargIn(end),1),'og')
+%  plot(inlargIn2(1),distanzeSmooth(inlargIn2(1),1),'og')
+%  plot(inlargIn3(end),distanzeSmooth(inlargIn3(end),1),'og')
+%  plot(inlargIn4(1),distanzeSmooth(inlargIn4(1),1),'og')
+%  plot(indiciLL(1),distanzeSmooth(indiciLL(1),1),'or')
+%  plot(inlargPo(end),distanzeSmooth(inlargPo(end),1),'og')
+%  plot(inlargPo2(1),distanzeSmooth(inlargPo2(1),1),'og')
+%  plot(inlargPo3(end),distanzeSmooth(inlargPo3(end),1),'og') 
+%  plot(inlargPo4(1),distanzeSmooth(inlargPo4(1),1),'og')
+%  xlabel('Indice delle distanze')
+%  ylabel('Distanze')
+% % 
 % 
 % % % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % % % %       Rappresentazione grafica delle Width Finger 
 % % % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 
- figure,imshow(aa)
- hold on
+%  figure,imshow(aa)
+%  hold on
  A11 = [x13Mi x13Mi2];
  A12 = [y13Mi y13Mi2];
  A13 = [x23Mi3 x23Mi4];
@@ -723,21 +723,21 @@ Larghezza33Pollice = round(sqrt((XprimoPollice-XsecondoPollice).^2+(YprimoPollic
  A38 = [y23Po3 y23Po4];
  A39 = [XprimoPollice XsecondoPollice];
  A40 = [YprimoPollice YsecondoPollice];
- plot(A11,A12); 
- plot(A13,A14); 
- plot(A15,A16); 
- plot(A17,A18); 
- plot(A19,A20); 
- plot(A21,A22); 
- plot(A23,A24); 
- plot(A25,A26); 
- plot(A27,A28); 
- plot(A29,A30); 
- plot(A31,A32); 
- plot(A33,A34); 
- plot(A35,A36);
- plot(A37,A38);
- plot(A39,A40);
+%  plot(A11,A12); 
+%  plot(A13,A14); 
+%  plot(A15,A16); 
+%  plot(A17,A18); 
+%  plot(A19,A20); 
+%  plot(A21,A22); 
+%  plot(A23,A24); 
+%  plot(A25,A26); 
+%  plot(A27,A28); 
+%  plot(A29,A30); 
+%  plot(A31,A32); 
+%  plot(A33,A34); 
+%  plot(A35,A36);
+%  plot(A37,A38);
+%  plot(A39,A40);
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -803,41 +803,41 @@ YsecondoDistanze = VettoreElimina(indiceDistanze ,1);
 XprimoDistanze = VettoreElimina(iMin(1) ,2); 
 YprimoDistanze = VettoreElimina(iMin(1) ,1);
  
- figure,
- imshow(aa)
- plot(XprimoDistanze ,YprimoDistanze,'og')
-plot(XsecondoDistanze ,YsecondoDistanze,'.g','MarkerSize', 16)
- title('Punti Mano')
- plot(XpuntoMedio ,YpuntoMedio,'og')
- plot(partenza(2) ,partenza(1),'or')
- plot(XmassimoMedio ,YmassimoMedio,'or')
-
-figure,
-imshow(edgeBw2)
-title('Punti Linee')
-hold on
-plot(XsecondoAnulare ,YsecondoAnulare,'.y','MarkerSize', 16)
-plot(XprimoAnulare ,YprimoAnulare,'.y','MarkerSize', 16)
-plot(XmassimoAnulare ,YmassimoAnulare,'.r','MarkerSize', 16)
-plot(XsecondoMignolo ,YsecondoMignolo,'.g','MarkerSize', 16)
-plot(XprimoMignolo ,YprimoMignolo,'.y','MarkerSize', 16)
-plot(XmassimoMignolo ,YmassimoMignolo,'.r','MarkerSize', 16)
-plot(XprimoMedio ,YprimoMedio,'.y','MarkerSize', 16)
-plot(XmassimoMedio ,YmassimoMedio,'.r','MarkerSize', 16)
-plot(XsecondoIndice ,YsecondoIndice,'.y','MarkerSize', 16)
-plot(XprimoIndice,YprimoIndice,'.g','MarkerSize', 16)
-plot(XmassimoIndice ,YmassimoIndice,'.r','MarkerSize', 16)
-plot(XsecondoPollice ,YsecondoPollice,'.b','MarkerSize', 16)
-plot(XprimoPollice,YprimoPollice,'.g','MarkerSize', 16)
-plot(XmassimoPollice ,YmassimoPollice,'.r','MarkerSize', 16)
-plot(XMedioMignolo ,YMedioMignolo,'.b','MarkerSize', 16)
-plot(XMedioAnulare ,YMedioAnulare,'.b','MarkerSize', 16)
-plot(XMedioIndice ,YMedioIndice,'.b','MarkerSize', 16)
-plot(XMedioPollice ,YMedioPollice,'.b','MarkerSize', 16)
- plot(XmassimoMedio ,YmassimoMedio,'.b','MarkerSize', 16)
- plot(partenza(2) ,partenza(1),'.c','MarkerSize', 16)
-
-title('Punti ManoYUI')
+%  figure,
+%  imshow(aa)
+%  plot(XprimoDistanze ,YprimoDistanze,'og')
+% plot(XsecondoDistanze ,YsecondoDistanze,'.g','MarkerSize', 16)
+%  title('Punti Mano')
+%  plot(XpuntoMedio ,YpuntoMedio,'og')
+%  plot(partenza(2) ,partenza(1),'or')
+%  plot(XmassimoMedio ,YmassimoMedio,'or')
+% 
+% figure,
+% imshow(edgeBw2)
+% title('Punti Linee')
+% hold on
+% plot(XsecondoAnulare ,YsecondoAnulare,'.y','MarkerSize', 16)
+% plot(XprimoAnulare ,YprimoAnulare,'.y','MarkerSize', 16)
+% plot(XmassimoAnulare ,YmassimoAnulare,'.r','MarkerSize', 16)
+% plot(XsecondoMignolo ,YsecondoMignolo,'.g','MarkerSize', 16)
+% plot(XprimoMignolo ,YprimoMignolo,'.y','MarkerSize', 16)
+% plot(XmassimoMignolo ,YmassimoMignolo,'.r','MarkerSize', 16)
+% plot(XprimoMedio ,YprimoMedio,'.y','MarkerSize', 16)
+% plot(XmassimoMedio ,YmassimoMedio,'.r','MarkerSize', 16)
+% plot(XsecondoIndice ,YsecondoIndice,'.y','MarkerSize', 16)
+% plot(XprimoIndice,YprimoIndice,'.g','MarkerSize', 16)
+% plot(XmassimoIndice ,YmassimoIndice,'.r','MarkerSize', 16)
+% plot(XsecondoPollice ,YsecondoPollice,'.b','MarkerSize', 16)
+% plot(XprimoPollice,YprimoPollice,'.g','MarkerSize', 16)
+% plot(XmassimoPollice ,YmassimoPollice,'.r','MarkerSize', 16)
+% plot(XMedioMignolo ,YMedioMignolo,'.b','MarkerSize', 16)
+% plot(XMedioAnulare ,YMedioAnulare,'.b','MarkerSize', 16)
+% plot(XMedioIndice ,YMedioIndice,'.b','MarkerSize', 16)
+% plot(XMedioPollice ,YMedioPollice,'.b','MarkerSize', 16)
+%  plot(XmassimoMedio ,YmassimoMedio,'.b','MarkerSize', 16)
+%  plot(partenza(2) ,partenza(1),'.c','MarkerSize', 16)
+% 
+% title('Punti ManoYUI')
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -861,9 +861,9 @@ lunghezzaPalmo = round(sqrt((XpuntoMedio-partenza(2)).^2+(YpuntoMedio-partenza(1
 % % % % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % % % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-figure,imshow(aa)
-hold on
+% 
+% figure,imshow(aa)
+% hold on
 A1 = [XmassimoMignolo XMedioMignolo];
 A2 = [YmassimoMignolo YMedioMignolo];
 A3 = [XmassimoAnulare XMedioAnulare];
@@ -913,32 +913,32 @@ A45 = [XMedioIndice XMedioPollice];
 A46 = [YMedioIndice YMedioPollice];
 A47 = [XMedioMignolo XMedioPollice];
 A48 = [YMedioMignolo YMedioPollice];
-
-plot(A1,A2, 'r', 'LineWidth', 2); 
-plot(A3,A4, 'r','LineWidth', 2); 
-plot(A5,A6, 'r','LineWidth', 2); 
-plot(A7,A8, 'r','LineWidth', 2); 
-plot(A9,A10, 'r','LineWidth', 2); 
-plot(A11,A12, 'r','LineWidth', 2); 
-plot(A13,A14, 'r','LineWidth', 2); 
-plot(A15,A16, 'r','LineWidth', 2);  
-plot(A17,A18, 'r','LineWidth', 2);  
-plot(A19,A20, 'r','LineWidth', 2); 
-plot(A21,A22, 'r','LineWidth', 2); 
-plot(A23,A24, 'r','LineWidth', 2); 
-plot(A25,A26, 'r','LineWidth', 2);  
-plot(A27,A28, 'r','LineWidth', 2);  
-plot(A29,A30, 'r','LineWidth', 2); 
-plot(A31,A32, 'r','LineWidth', 2);  
-plot(A33,A34, 'r','LineWidth', 2); 
-plot(A35,A36, 'r','LineWidth', 2); 
-plot(A37,A38, 'r','LineWidth', 2); 
-plot(A39,A40, 'r','LineWidth', 2); 
-plot(A41,A42, 'y','LineWidth', 2); 
-%%%Adriano
-plot(A43,A44, 'b','LineWidth', 2); 
-plot(A45,A46, 'b','LineWidth', 2); 
-plot(A47,A48, 'b','LineWidth', 2); 
+% 
+% plot(A1,A2, 'r', 'LineWidth', 2); 
+% plot(A3,A4, 'r','LineWidth', 2); 
+% plot(A5,A6, 'r','LineWidth', 2); 
+% plot(A7,A8, 'r','LineWidth', 2); 
+% plot(A9,A10, 'r','LineWidth', 2); 
+% plot(A11,A12, 'r','LineWidth', 2); 
+% plot(A13,A14, 'r','LineWidth', 2); 
+% plot(A15,A16, 'r','LineWidth', 2);  
+% plot(A17,A18, 'r','LineWidth', 2);  
+% plot(A19,A20, 'r','LineWidth', 2); 
+% plot(A21,A22, 'r','LineWidth', 2); 
+% plot(A23,A24, 'r','LineWidth', 2); 
+% plot(A25,A26, 'r','LineWidth', 2);  
+% plot(A27,A28, 'r','LineWidth', 2);  
+% plot(A29,A30, 'r','LineWidth', 2); 
+% plot(A31,A32, 'r','LineWidth', 2);  
+% plot(A33,A34, 'r','LineWidth', 2); 
+% plot(A35,A36, 'r','LineWidth', 2); 
+% plot(A37,A38, 'r','LineWidth', 2); 
+% plot(A39,A40, 'r','LineWidth', 2); 
+% plot(A41,A42, 'y','LineWidth', 2); 
+% %%%Adriano
+% plot(A43,A44, 'b','LineWidth', 2); 
+% plot(A45,A46, 'b','LineWidth', 2); 
+% plot(A47,A48, 'b','LineWidth', 2); 
 
 LunghezzaPolliceIndice = round(sqrt((XMedioPollice-XMedioIndice).^2+(YMedioPollice-YMedioIndice).^2));
 LunghezzaIndiceMignolo = round(sqrt((XMedioIndice-XMedioMignolo).^2+(YMedioIndice-YMedioMignolo).^2));

@@ -4,6 +4,14 @@
 
 %Prende in INPUT il database che contiene i render 2D, ovvero le immagini dell'intera mano.
 %--------------------------------------------------------------------------
+
+usaMac = true;
+if usaMac
+    slash = '/';
+else 
+    slash = '\';
+end
+
 directory = uigetdir(pwd,'Seleziona la directory contenente i render 2D:');
 
 
@@ -19,22 +27,31 @@ error = 0;
  
 
 for kk=0:sizeSubFolders-1
-    directory2 = [directory '\' subFolders(kk+1).name]
-    [m, n] = size(dir(directory2));
+
+    disp([newline 'Rimangono ' num2str(sizeSubFolders - kk) ' utenti per cui generare immagini'])
+
+    directory2 = [directory slash subFolders(kk+1).name];
+
+    all_files = dir(directory2);
+    numAcquisizioni = nnz(~ismember({all_files.name},{'.','..'})&[all_files.isdir]);
     
-    for g =1 :  m-2
-        FileNameDat=strcat( directory,'\', subFolders(kk+1).name, '\', num2str(g),'\',subFolders(kk+1).name,'_',num2str(g))
-        %DataFolder=['DATABASE_TEMPLATE' '\',subFolders(kk+1).name, '\', num2str(g)];
+    disp(['Ci sono '  num2str(numAcquisizioni) ' acquisizioni per il soggetto ' subFolders(kk+1).name]);
+    for g =1 : numAcquisizioni
+        
+        disp(['Generando le immagini per acquisizione numero ' num2str(g)  ' del soggetto ' subFolders(kk+1).name]);
+
+        FileNameDat=strcat( directory,slash, subFolders(kk+1).name, slash, num2str(g),slash,subFolders(kk+1).name,'_',num2str(g));
+        %DataFolder=['DATABASE_TEMPLATE' slash,subFolders(kk+1).name, slash, num2str(g)];
        % mkdir(DataFolder);
        
         for gg = 2 : 16
             error = 0;
-           % DataFolder=['DATABASE_TEMPLATE' '\',num2str(profonditaNaming(gg)),'mm','\',subFolders(kk+1).name, '.', num2str(g)];
+           % DataFolder=['DATABASE_TEMPLATE' slash,num2str(profonditaNaming(gg)),'mm',slash,subFolders(kk+1).name, '.', num2str(g)];
             %mkdir(DataFolder);
               
-            FilejpgName=strcat( 'Immagine_', num2str((gg) ),'.jpg')
-            pathNameImmagine=[directory '\' subFolders(kk+1).name '\' num2str(g) '\' FilejpgName ]
-            %filenameData = strcat(pathNameSubDirectory,'\',subFolders(kk+1).name,'_',num2str(g));
+            FilejpgName=strcat( 'Immagine_', num2str((gg) ),'.jpg');
+            pathNameImmagine=[directory slash subFolders(kk+1).name slash num2str(g) slash FilejpgName ];
+            %filenameData = strcat(pathNameSubDirectory,slash,subFolders(kk+1).name,'_',num2str(g));
              
             aa = imread(pathNameImmagine);
          try
@@ -46,8 +63,8 @@ for kk=0:sizeSubFolders-1
 %                 HandGeometry;
                
                 GeometriaMano;
-                  catch
-                 %  messaggio = strcat('Problema nella generazione del template',DataFolder,'\',subFolders(kk+1).name,'.',num2str(g));
+            catch
+                  %messaggio = strcat('Problema nella generazione del template',DataFolder,slash,subFolders(kk+1).name,'.',num2str(g));
              messaggio = strcat('Problema nella generazione del template');   
              warning(messaggio);
                 error = 1;
@@ -55,24 +72,24 @@ for kk=0:sizeSubFolders-1
                 %-------------------------------
 %                 crop ROI PALMO
                
-                databaseRenderPalmo = ['DATABASE_RENDER_PALMOX', '\',num2str(profonditaNaming(gg-1)),'mm','\',subFolders(kk+1).name, '.', num2str(g)];
+                databaseRenderPalmo = ['DATABASE_RENDER_PALMOX', slash,num2str(profonditaNaming(gg-1)),'mm',slash,subFolders(kk+1).name, '.', num2str(g)];
                 mkdir(databaseRenderPalmo)
                 
                 %-------------------------------
         
-               DataFolder=['DATABASE_TEMPLATE_HandGeometryP', '\',num2str(profonditaNaming(gg-1)),'mm','\',subFolders(kk+1).name, '.', num2str(g)]
+               DataFolder=['DATABASE_TEMPLATE_HandGeometryP', slash,num2str(profonditaNaming(gg-1)),'mm',slash,subFolders(kk+1).name, '.', num2str(g)];
                mkdir(DataFolder)
              
             if(error == 0)
                 %hand geometry
-                fileName = strcat(DataFolder,'\',subFolders(kk+1).name,'.',num2str(g),'_1','.dat');
-                fileName2 = strcat(DataFolder,'\',subFolders(kk+1).name,'.',num2str(g),'_1','.jpg');
+                fileName = strcat(DataFolder,slash,subFolders(kk+1).name,'.',num2str(g),'_1','.dat');
+                fileName2 = strcat(DataFolder,slash,subFolders(kk+1).name,'.',num2str(g),'_1','.jpg');
                 save(fileName,'vettoreUtente'); 
                 
                 
                 %palmprint Q = A( round(r(2)) + (1:r(4)) , round(r(1)) + (1:r(3)) );
-%               Palm = aa(round(YMedioIndice):YprimoMignolo,XprimoPollice:round(XMedioMignolo)); % poi vediamo se è possibile una alternativa 
-%               Palm = aa(round(YsecondoPuntoRoiPalmo):YprimoPuntoRoiPalmo, XterzoPuntoRoiPalmo:round(XprimoPuntoRoiPalmo)); % poi vediamo se è possibile una alternativa 
+%               Palm = aa(round(YMedioIndice):YprimoMignolo,XprimoPollice:round(XMedioMignolo)); % poi vediamo se Ã¨ possibile una alternativa 
+%               Palm = aa(round(YsecondoPuntoRoiPalmo):YprimoPuntoRoiPalmo, XterzoPuntoRoiPalmo:round(XprimoPuntoRoiPalmo)); % poi vediamo se Ã¨ possibile una alternativa 
 %               Palm = aa( round(YprimoPuntoRoiPalmo:YterzoPuntoRoiPalmo) + (YsecondoPuntoRoiPalmo:YquartoPuntoRoiPalmo) , round(XsecondoPuntoRoiPalmo:XprimoPuntoRoiPalmo) + (XterzoPuntoRoiPalmo:XquartoPuntoRoiPalmo));   
                              
                 x=[round(YprimoPuntoRoiPalmo) round(YsecondoPuntoRoiPalmo) round(YquartoPuntoRoiPalmo) round(YterzoPuntoRoiPalmo) (YprimoPuntoRoiPalmo)];
@@ -91,7 +108,7 @@ for kk=0:sizeSubFolders-1
                 
                 angolo=radtodeg((YprimoPuntoRoiPalmo-YterzoPuntoRoiPalmo)/(XprimoPuntoRoiPalmo-XterzoPuntoRoiPalmo));
                 palmoRuotato=imrotate(palmProva,angolo);
-             figure,imshow(palmoRuotato);
+             %figure,imshow(palmoRuotato);
                 
                 L=logical(palmoRuotato);
                 box=regionprops(L,'Area', 'BoundingBox');
@@ -99,7 +116,7 @@ for kk=0:sizeSubFolders-1
                 immagineRoiPalmo=uint8(immagine(2:134,2:134));
                 pixelPerInch=get(0,'ScreenPixelsPerInch');
                 dimesioneInch=size(immagineRoiPalmo,1)/pixelPerInch;               dimensioneCm=dimesioneInch*2.54;
-                 figure,imshow(immagineRoiPalmo)
+                % figure,imshow(immagineRoiPalmo)
                 FileName = strcat('render_',num2str(profonditaNaming(gg-1)),'.jpg');
                 Name = fullfile(databaseRenderPalmo, FileName);
                 imwrite(immagineRoiPalmo, Name, 'jpg');
@@ -109,7 +126,7 @@ for kk=0:sizeSubFolders-1
                
                 
             end
-           clearvars -except DataFolder gg g kk profonditaNaming vettoreUtente directory subFolders FileNameDat 
+           clearvars -except DataFolder gg g kk profonditaNaming vettoreUtente directory subFolders FileNameDat slash sizeSubFolders
             
           
         end
