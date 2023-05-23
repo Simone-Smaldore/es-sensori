@@ -1,23 +1,28 @@
 
-cartella = ('\template7');
-mkdir(pwd, cartella);
+usaMac = true;
+if usaMac
+    slash = '/';
+else 
+    slash = '\';
+end
+
 elencaSottocartelle;
    
 for kk=0:sizeSubFolders-1
     
-   director = strcat(directory, '\', subFolders(kk+1).name);
-    mkdir([pwd '\template8'], subFolders(kk+1).name);
+   director = strcat(directory, slash, subFolders(kk+1).name);
+    mkdir([pwd  slash 'template8'], subFolders(kk+1).name);
     struttura = dir(fullfile(director));
     
     for r=3:size(struttura,1)
         
-        director2 = strcat(director, '\', struttura(r).name);
-        mkdir([pwd '\template8\' subFolders(kk+1).name], struttura(r).name);
+        director2 = strcat(director, slash, struttura(r).name);
+        mkdir([pwd slash 'template8' slash subFolders(kk+1).name], struttura(r).name);
         struttura2 = dir(fullfile(director2));
         
         for h=3:size(struttura2,1)
            % struttura2(h).name=strcat(struttura2(h).name(1:8),'_',num2str(h-2));
-            file = strcat(director2,'\', strcat(struttura2(h).name(1:8),'_',num2str(h-2),'.jpg'));
+            file = strcat(director2,slash, strcat(struttura2(h).name(1:8),'_',num2str(h-2),'.jpg'));
             disp(file);
             im11 = imread(file);
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -44,7 +49,7 @@ for kk=0:sizeSubFolders-1
             %   resize = 200/col;
             im1=imresize(im1, [266 266],'bicubic'); % la scala della dimensione ricercata ovvero 349 colonne
             
-             
+             imwrite( im1,[pwd slash 'template8' slash subFolders(kk+1).name slash struttura(r).name slash 'MATRICE_RESIZE' num2str(h-2) '.jpg']);
             
              
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -59,6 +64,8 @@ for kk=0:sizeSubFolders-1
          
            
            matGraySporco=imadjust(matGraySporco, stretchlim(matGraySporco),[]);
+
+           imwrite( matGraySporco,[pwd slash 'template8' slash subFolders(kk+1).name slash struttura(r).name slash 'MATRICE_BIANCO_NERA' num2str(h-2) '.jpg']);
            
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             % EFFETTUO VARI FILTRAGGI PER REALIZZARE LE LINEE %
@@ -70,20 +77,21 @@ for kk=0:sizeSubFolders-1
            
             
             num=5;
-            %mat5=template_difference(matGraySporco,num,sigmaGauss);
+            mat5=template_difference(matGraySporco,num,sigmaGauss);
           
            
            
             num=7;
-            %mat7=template_difference(matGraySporco,num,sigmaGauss);
+            mat7=template_difference(matGraySporco,num,sigmaGauss);
            
             num=9;
-            %mat9=template_difference(matGraySporco,num,sigmaGauss);
+            mat9=template_difference(matGraySporco,num,sigmaGauss);
            
             num=11;
             %mat11=template_difference(matGraySporco,num,sigmaGauss);
            
             
+           imwrite( mat3,[pwd slash 'template8' slash subFolders(kk+1).name slash struttura(r).name slash 'MAT_3_' num2str(h-2) '.jpg']);  
           
 
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -106,7 +114,7 @@ for kk=0:sizeSubFolders-1
                 end
             end
 
-              
+            imwrite( matGraySporco,[pwd slash 'template8' slash subFolders(kk+1).name slash struttura(r).name slash 'MATRICE_SOMMA_GAUSS' num2str(h-2) '.jpg']);  
             
             %bisogna provare a fare gli score e smanettare su quali matrici usare e la
             %soglia
@@ -132,6 +140,7 @@ for kk=0:sizeSubFolders-1
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
             matGrayXY_binary1=mat3_17_filtrata([8:dimensionerighe-7],[8:dimensionecolonne-7]); %ne eliminiamo 7
+            imwrite( matGrayXY_binary1,[pwd slash 'template8' slash subFolders(kk+1).name slash struttura(r).name slash 'MATRICE_NO_CONTORNO_BINARY_1' num2str(h-2) '.jpg']);  
             
            
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -152,10 +161,15 @@ for kk=0:sizeSubFolders-1
             
             matGraySporco2=matGraySporco([8:dimensionerighe-7],[8:dimensionecolonne-7]);
 
+            imwrite( matGraySporco2,[pwd slash 'template8' slash subFolders(kk+1).name slash struttura(r).name slash 'MATRICE_NO_CONTORNO_IMMAGINE' num2str(h-2) '.jpg']);  
+
             % %senza contorni
             matGrayXY_binary3 = bwmorph(matGrayXY_binary1,'close');
+            imwrite( matGrayXY_binary3,[pwd slash 'template8' slash subFolders(kk+1).name slash struttura(r).name slash 'MATRICE_NO_CONTORNO_BINARY_3' num2str(h-2) '.jpg']);  
          
             matGrayXY_binary4 = bwmorph(matGrayXY_binary3,'thin',Inf);
+
+            imwrite( matGrayXY_binary4,[pwd slash 'template8' slash subFolders(kk+1).name slash struttura(r).name slash 'MATRICE_NO_CONTORNO_BINARY_4' num2str(h-2) '.jpg']);  
 
             %%%%%%%%%%%%%%%%%%%%%%%%
             % RICOSTRUIAMO I BORDI %
@@ -167,11 +181,16 @@ for kk=0:sizeSubFolders-1
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
             matriceXY_delete1=delete_small_lines(matGrayXY_binary4);
+
+            imwrite( matriceXY_delete1,[pwd slash 'template8' slash subFolders(kk+1).name slash struttura(r).name slash 'MATRICE_TRATTI_CORTI' num2str(h-2) '.jpg']);  
  
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%
             % ELIMINO I TRATTI ISOLATI %
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%
             matriceXY_delete = bwmorph(matriceXY_delete1,'clean',Inf);
+
+            imwrite( matriceXY_delete,[pwd slash 'template8' slash subFolders(kk+1).name slash struttura(r).name slash 'MATRICE_TRATTI_ISOLATI' num2str(h-2) '.jpg']);  
+            
             
             rgbImage = cat(3, matGraySporco2, matGraySporco2, matGraySporco2);
 
@@ -186,14 +205,16 @@ for kk=0:sizeSubFolders-1
             rgbImage(i,j,3)=255;
                  end 
               end 
-    end	 
+    end  
 
             
             
             
-            save([pwd '\template8\' subFolders(kk+1).name '\' struttura(r).name '\' 'TEMPLATE' num2str(h-2) '.dat'], 'matriceXY_delete');
-             imwrite( matriceXY_delete,[pwd '\template8\' subFolders(kk+1).name '\' struttura(r).name '\' 'TEMPLATE' num2str(h-2) '.jpg']);
-            imwrite(  rgbImage,[pwd '\template8\' subFolders(kk+1).name '\' struttura(r).name '\' 'TEMPLATEM' num2str(h-2) '.jpg']);
+            save([pwd slash 'template8' slash subFolders(kk+1).name slash struttura(r).name slash 'TEMPLATE' num2str(h-2) '.dat'], 'matriceXY_delete');
+             imwrite( matriceXY_delete,[pwd slash 'template8' slash subFolders(kk+1).name slash struttura(r).name slash 'TEMPLATE' num2str(h-2) '.jpg']);
+            imwrite(  rgbImage,[pwd slash 'template8' slash subFolders(kk+1).name slash struttura(r).name slash 'TEMPLATEM' num2str(h-2) '.jpg']);
+
+            break
         end
     end
 end
