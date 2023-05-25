@@ -7,12 +7,15 @@ function [matGrayXY_binary_allung2,matGray] = template_difference(matGraySporco,
     matGraySporcoMediato = medfilt2(matGraySporco, [9,9]);
     matGraySporcoAritmetico = imfilter(matGraySporco,w5);
 
+    imwrite(matGraySporcoAritmetico, ['img/immagine_primo_filtro_' num2str(num) '.png']);
+    writematrix(matGraySporcoAritmetico,['csv/immagine_primo_filtro_' num2str(num) '.csv']) 
 
     conteggio_punti=850; %850
     %%%%%%%%%%%%%%%%%%%%%%%
     %% PROCEDURA PER LE X %
     %%%%%%%%%%%%%%%%%%%%%%%
     matGrayNum=double(matGraySporcoAritmetico); %matGraySporcoAritmetico 3
+
     dimensione=size(matGrayNum); % CALCOLO RIGA E COLONNE MATRICE
     dimensionerighe=dimensione(1);
     dimensionecolonne=dimensione(2);
@@ -26,6 +29,9 @@ function [matGrayXY_binary_allung2,matGray] = template_difference(matGraySporco,
             end
         end
     end
+    imwrite(matGrayX, ['img/immagine_algoritmo_applicato_' num2str(num) '.png']);
+    writematrix(matGrayX,['csv/immagine_algoritmo_applicato_' num2str(num) '.csv'])
+
 
     % 2° ALGORITMO
     for i=1:dimensionerighe
@@ -49,6 +55,9 @@ function [matGrayXY_binary_allung2,matGray] = template_difference(matGraySporco,
             end
         end
     end
+
+    imwrite(matGrayX2, ['img/secondo_algoritmo_applicato_' num2str(num) '.png']);
+    writematrix(matGrayX2,['csv/secondo_algoritmo_applicato_' num2str(num) '.csv'])
     
     %binarizzo -> non usato
     matGrayX2_binary=matGrayX2;
@@ -63,6 +72,8 @@ function [matGrayXY_binary_allung2,matGray] = template_difference(matGraySporco,
         end
     end
     matGrayX2_binary=mat2gray(matGrayX2_binary);
+
+
  
   imwrite(matGrayX2_binary, 'immagine_edge.png');
 
@@ -87,6 +98,9 @@ function [matGrayXY_binary_allung2,matGray] = template_difference(matGraySporco,
             end
         end
     end
+
+    imwrite(matGrayX2_SPOLVERATA, ['img/terzo_algoritmo_applicato_' num2str(num) '.png']);
+    writematrix(matGrayX2_SPOLVERATA,['csv/terzo_algoritmo_applicato_' num2str(num) '.csv'])
 
 
     % 4° ALGORITMO
@@ -248,7 +262,7 @@ imwrite(matGrayX3_binary, 'immagine_0.png');
 
     matGrayX_2=double(matGrayX_2);
 
-    imshow(matGrayX_2);
+    %imshow(matGrayX_2);
     for i=1:dimensionerighe
         for j=1:dimensionecolonne
             if(j==dimensionecolonne)

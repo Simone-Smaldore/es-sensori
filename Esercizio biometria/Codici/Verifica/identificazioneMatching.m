@@ -1,15 +1,21 @@
 clear all;
 clc;
 
+usaMac = true;
+if usaMac
+    slash = '/';
+else 
+    slash = '\';
+end
 %Questo è lo script che si occupa del matching, l'unico parametro che va modificato in questa
 %function è il numero di iterazioni indicato nel secondo ciclo for (riga 29). Questo numero deve 
 %essere uguale al numero usato nella function matching2new e deve essere pari al numero di caratteristiche 
 %che si desidera utilizzare
 
 cartellaTemplate = uigetdir(pwd,'Seleziona la directory contenente i template:') ;
-%cartellaTemplate=strcat(pwd,'\template\lines_template','\');
-% cartellaTemplate=strcat(pwd,'\Sarli','\');
-cartellaTemplate = strcat(cartellaTemplate,'\');
+%cartellaTemplate=strcat(pwd,'\template\lines_template',slash);
+% cartellaTemplate=strcat(pwd,'\Sarli',slash);
+cartellaTemplate = strcat(cartellaTemplate,slash);
 dirs=dir(fullfile(cartellaTemplate));
 
 sp=1;
@@ -22,8 +28,9 @@ tic;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 for i = numeroCartella:length(dirs)
-   cartella=strcat(cartellaTemplate,dirs(i).name,'\');
+   cartella=strcat(cartellaTemplate,dirs(i).name,slash);
    files=dir(fullfile(cartella,'*.dat'));
+   disp(cartella)
    Template(:,i-2) = importdata(strcat(cartella,files(1).name));
 end
 
@@ -34,7 +41,7 @@ end
 %TempVar = [Template, varianze];
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 for i=numeroCartella:length(dirs) 
-   cartella=strcat(cartellaTemplate,dirs(i).name,'\');
+   cartella=strcat(cartellaTemplate,dirs(i).name,slash);
    files=dir(fullfile(cartella,'*.dat'));
    elementi=size(files,1);
    numeroFile=0;
@@ -47,7 +54,7 @@ for i=numeroCartella:length(dirs)
      
      dirsDaTestare=dir(fullfile(cartellaDaTestare));
      for j=numeroCartella:length(dirsDaTestare)
-        sottocartelleDaTestare=strcat(cartellaDaTestare,dirsDaTestare(j).name,'\');
+        sottocartelleDaTestare=strcat(cartellaDaTestare,dirsDaTestare(j).name,slash);
         if(strcmp(cartella,sottocartelleDaTestare)==1)
             filesDaTestare=dir(fullfile(sottocartelleDaTestare,'*.dat'));
             elementiDaTestare=size(filesDaTestare,1);
