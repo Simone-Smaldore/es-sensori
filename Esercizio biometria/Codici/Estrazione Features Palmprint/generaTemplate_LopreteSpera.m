@@ -216,7 +216,7 @@ for kk=0:sizeSubFolders-1
              imwrite( matriceXY_delete,[pwd slash cartellaDestinazione slash subFolders(kk+1).name slash struttura(r).name slash 'TEMPLATE' num2str(h-2) '.jpg']);
             imwrite(  rgbImage,[pwd slash cartellaDestinazione slash subFolders(kk+1).name slash struttura(r).name slash 'TEMPLATEM' num2str(h-2) '.jpg']);
 
-            break
+            %break
         end
     end
 end

@@ -3,7 +3,8 @@ clear all;
 clc;
 
 
-load Tabella111__350_alfa=6_dil5_nuova4.mat
+%load Tabella111__350_alfa=6_dil5_nuova4.mat
+load test2D.mat
 
 matchT=size(T);
 for i=1:matchT(1)
@@ -24,8 +25,9 @@ for i=1:matchT(1)
         end
        
         xxx=strrep(Ut1,'.dat','');
-        yyy=str2num(xxx);
-        T.Utente1(i)={yyy};
+       
+        %yyy=str2num(xxx);
+        %T.Utente1(i)={yyy};
         
         
 end

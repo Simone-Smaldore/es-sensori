@@ -1,13 +1,14 @@
-function [ matriceOutput ] = generaMatriceContenenteTemplate(matFile)
+function [ matriceOutput ] = generaMatriceContenenteTemplate(path)
 %UNTITLED2 Summary of this function goes here
 %   Detailed explanation goes here
          
     %path = 'codice/palmprint_tesi/template/lines_template/provaProfondita/';    
     
-    path=strcat(pwd,'\template\',extractBefore(matFile, '.'),'\', matFile, '\');
+    
     
     %ricommentare template1
     %template1 = importdata(strcat(path,'TEMPLATE1.dat'));
+    disp(strcat(path,'TEMPLATE1.dat'))
     template2 = importdata(strcat(path,'TEMPLATE1.dat'));
     template3 = importdata(strcat(path,'TEMPLATE2.dat'));
     template4 = importdata(strcat(path,'TEMPLATE3.dat'));
