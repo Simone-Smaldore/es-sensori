@@ -110,13 +110,14 @@ for kk=0:sizeSubFolders-1
                     for i1=i-k:i+k
                         for j1=j-k:j+k
                               somma_pixel=somma_pixel+mat9(i1,j1)+mat11(i1,j1)+mat7(i1,j1)+mat5(i1,j1); %dal 5 al 15
+                              %somma_pixel = somma_pixel+mat11(i,j);
                         end
                     end
                     mat3_17(i,j)=somma_pixel;
                 end
             end
 
-            imwrite( matGraySporco,[pwd slash cartellaDestinazione slash subFolders(kk+1).name slash struttura(r).name slash 'MATRICE_SOMMA_GAUSS' num2str(h-2) '.jpg']);  
+            imwrite( mat3_17,[pwd slash cartellaDestinazione slash subFolders(kk+1).name slash struttura(r).name slash 'MATRICE_SOMMA_GAUSS' num2str(h-2) '.jpg']);  
             
             %bisogna provare a fare gli score e smanettare su quali matrici usare e la
             %soglia
@@ -216,7 +217,7 @@ for kk=0:sizeSubFolders-1
              imwrite( matriceXY_delete,[pwd slash cartellaDestinazione slash subFolders(kk+1).name slash struttura(r).name slash 'TEMPLATE' num2str(h-2) '.jpg']);
             imwrite(  rgbImage,[pwd slash cartellaDestinazione slash subFolders(kk+1).name slash struttura(r).name slash 'TEMPLATEM' num2str(h-2) '.jpg']);
 
-            %break
+            break
         end
     end
 end

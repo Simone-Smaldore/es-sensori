@@ -239,6 +239,7 @@ function [matGrayXY_binary_allung2,matGray] = template_difference(matGraySporco,
         end
      end
 imwrite(matGrayX3_binary, 'immagine_0.png');
+imwrite(matGrayX3_binary, ['img/immagine0_' num2str(num) '.png']);
     %%%%%%%%%%%%%%%%%%%%%
     % INVERTIAMO LA MATRICE DELLE DIFFERENZE PER CERCARE LE LINEE ANCHE DA
     % DESTRA VERSO SINISTRA
@@ -445,6 +446,7 @@ imwrite(matGrayX3_binary, 'immagine_0.png');
         j=j+1;
     end
 imwrite(matGrayX33_binary_girata, 'immagine_180.png');
+imwrite(matGrayX33_binary_girata, ['img/immagine180_' num2str(num) '.png']);
 
 
     for i=1:dimensionerighe
@@ -665,6 +667,7 @@ imwrite(matGrayX33_binary_girata, 'immagine_180.png');
         end
      end
   imwrite(matGrayY3_binary, 'immagine_90.png');
+  imwrite(matGrayY3_binary, ['img/immagine90_' num2str(num) '.png']);
 
     % %%%%%%%%%%%%%%%%%%%%%
     % % INVERTIAMO LA MATRICE DELLE DIFFERENZE PER CERCARE LE LINEE ANCHE DAL
@@ -871,6 +874,7 @@ imwrite(matGrayX33_binary_girata, 'immagine_180.png');
     end
 
  imwrite(matGrayY33_binary_girata,'Ximmagine270.png');
+ imwrite(matGrayY33_binary_girata, ['img/immagine270_' num2str(num) '.png']);
 
 
     for i=1:dimensionerighe
@@ -967,8 +971,11 @@ imwrite(matGrayX33_binary_girata, 'immagine_180.png');
     
   imwrite(matGrayXY_binary, 'immagine_somma.png');
     
+  imwrite(matGrayXY_binary_allung, ['img/immagine_allung_' num2str(num) '.png']);
     matGrayXY_binary_allung1 = bwmorph(matGrayXY_binary_allung,'close');
+    imwrite(matGrayXY_binary_allung1, ['img/immagine_allung_post_closing' num2str(num) '.png']);
     matGrayXY_binary_allung2 = bwmorph(matGrayXY_binary_allung1,'thin',Inf);
+    imwrite(matGrayXY_binary_allung2, ['img/immagine_allung_post_thinning' num2str(num) '.png']);
 %  matGrayXY_binary_allung2=matGrayXY_binary_allung;
 
     % SE=[ 1 1 1 ; 1 1 1; 1 1 1; 1 1 1; 1 1 1; 1 1 1; 1 1 1; 1 1 1; 1 1 1; 1 1 1; 1 1 1];
