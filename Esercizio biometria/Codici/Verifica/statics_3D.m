@@ -4,7 +4,7 @@ clc;
 
 
 %load Tabella111__350_alfa=6_dil5_nuova4.mat
-load test2D.mat
+load MatComplete_3D.mat
 
 matchT=size(T);
 for i=1:matchT(1)
